@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cookbook.MainPage">
-    <Grid Padding="20, 20, 20, 200" RowSpacing="20" ColumnSpacing="20" BackgroundColor="Red">
+    <Grid Padding="20, 20, 20, 200" RowSpacing="20" ColumnSpacing="20" BackgroundColor="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -12,26 +12,33 @@
             <RowDefinition Height="0.4*"/>
             <RowDefinition Height="0.4*"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0"
-                Grid.Column="0"
-                Margin="0,0,0,0"
-                FontSize="20"
-                Text="Cookbook"/>
-        <Button Grid.Row="0"
-                Grid.Column="1"
-                x:Name="Settings"
-                FontSize="15"/>
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Margin="0,0,0,0"
+               FontSize="30"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               Text="Cookbook"/>
+        <ImageButton Grid.Row="0"
+                     Grid.Column="1"
+                     x:Name="Settings"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Source="settingsicon"/>
         <Button Grid.Row="1"
                 Grid.Column="0"
+                BackgroundColor="White"
                 x:Name="Breakfast"
                 FontSize="20"
                 Text="Breakfast"/>
         <Button Grid.Row="1"
                 Grid.Column="1"
+                BackgroundColor="White"
                 x:Name="Lunch"
                 FontSize="20"
                 Text="Lunch"/>
         <Button Grid.Row="2"
+                BackgroundColor="White"
                 FontSize="20"
                 x:Name="Dinner"
                 Text="Dinner"/>

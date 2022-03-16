@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cookbook.MainPage">
-    <Grid Padding="20, 20, 20, 200" RowSpacing="20" ColumnSpacing="20" BackgroundColor="White">
+    <Grid Style="{StaticResource GridMainPage}"
+          Padding="20, 20, 20, 200" RowSpacing="20" ColumnSpacing="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -25,20 +26,20 @@
                      HorizontalOptions="Center"
                      VerticalOptions="Center"
                      Source="settingsicon"/>
-        <Button Grid.Row="1"
+        <Button Style="{StaticResource ButtonMainPage}"
+                Grid.Row="1"
                 Grid.Column="0"
-                BackgroundColor="White"
                 x:Name="Breakfast"
                 FontSize="20"
                 Text="Breakfast"/>
-        <Button Grid.Row="1"
+        <Button Style="{StaticResource ButtonMainPage}"
+                Grid.Row="1"
                 Grid.Column="1"
-                BackgroundColor="White"
                 x:Name="Lunch"
                 FontSize="20"
                 Text="Lunch"/>
-        <Button Grid.Row="2"
-                BackgroundColor="White"
+        <Button Style="{StaticResource ButtonMainPage}"
+                Grid.Row="2"
                 FontSize="20"
                 x:Name="Dinner"
                 Text="Dinner"/>

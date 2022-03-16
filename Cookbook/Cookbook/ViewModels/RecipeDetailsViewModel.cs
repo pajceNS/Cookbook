@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cookbook.ViewModels
 {
-    internal class RecipeDetailsViewModel
+    internal class RecipeDetailsViewModel : BaseViewModel
     {
     }
 }

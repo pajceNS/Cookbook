@@ -22,9 +22,12 @@
         <ImageButton Grid.Row="0"
                      Grid.Column="1"
                      x:Name="Settings"
-                     HorizontalOptions="Center"
+                     HorizontalOptions="End"
                      VerticalOptions="Center"
-                     Source="settingsicon"/>
+                     Source="settingsicon"
+                     BorderColor="Transparent"
+                     BackgroundColor="Transparent"
+                     Scale="0.5"/>
         <Button Grid.Row="1"
                 Grid.Column="0"
                 BackgroundColor="White"

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cookbook.Models
+namespace Cookbook.Services
 {
-    internal class Cookbook
+    internal class ViewModelLocator
     {
     }
 }

@@ -10,21 +10,26 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
-            <RowDefinition Height="0.4*"/>
-            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0"
                Grid.Column="0"
+               Grid.ColumnSpan="2"
                Margin="0,0,0,0"
-               FontSize="30"
-               HorizontalOptions="Center"
+               FontSize="40"
+               HorizontalOptions="Start"
                VerticalOptions="Center"
-               Text="Cookbook"/>
+               Text="       Cookbook"/>
         <ImageButton Grid.Row="0"
                      Grid.Column="1"
                      x:Name="Settings"
-                     HorizontalOptions="Center"
+                     HorizontalOptions="End"
                      VerticalOptions="Center"
+                     BorderColor="Transparent"
+                     BackgroundColor="Transparent"
+                     Scale="0.5"
                      Source="settingsicon"/>
         <Button Style="{StaticResource ButtonMainPage}"
                 Grid.Row="1"

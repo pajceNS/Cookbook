@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cookbook.DataAccess
+namespace Cookbook.Converters
 {
-    internal class CookbookRepository
+    internal class InvertedBooleanConverter
     {
     }
 }

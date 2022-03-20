@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Cookbook.DataAccess
 {
-    internal interface ICookbookRepository
+    internal interface IRecipeRepository
     {
     }
 }

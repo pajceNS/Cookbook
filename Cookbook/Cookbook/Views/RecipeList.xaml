@@ -1,12 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cookbook.Views.RecipeList">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
+             x:Class="Cookbook.Views.RecipeList"
+             x:DataType="viewmodels:RecipeListViewModel">
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <ImageButton
+                    Source="backButton.png"
+                    Margin="0,20,0,0"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    BackgroundColor="Blue"
+                    Command="{Binding BackButtonClicked}"
+                    />
+                <Label
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3"
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    BackgroundColor="Beige"
+                    Margin="0,20,0,0"
+                    FontSize="30"
+                    TextColor="Black"
+                    Text="{Binding MealName}"
+                    
+                    />
+
+            </Grid>
+            
+            <Grid Grid.Row="1">
+                <CollectionView
+                    Margin="0,20,0,0"
+                    BackgroundColor="AliceBlue"
+                    />
+            </Grid>
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

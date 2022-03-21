@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cookbook.Views.Settings">
+    <Grid Style="{DynamicResource GridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Text="Dark Mode"
+               FontSize="20"
+               TextColor="Black"/>
+        <Switch x:Name="SwitchButton"
+                Grid.Row="0"
+                Grid.Column="1"
+                Toggled="SwitchButton_Toggled"/>
+    </Grid>
+</ContentPage>

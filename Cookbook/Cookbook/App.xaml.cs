@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Cookbook.DataAccess;
+using Cookbook.Services;
+using Cookbook.ViewModels;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,11 +10,26 @@ namespace Cookbook
 {
     public partial class App : Application
     {
+        private static ViewModelLocator _viewLocator;
+        private static IServiceProvider _serviceProvider;
+
         public App()
         {
             InitializeComponent();
+            SetupServices();
+            MainPage = new NavigationPage(new MainPage { BindingContext = Locator.MainViewModel });
+        }
 
-            MainPage = new MainPage();
+        internal static ViewModelLocator Locator
+        {
+            get
+            {
+                if(_viewLocator is null)
+                {
+                    _viewLocator = new ViewModelLocator(_serviceProvider);
+                }
+                return _viewLocator;
+            }
         }
 
         protected override void OnStart()
@@ -23,6 +42,15 @@ namespace Cookbook
 
         protected override void OnResume()
         {
+        }
+        private void SetupServices()
+        {
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddTransient<MainViewModel>();
+            serviceCollection.AddTransient<RecipeListViewModel>();
+            serviceCollection.AddSingleton<IRecipeRepository, RecipeRepository>();
+            serviceCollection.AddSingleton<INavigationService, NavigationService>();
+            _serviceProvider = serviceCollection.BuildServiceProvider();
         }
     }
 }

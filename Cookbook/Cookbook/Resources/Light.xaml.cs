@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Cookbook.Resources
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Light : ContentPage
+    public partial class Light
     {
         public Light()
         {

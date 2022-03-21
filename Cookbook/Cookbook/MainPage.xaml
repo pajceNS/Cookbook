@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cookbook.MainPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
+             x:Class="Cookbook.MainPage"
+             x:DataType="viewmodels:MainViewModel"
+             >
+    <ContentPage.BindingContext>
+        <viewmodels:MainViewModel/>
+    </ContentPage.BindingContext>
+    
     <Grid Style="{StaticResource GridMainPage}"
           Padding="20, 20, 20, 200" RowSpacing="20" ColumnSpacing="20">
         <Grid.ColumnDefinitions>
@@ -30,24 +37,30 @@
                      BorderColor="Transparent"
                      BackgroundColor="Transparent"
                      Scale="0.5"
-                     Source="settingsicon"/>
+                     Source="settingsicon"
+                     Command ="{Binding ButtonSettings}"
+                     />
         <Button Style="{StaticResource ButtonMainPage}"
                 Grid.Row="1"
                 Grid.Column="0"
-                x:Name="Breakfast"
+                
                 FontSize="20"
-                Text="Breakfast"/>
+                Text="Breakfast"
+                Command="{Binding BrekfastButton}"
+                />
         <Button Style="{StaticResource ButtonMainPage}"
                 Grid.Row="1"
                 Grid.Column="1"
                 x:Name="Lunch"
                 FontSize="20"
-                Text="Lunch"/>
+                Text="Lunch"
+                Command="{Binding LunchButton}"/>
         <Button Style="{StaticResource ButtonMainPage}"
                 Grid.Row="2"
                 FontSize="20"
                 x:Name="Dinner"
-                Text="Dinner"/>
+                Text="Dinner"
+                Command="{Binding DinnerButton}"/>
     </Grid>
 
 </ContentPage>

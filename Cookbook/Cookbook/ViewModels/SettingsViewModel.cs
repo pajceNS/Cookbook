@@ -7,10 +7,10 @@ using Xamarin.Forms.Xaml;
 
 namespace Cookbook.ViewModels
 {
-    /*[XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Settings : BaseViewModel
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    internal partial class SettingsViewModel : BaseViewModel
     {
-        public Settings()
+        public SettingsViewModel()
         {
             InitializeComponent();
         }
@@ -26,5 +26,5 @@ namespace Cookbook.ViewModels
             mergedDictionaries.Clear();
             mergedDictionaries.Add(new Dark());
         }
-    }*/
+    }
 }

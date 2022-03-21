@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cookbook.Views.Settings">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
+             x:Class="Cookbook.Views.Settings"
+             x:DataType="viewmodels:SettingsViewModel">
+
+    <ContentPage.BindingContext>
+        <viewmodels:MainViewModel/>
+    </ContentPage.BindingContext>
+
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -18,6 +25,7 @@
         <Switch x:Name="SwitchButton"
                 Grid.Row="0"
                 Grid.Column="1"
-                Toggled="SwitchButton_Toggled"/>
+                
+                />
     </Grid>
 </ContentPage>

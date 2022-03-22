@@ -4,10 +4,7 @@
              xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
              x:Class="Cookbook.MainPage"
              x:DataType="viewmodels:MainViewModel"
-             >
-    <ContentPage.BindingContext>
-        <viewmodels:MainViewModel/>
-    </ContentPage.BindingContext>
+             BindingContext="MainViewModel">
     
     <Grid Style="{StaticResource GridMainPage}"
           Padding="20, 20, 20, 200" RowSpacing="20" ColumnSpacing="20">

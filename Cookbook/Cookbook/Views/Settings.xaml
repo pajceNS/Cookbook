@@ -3,11 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
              x:Class="Cookbook.Views.Settings"
-             x:DataType="viewmodels:SettingsViewModel">
+             x:DataType="viewmodels:SettingsViewModel"
+             NavigationPage.HasNavigationBar="False">
 
-    <ContentPage.BindingContext>
-        <viewmodels:MainViewModel/>
-    </ContentPage.BindingContext>
+    
 
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>

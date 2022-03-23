@@ -51,8 +51,48 @@
             <Grid Grid.Row="1">
                 <CollectionView
                     Margin="0,20,0,0"
-                    BackgroundColor="AliceBlue"
-                    />
+                    BackgroundColor="Gray"
+                    SelectionMode="Single"
+                    SelectedItem="{Binding SelectedRecipe}"
+                    SelectionChangedCommand="{Binding SelectedRecipeChangedCommand}"
+                    ItemsSource="{Binding RecipeSource}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="viewmodels:RecipeListViewModel">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Source="thumbnail1.png"
+                                    />
+                                <Label
+                                    LineBreakMode="TailTruncation"
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="2"
+                                    Text="Title"
+                                    />
+                                <Label
+                                    LineBreakMode="TailTruncation"
+                                    Grid.Column="1"
+                                    Grid.Row="1"
+                                    Grid.ColumnSpan="2"
+                                    Text="Short description"
+                                    />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </Grid>
 
         </Grid>

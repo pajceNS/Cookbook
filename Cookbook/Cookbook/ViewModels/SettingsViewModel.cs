@@ -1,7 +1,9 @@
 ﻿using Cookbook.Resources;
+using Cookbook.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,21 +12,38 @@ namespace Cookbook.ViewModels
     [XamlCompilation(XamlCompilationOptions.Compile)]
     internal partial class SettingsViewModel : BaseViewModel
     {
-        public SettingsViewModel()
+        private readonly INavigationService _navigationService;
+
+        public SettingsViewModel(INavigationService navigationService)
         {
-            InitializeComponent();
+            _navigationService = navigationService;
+            SwitchTheme = new Command(() => Update());
         }
 
-        private void InitializeComponent()
+        public void Update()
         {
-            throw new NotImplementedException();
-        }
+            var mergedDictionaries = Xamarin.Forms.Application.Current.Resources.
+                MergedDictionaries;
 
-        private void SwitchButton_Toggled(object sender, ToggledEventArgs e)
-        {
-            var mergedDictionaries = Xamarin.Forms.Application.Current.Resources.MergedDictionaries;
             mergedDictionaries.Clear();
             mergedDictionaries.Add(new Dark());
+
         }
+
+        public void Toggled_handler(object sender, ToggledEventArgs e)
+        {
+            Update();
+        }
+
+        public ICommand SwitchTheme { get; }
+
+        //private void OnSwitchTheme(object sender, ToggledEventArgs e)
+        //{
+        //    var mergedDictionaries = Xamarin.Forms.Application.Current.Resources.
+        //        MergedDictionaries;
+
+        //    mergedDictionaries.Clear();
+        //    mergedDictionaries.Add(new Dark());
+        //}
     }
 }

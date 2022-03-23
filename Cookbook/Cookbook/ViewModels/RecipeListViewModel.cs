@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cookbook.Services;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
@@ -9,11 +10,13 @@ namespace Cookbook.ViewModels
     internal class RecipeListViewModel : BaseViewModel 
     {
         private string _mealName;
+        private readonly INavigationService _navigationService;
 
-        public RecipeListViewModel()
+        public RecipeListViewModel(INavigationService navigationService)
         {
-            MealName = "Dinner";
             BackButtonClicked = new Command(OnBackButtonClicked);
+
+            _navigationService = navigationService;
         }
 
         public string MealName
@@ -30,7 +33,7 @@ namespace Cookbook.ViewModels
 
         private void OnBackButtonClicked()
         {
-            throw new NotImplementedException();
+            _navigationService.GoBack();
         }
     }
 }

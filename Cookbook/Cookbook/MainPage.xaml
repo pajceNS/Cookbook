@@ -6,9 +6,11 @@
              x:DataType="viewmodels:MainViewModel"
              BindingContext="MainViewModel">
     
-    <Grid Style="{StaticResource GridMainPage}"
+    <Grid Style="{DynamicResource GridStyle}"
           Padding="20, 20, 20, 200" RowSpacing="20" ColumnSpacing="20">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -18,16 +20,20 @@
             <RowDefinition Height="0.3*"/>
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0"
+        
+        <Label 
+               Style="{DynamicResource LabelStyle}"
+               Grid.Row="0"
                Grid.Column="0"
-               Grid.ColumnSpan="2"
+               Grid.ColumnSpan="3"
                Margin="0,0,0,0"
                FontSize="40"
-               HorizontalOptions="Start"
+               HorizontalOptions="Center"
                VerticalOptions="Center"
-               Text="       Cookbook"/>
+               Text="Cookbook"/>
+        
         <ImageButton Grid.Row="0"
-                     Grid.Column="1"
+                     Grid.Column="3"
                      x:Name="Settings"
                      HorizontalOptions="End"
                      VerticalOptions="Center"
@@ -37,27 +43,33 @@
                      Source="settingsicon"
                      Command ="{Binding ButtonSettings}"
                      />
+        
         <Button Style="{StaticResource ButtonMainPage}"
                 Grid.Row="1"
                 Grid.Column="0"
-                
+                Grid.ColumnSpan="2"
                 FontSize="20"
                 Text="Breakfast"
-                Command="{Binding BrekfastButton}"
+                CommandParameter="Breakfast"
+                Command="{Binding MealButton}"
                 />
+        
         <Button Style="{StaticResource ButtonMainPage}"
                 Grid.Row="1"
-                Grid.Column="1"
-                x:Name="Lunch"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
                 FontSize="20"
                 Text="Lunch"
-                Command="{Binding LunchButton}"/>
+                CommandParameter="Lunch"
+                Command="{Binding MealButton}"/>
+        
         <Button Style="{StaticResource ButtonMainPage}"
                 Grid.Row="2"
+                Grid.ColumnSpan="2"
                 FontSize="20"
-                x:Name="Dinner"
                 Text="Dinner"
-                Command="{Binding DinnerButton}"/>
+                CommandParameter="Dinner"
+                Command="{Binding MealButton}"/>
     </Grid>
 
 </ContentPage>

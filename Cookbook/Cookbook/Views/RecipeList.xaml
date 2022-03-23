@@ -3,10 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
              x:Class="Cookbook.Views.RecipeList"
-             x:DataType="viewmodels:RecipeListViewModel">
-    <ContentPage.BindingContext>
-        <viewmodels:RecipeListViewModel/>
-    </ContentPage.BindingContext>
+             x:DataType="viewmodels:RecipeListViewModel"
+             BindingContext="RecipeListViewModel">
+    
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -22,15 +21,16 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="0.2*"/>
                 </Grid.RowDefinitions>
 
                 <ImageButton
-                    Source="backButton.png"
+                    Source="BackButton.png"
                     Margin="0,20,0,0"
                     Grid.Column="0"
                     Grid.Row="0"
                     BackgroundColor="Blue"
+                    VerticalOptions="Center"
                     Command="{Binding BackButtonClicked}"
                     />
                 <Label

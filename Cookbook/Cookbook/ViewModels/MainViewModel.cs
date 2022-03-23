@@ -17,35 +17,22 @@ namespace Cookbook.ViewModels
         {
             _navigationService = navigationService;
             ButtonSettings = new Command(OnButtonSettings);
-            BrekfastButton = new Command(OnBrekfastButton);
-            LunchButton = new Command(OnLunchButton);
-            DinnerButton = new Command(OnDinnerButton);
+            MealButton = new Command<string>(OnMealButton);
         }
 
         
 
         public ICommand ButtonSettings { get; }
-        public ICommand BrekfastButton { get; }
-        public ICommand LunchButton { get; }
-        public ICommand DinnerButton { get; }
+        public ICommand MealButton { get; }
 
-        private void OnButtonSettings(object obj)
+        private void OnButtonSettings()
         {
-            throw new NotImplementedException();   
+            _navigationService.NavigateToSettingsViewModel();
         }
-        private void OnBrekfastButton()
+        private void OnMealButton(string mealName)
         {
 
             _navigationService.NavigateToRecipeListViewModel();
-        }
-        private void OnDinnerButton(object obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnLunchButton(object obj)
-        {
-            throw new NotImplementedException();
         }
     }
 }

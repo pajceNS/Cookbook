@@ -1,6 +1,8 @@
-﻿using Cookbook.Views;
+﻿using Cookbook.ViewModels;
+using Cookbook.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
@@ -10,7 +12,14 @@ namespace Cookbook.Services
     {
         public void GoBack()
         {
-            throw new NotImplementedException();
+            Application.Current.MainPage.Navigation.PopModalAsync();
+
+            //var lastView = Application.Current.MainPage.Navigation.NavigationStack.Last();
+            //if (lastView is MainPage mainPage
+            //    && mainPage.BindingContext is MainViewModel mainViewModel)
+            //{
+            //    mainViewModel.LoadNotes();
+            //}
         }
 
         public void NavigateToRecipeListViewModel()
@@ -25,7 +34,15 @@ namespace Cookbook.Services
 
         public void NavigateToSettingsViewModel()
         {
-            throw new NotImplementedException();
+            //var vm = App.Locator.RecipeListViewModel;
+
+            Application.
+                Current.
+                MainPage.
+                Navigation.
+                PushModalAsync(new Settings());
+
+            //throw new NotImplementedException();
         }
     }
 }

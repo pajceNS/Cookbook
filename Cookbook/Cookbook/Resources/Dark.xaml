@@ -6,6 +6,6 @@
         <Setter Property="BackgroundColor" Value="Black"/>
     </Style>
     <Style x:Key="LabelStyle" TargetType="Label">
-        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="TextColor" Value="Cyan"/>
     </Style>
 </ResourceDictionary>

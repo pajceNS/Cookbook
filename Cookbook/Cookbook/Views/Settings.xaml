@@ -4,27 +4,34 @@
              xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
              x:Class="Cookbook.Views.Settings"
              x:DataType="viewmodels:SettingsViewModel"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BindingContext="SettingsViewModel"
+             >
 
-    
 
-    <Grid Style="{DynamicResource GridStyle}">
+    <Grid Style="{DynamicResource GridStyle}"
+          Padding="20,20,20,20"
+          >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0"
+               Style="{DynamicResource LabelStyle}"
                Grid.Column="0"
                Text="Dark Mode"
                FontSize="20"
-               TextColor="Black"/>
-        <Switch x:Name="SwitchButton"
+               />
+        <Switch Margin="20,0,0,0"
                 Grid.Row="0"
                 Grid.Column="1"
-                
-                />
+                IsToggled="{Binding SwitchTheme}"
+                Toggled="SwitchButton_Toggled"
+                >
+        </Switch>
     </Grid>
 </ContentPage>

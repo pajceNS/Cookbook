@@ -9,7 +9,8 @@
             x:Key="ButtonMainPage">
             <Setter Property="BackgroundColor" Value="#acbdbd"/>
             <Setter Property="TextColor" Value="Black"/>
-            
+            <Setter Property="CornerRadius" Value="10"/>
+
         </Style>
 
         <Style TargetType="Grid"

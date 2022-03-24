@@ -15,9 +15,8 @@ namespace Cookbook.ViewModels
         private string _mealName;
         private readonly INavigationService _navigationService;
         private readonly IRecipeRepository _recipeRepository;
-        private readonly string _recipeType;
 
-        public RecipeListViewModel(INavigationService navigationService,IRecipeRepository recipeRepository, string recipeType)
+        public RecipeListViewModel(INavigationService navigationService,IRecipeRepository recipeRepository)
 
         {
             //TO BE CONTINUED
@@ -26,11 +25,10 @@ namespace Cookbook.ViewModels
              * napraviti konstruktor za type, ubaciti ga u kontejner, ovde ga uvezati
              */
 
-            _recipeType = recipeType;
             BackButtonClicked = new Command(OnBackButtonClicked);
             _recipeRepository = recipeRepository;
             _navigationService = navigationService;
-            var allRecipesForType = _recipeRepository.GetRecipesForType(_recipeType)
+            var allRecipesForType = _recipeRepository.GetRecipesForType("lunch")
                 .Select(r => new RecipeItemViewModel(r));
 
             //Items = new ObservableCollection<RecipeItemViewModel>(allRecipesForType)
@@ -42,7 +40,7 @@ namespace Cookbook.ViewModels
 
         }
 
-
+        
         public string MealName
         {
             get => _mealName;
@@ -60,5 +58,11 @@ namespace Cookbook.ViewModels
         {
             _navigationService.GoBack();
         }
+        //public void OnRecipeClickedCommand()
+        //{
+        //    //var clickedRecipe = selectedItem.GetRecipe();
+        //    _navigationService.navigateToRecipeDetailsModel();
+
+        //}
     }
 }

@@ -31,7 +31,7 @@ namespace Cookbook.ViewModels
         }
         private void OnMealButton(string mealName)
         {
-
+            
             _navigationService.NavigateToRecipeListViewModel(mealName);
         }
     }

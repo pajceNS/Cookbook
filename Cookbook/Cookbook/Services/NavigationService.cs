@@ -26,6 +26,7 @@ namespace Cookbook.Services
         {
             var vm = App.Locator.RecipeListViewModel;
             vm.MealName = mealName;
+
             Application.
                 Current.
                 MainPage.

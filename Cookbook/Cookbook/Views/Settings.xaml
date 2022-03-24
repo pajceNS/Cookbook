@@ -28,8 +28,7 @@
                />
         <Switch Margin="20,0,0,0"
                 Grid.Row="0"
-                Grid.Column="1"
-                >
+                Grid.Column="1">
             <Switch.Behaviors>
                 <xct:EventToCommandBehavior
                     EventName="Toggled"

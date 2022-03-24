@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,37 +14,43 @@ namespace Cookbook.ViewModels
     internal partial class SettingsViewModel : BaseViewModel
     {
         private readonly INavigationService _navigationService;
+        private readonly IThemeService _themeService;
+        
+        private bool _switchTheme;
 
-        public SettingsViewModel(INavigationService navigationService)
+        public SettingsViewModel(INavigationService navigationService,IThemeService themeService)
         {
+            SwitchThemeCommand = new Command(OnSwitchThemeCommand);
+            var currentTheme = Preferences.Get("current_theme", "light");
+
+            if(currentTheme == "dark")
+            {
+                SwitchTheme = true;
+            }
+            else
+            {
+                SwitchTheme = false;
+            }
             _navigationService = navigationService;
-            SwitchTheme = new Command(() => Update());
+            _themeService = themeService;
         }
 
-        public void Update()
+        public ICommand SwitchThemeCommand { get; }
+        public bool SwitchTheme 
         {
-            var mergedDictionaries = Xamarin.Forms.Application.Current.Resources.
-                MergedDictionaries;
-
-            mergedDictionaries.Clear();
-            mergedDictionaries.Add(new Dark());
-
+            get => _switchTheme;
+            set
+            {
+                _switchTheme = value;
+                OnPropertyChanged(nameof(SwitchTheme));
+            }
         }
 
-        public void Toggled_handler(object sender, ToggledEventArgs e)
+        private void OnSwitchThemeCommand(object obj)
         {
-            Update();
+            _themeService.SwitchTheme("light");
+            
+            var currentTheme = Preferences.Get("current_theme", "light");
         }
-
-        public ICommand SwitchTheme { get; }
-
-        //private void OnSwitchTheme(object sender, ToggledEventArgs e)
-        //{
-        //    var mergedDictionaries = Xamarin.Forms.Application.Current.Resources.
-        //        MergedDictionaries;
-
-        //    mergedDictionaries.Clear();
-        //    mergedDictionaries.Add(new Dark());
-        //}
     }
 }

@@ -9,11 +9,16 @@ namespace Cookbook.Services
 {
     internal class ThemeService : IThemeService
     {
+
         private readonly string MyThemeKey = "current_theme";
+
+
         public string GetCurrentTheme()
         {
             return Preferences.Get(MyThemeKey, "light");
         } 
+
+
         public void SwitchTheme(string theme)
         {
             var dictionaries = Application.Current.Resources.MergedDictionaries;

@@ -6,7 +6,7 @@ namespace Cookbook.Services
 {
     internal interface INavigationService
     {
-        void NavigateToRecipeListViewModel();
+        void NavigateToRecipeListViewModel(string mealName);
         void NavigateToSettingsViewModel();
         void GoBack();
     }

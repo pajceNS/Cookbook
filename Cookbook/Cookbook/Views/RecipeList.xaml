@@ -6,95 +6,94 @@
              x:DataType="viewmodels:RecipeListViewModel"
              BindingContext="RecipeListViewModel">
     
-    <ContentPage.Content>
-        <Grid>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.2*"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0.2*"/>
-                </Grid.RowDefinitions>
-
-                <ImageButton
-                    Source="BackButton.png"
-                    Margin="0,20,0,0"
-                    Grid.Column="0"
-                    Grid.Row="0"
-                    BackgroundColor="Blue"
-                    VerticalOptions="Center"
-                    Command="{Binding BackButtonClicked}"
-                    />
-                <Label
-                    Grid.Column="1"
-                    Grid.ColumnSpan="3"
-                    VerticalOptions="Center"
-                    HorizontalTextAlignment="Center"
-                    BackgroundColor="Beige"
-                    Margin="0,20,0,0"
-                    FontSize="30"
-                    TextColor="Black"
-                    Text="{Binding MealName}"
+            <ImageButton
+                Source="BackButton.png"
+                Margin="0,20,0,0"
+                Grid.Column="0"
+                Grid.Row="0"
+                BackgroundColor="Blue"
+                VerticalOptions="Center"
+                Command="{Binding BackButtonClicked}"
+                />
+            <Label
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Center"
+                BackgroundColor="Beige"
+                Margin="0,20,0,0"
+                FontSize="30"
+                TextColor="Black"
+                Text="{Binding MealName}"
                     
-                    />
-
-            </Grid>
-
-            <Grid Grid.Row="1">
-                <CollectionView
-                    Margin="0,20,0,0"
-                    BackgroundColor="Gray"
-                    SelectionMode="Single"
-                    SelectedItem="{Binding SelectedRecipe}"
-                    SelectionChangedCommand="{Binding SelectedRecipeChangedCommand}"
-                    ItemsSource="{Binding RecipeSource}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="viewmodels:RecipeListViewModel">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-
-                                <Image
-                                    Grid.Column="0"
-                                    Grid.Row="0"
-                                    Grid.RowSpan="2"
-                                    Source="thumbnail1.png"
-                                    />
-                                <Label
-                                    LineBreakMode="TailTruncation"
-                                    Grid.Column="1"
-                                    Grid.Row="0"
-                                    Grid.ColumnSpan="2"
-                                    Text="Title"
-                                    />
-                                <Label
-                                    LineBreakMode="TailTruncation"
-                                    Grid.Column="1"
-                                    Grid.Row="1"
-                                    Grid.ColumnSpan="2"
-                                    Text="Short description"
-                                    />
-                            </Grid>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </Grid>
+                />
 
         </Grid>
-    </ContentPage.Content>
+
+        <Grid Grid.Row="1">
+            <CollectionView
+                Margin="0,20,0,0"
+                BackgroundColor="Gray"
+                SelectionMode="Single"
+                ItemsSource="{Binding Items}">
+                
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="viewmodels:RecipeItemViewModel">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image
+                                Grid.Column="0"
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Source="thumbnail1.png"
+                                />
+                            <Label
+                                LineBreakMode="TailTruncation"
+                                Grid.Column="1"
+                                Grid.Row="0"
+                                Grid.ColumnSpan="2"
+                                Text="Title"
+                                />
+                            <Label
+                                LineBreakMode="TailTruncation"
+                                Grid.Column="1"
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                Text="Short description"
+                                />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+    </Grid>
+    
 </ContentPage>

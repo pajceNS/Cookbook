@@ -22,9 +22,10 @@ namespace Cookbook.Services
             //}
         }
 
-        public void NavigateToRecipeListViewModel()
+        public void NavigateToRecipeListViewModel(string mealName)
         {
             var vm = App.Locator.RecipeListViewModel;
+            vm.MealName = mealName;
             Application.
                 Current.
                 MainPage.

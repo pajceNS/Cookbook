@@ -22,13 +22,13 @@ namespace Cookbook.Services
             
             if (theme == "Dark")
             {
-                dictionaries.Add(new Light());
-                Preferences.Set(MyThemeKey, "Light");
+                dictionaries.Add(new Dark());
+                Preferences.Set(MyThemeKey, "Dark");
             }
             else if (theme == "Light")
             {
-                dictionaries.Add(new Dark());
-                Preferences.Set(MyThemeKey, "Dark");
+                dictionaries.Add(new Light());
+                Preferences.Set(MyThemeKey, "Light");
             }          
         }
     }

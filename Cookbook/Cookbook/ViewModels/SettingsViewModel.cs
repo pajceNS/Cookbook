@@ -20,8 +20,8 @@ namespace Cookbook.ViewModels
         {
             _themeService = themeService;
             _navigationService = navigationService;
-            SwitchThemeCommand = new Command(OnSwitchThemeCommand);
-            SwitchTheme = _themeService.GetCurrentTheme() == "Light";
+            SwitchThemeCommand = new Command<ToggledEventArgs>(OnSwitchThemeCommand);
+            SwitchTheme = _themeService.GetCurrentTheme() != "Light";
         }
         public ICommand SwitchThemeCommand { get; }
         public bool SwitchTheme 
@@ -33,10 +33,16 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(SwitchTheme));
             }
         }
-        private void OnSwitchThemeCommand(object obj)
+        private void OnSwitchThemeCommand(ToggledEventArgs args)
         {
-            var currentTheme = Preferences.Get("currentTheme", "Light");
-            _themeService.SwitchTheme(currentTheme);          
+            if (args.Value == true)
+            {
+                _themeService.SwitchTheme("Dark");
+            }
+            else
+            {
+                _themeService.SwitchTheme("Light");
+            }
         }
     }
 }

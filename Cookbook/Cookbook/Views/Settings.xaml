@@ -22,6 +22,7 @@
                FontSize="20"/>
         <Switch Margin="20,0,0,0"
                 Grid.Row="0"
+                IsToggled="{Binding SwitchTheme}"
                 Grid.Column="1">
             <Switch.Behaviors>
                 <xct:EventToCommandBehavior

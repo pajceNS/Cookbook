@@ -60,7 +60,6 @@ namespace Cookbook.DataAccess
             // load from json
             //filter by type
             //return List of recipes
-            LoadRecipes();
             //var recipes = GetAllRecipes();            
            var recipeToDisplay = _recipes.Where(i => i.Type == mealName).ToList();
            return recipeToDisplay;

@@ -21,22 +21,21 @@ namespace Cookbook.ViewModels
         public RecipeListViewModel(INavigationService navigationService, IRecipeRepository recipeRepository)
 
         {
-            
-
             BackButtonClicked = new Command(OnBackButtonClicked);
             _recipeRepository = recipeRepository;
             _navigationService = navigationService;
-            //var allRecipesForType = _recipeRepository.GetRecipesForType(MealName)
-            //    .Select(r =>  new RecipeItemViewModel(r));
+            
 
-            var testList = new List<RecipeItemViewModel>()
-            {
-                new RecipeItemViewModel(new Recipe(Guid.NewGuid(),"recept1","desc1","Slika.png")),
-                new RecipeItemViewModel(new Recipe(Guid.NewGuid(),"recept1","desc1","Slika.png"))
-            };
+            //var testList = new List<RecipeItemViewModel>()
+            //{
+            //    new RecipeItemViewModel(new Recipe(Guid.NewGuid(),"recept1","desc1","Slika.png")),
+            //    new RecipeItemViewModel(new Recipe(Guid.NewGuid(),"recept1","desc1","Slika.png"))
+            //};
 
-            RecipeSource = new ObservableCollection<RecipeItemViewModel>(testList);
+            
         }
+
+        
 
         //Items = new ObservableCollection<RecipeItemViewModel>(allRecipesForType)
 
@@ -67,6 +66,13 @@ namespace Cookbook.ViewModels
         private void OnBackButtonClicked()
         {
             _navigationService.GoBack();
+        }
+        internal void LoadRecipes(string mealName)
+        {
+            var allRecipesForType = _recipeRepository.GetRecipesForType(mealName)
+                .Select(r => new RecipeItemViewModel(r));
+            RecipeSource = new ObservableCollection<RecipeItemViewModel>(allRecipesForType);
+            MealName = mealName;
         }
         //public void OnRecipeClickedCommand()
         //{

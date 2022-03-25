@@ -17,33 +17,33 @@ namespace Cookbook.DataAccess
     {
         //jsonconvert.deserializeObject<RecipeList>("recipe.json content");
         private List<Recipe> _recipes = new List<Recipe>();
-        private const string FileName = "Resources/recipe.json";
+        private const string FileName = "recipe.json";
 
 
         public RecipeRepository()
         {
-            //LoadRecipes();
+            LoadRecipes();
+
         }
+        
 
         public IEnumerable<Recipe> GetAllRecipes()
         {
             return _recipes.ToList();
         }
 
-        private void LoadRecipes()
+        private async void LoadRecipes()
         {
-            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Cookbook.Resources.recipe.json");
-
-
-
-            //var path = Path.Combine(FileSystem.AppDataDirectory, FileName);
-            //if (!File.Exists(path))
-            //{
-            //    return;
-            //}
-
-            var data = File.ReadAllText(fileName);
-            _recipes = JsonConvert.DeserializeObject<List<Recipe>>(data);
+            var fileName = "recipe.json";
+            using (var stream = await FileSystem.OpenAppPackageFileAsync(fileName))
+            {
+                using (var reader = new StreamReader(stream))
+                {
+                    var fileContents = await reader.ReadToEndAsync();
+                    var listRecipes = JsonConvert.DeserializeObject<Models.RecipeList>(fileContents);
+                    _recipes = listRecipes.Recipe;
+                }
+            }
         }
 
         //private void Save()
@@ -69,15 +69,11 @@ namespace Cookbook.DataAccess
             //filter by type
             //return List of recipes
             LoadRecipes();
-            var recipes = GetAllRecipes();
-            recipes.Where(i => i.Type == mealName).ToList();
-            
+            //var recipes = GetAllRecipes();
 
-            return new List<Recipe>()
-            {
-                //new Recipe() {Type = "Lunch"},\
-                //new Recipe() { Name = mealName }
-            };
+            
+           var recipeToDisplay = _recipes.Where(i => i.Type == mealName).ToList();
+           return recipeToDisplay;
         }
 
 

@@ -25,7 +25,8 @@ namespace Cookbook.Services
         public void NavigateToRecipeListViewModel(string mealName)
         {
             var vm = App.Locator.RecipeListViewModel;
-            vm.MealName = mealName;
+            vm.LoadRecipes(mealName);
+            //vm.MealName = mealName;
 
             Application.
                 Current.

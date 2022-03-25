@@ -11,10 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\recipe.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Include="Resources\recipe.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

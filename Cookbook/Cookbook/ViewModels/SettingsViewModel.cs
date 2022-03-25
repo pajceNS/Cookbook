@@ -23,7 +23,7 @@ namespace Cookbook.ViewModels
             _themeService = themeService;
             _navigationService = navigationService;
             SwitchThemeCommand = new Command(OnSwitchThemeCommand);
-            SwitchTheme = _themeService.GetCurrentTheme() == "dark";                    
+            SwitchTheme = _themeService.GetCurrentTheme() == "Light";
         }
 
         public ICommand SwitchThemeCommand { get; }
@@ -39,9 +39,10 @@ namespace Cookbook.ViewModels
 
         private void OnSwitchThemeCommand(object obj)
         {
-            _themeService.SwitchTheme("light");
+            var currentTheme = Preferences.Get("currentTheme", "Light");
+            _themeService.SwitchTheme(currentTheme);
             
-            var currentTheme = Preferences.Get("current_theme", "light");
+            
         }
     }
 }

@@ -29,7 +29,7 @@
                 Margin="0,20,0,0"
                 Grid.Column="0"
                 Grid.Row="0"
-                BackgroundColor="Blue"
+                BackgroundColor="Transparent"
                 VerticalOptions="Center"
                 Command="{Binding BackButtonClicked}"
                 />
@@ -38,7 +38,7 @@
                 Grid.ColumnSpan="3"
                 VerticalOptions="Center"
                 HorizontalTextAlignment="Center"
-                BackgroundColor="Beige"
+                BackgroundColor="Transparent"
                 Margin="0,20,0,0"
                 FontSize="30"
                 TextColor="Black"
@@ -51,7 +51,7 @@
         <Grid Grid.Row="1">
             <CollectionView
                 Margin="0,20,0,0"
-                BackgroundColor="Gray"
+                BackgroundColor="Transparent"
                 SelectionMode="Single"
                 ItemsSource="{Binding RecipeSource}">
                 

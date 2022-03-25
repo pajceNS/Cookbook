@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using Xamarin.Essentials;
@@ -16,12 +17,12 @@ namespace Cookbook.DataAccess
     {
         //jsonconvert.deserializeObject<RecipeList>("recipe.json content");
         private List<Recipe> _recipes = new List<Recipe>();
-        private const string FileName = "recipe.json";
+        private const string FileName = "Resources/recipe.json";
 
 
         public RecipeRepository()
         {
-            LoadRecipes();
+            //LoadRecipes();
         }
 
         public IEnumerable<Recipe> GetAllRecipes()
@@ -31,13 +32,17 @@ namespace Cookbook.DataAccess
 
         private void LoadRecipes()
         {
-            var path = Path.Combine(FileSystem.AppDataDirectory, FileName);
-            if (!File.Exists(path))
-            {
-                return;
-            }
+            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Cookbook.Resources.recipe.json");
 
-            var data = File.ReadAllText(path);
+
+
+            //var path = Path.Combine(FileSystem.AppDataDirectory, FileName);
+            //if (!File.Exists(path))
+            //{
+            //    return;
+            //}
+
+            var data = File.ReadAllText(fileName);
             _recipes = JsonConvert.DeserializeObject<List<Recipe>>(data);
         }
 
@@ -65,6 +70,7 @@ namespace Cookbook.DataAccess
             //return List of recipes
             LoadRecipes();
             var recipes = GetAllRecipes();
+            recipes.Where(i => i.Type == mealName).ToList();
             
 
             return new List<Recipe>()

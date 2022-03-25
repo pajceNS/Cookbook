@@ -1,4 +1,5 @@
 ﻿using Cookbook.DataAccess;
+using Cookbook.Models;
 using Cookbook.Services;
 using System;
 using System.Collections.Generic;
@@ -20,21 +21,26 @@ namespace Cookbook.ViewModels
         public RecipeListViewModel(INavigationService navigationService, IRecipeRepository recipeRepository)
 
         {
-            //TO BE CONTINUED
-            // 
-            /* 
-             * napraviti konstruktor za type, ubaciti ga u kontejner, ovde ga uvezati
-             */
+            
 
             BackButtonClicked = new Command(OnBackButtonClicked);
             _recipeRepository = recipeRepository;
             _navigationService = navigationService;
-            var allRecipesForType = _recipeRepository.GetRecipesForType("dinner")
-                .Select(r => new RecipeItemViewModel(r));
+            //var allRecipesForType = _recipeRepository.GetRecipesForType(MealName)
+            //    .Select(r =>  new RecipeItemViewModel(r));
+
+            var testList = new List<RecipeItemViewModel>()
+            {
+                new RecipeItemViewModel(new Recipe(Guid.NewGuid(),"recept1","desc1","Slika.png")),
+                new RecipeItemViewModel(new Recipe(Guid.NewGuid(),"recept1","desc1","Slika.png"))
+            };
+
+            RecipeSource = new ObservableCollection<RecipeItemViewModel>(testList);
         }
 
-            //Items = new ObservableCollection<RecipeItemViewModel>(allRecipesForType)
-            public ObservableCollection<RecipeItemViewModel> RecipeSource
+        //Items = new ObservableCollection<RecipeItemViewModel>(allRecipesForType)
+
+        public ObservableCollection<RecipeItemViewModel> RecipeSource
             {
                 get { return _recipeSource; }
                 set

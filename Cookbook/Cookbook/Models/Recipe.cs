@@ -7,6 +7,24 @@ namespace Cookbook.Models
 {
     public class Recipe
     {
+        public Recipe(Guid id, string name, string shortDescription, string thumbnailImage)
+        {
+            Id = id;
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new InvalidOperationException("Title can't be empty");
+            }
+
+            if (string.IsNullOrEmpty(shortDescription))
+            {
+                throw new InvalidOperationException(nameof(shortDescription));
+            }
+
+            Name = name;
+            ShortDescription = shortDescription;
+            ThumbnailImage = thumbnailImage;
+        }
+
             [JsonProperty("id")]
             public Guid Id { get; set; }
 

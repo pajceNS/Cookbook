@@ -1,4 +1,5 @@
 ﻿using Cookbook.Models;
+using Cookbook.ViewModels;
 using Cookbook.Views;
 using Newtonsoft.Json;
 using System;
@@ -62,11 +63,14 @@ namespace Cookbook.DataAccess
             // load from json
             //filter by type
             //return List of recipes
+            LoadRecipes();
+            var recipes = GetAllRecipes();
+            
 
             return new List<Recipe>()
             {
-                new Recipe() {Type = "Lunch"},
-                new Recipe() {Type = "Dinner"}
+                //new Recipe() {Type = "Lunch"},\
+                //new Recipe() { Name = mealName }
             };
         }
 

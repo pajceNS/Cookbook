@@ -13,9 +13,10 @@ namespace Cookbook.ViewModels
         private readonly IRecipeRepository _recipeRepository;
         private readonly INavigationService _navigationService;
 
-        public MainViewModel(INavigationService navigationService)
+        public MainViewModel(INavigationService navigationService, IRecipeRepository recipeRepository)
         {
             _navigationService = navigationService;
+            _recipeRepository = recipeRepository;
             ButtonSettings = new Command(OnButtonSettings);
             MealButton = new Command<string>(OnMealButton);
         }

@@ -53,7 +53,7 @@
                 Margin="0,20,0,0"
                 BackgroundColor="Gray"
                 SelectionMode="Single"
-                ItemsSource="{Binding Items}">
+                ItemsSource="{Binding RecipeSource}">
                 
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewmodels:RecipeItemViewModel">
@@ -72,21 +72,21 @@
                                 Grid.Column="0"
                                 Grid.Row="0"
                                 Grid.RowSpan="2"
-                                Source="thumbnail1.png"
+                                Source="{Binding ThumbnailImage}"
                                 />
                             <Label
                                 LineBreakMode="TailTruncation"
                                 Grid.Column="1"
                                 Grid.Row="0"
                                 Grid.ColumnSpan="2"
-                                Text="Title"
+                                Text="{Binding Name}"
                                 />
                             <Label
                                 LineBreakMode="TailTruncation"
                                 Grid.Column="1"
                                 Grid.Row="1"
                                 Grid.ColumnSpan="2"
-                                Text="Short description"
+                                Text="{Binding ShortDescription}"
                                 />
                         </Grid>
                     </DataTemplate>

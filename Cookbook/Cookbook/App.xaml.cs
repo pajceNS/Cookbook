@@ -49,6 +49,9 @@ namespace Cookbook
             serviceCollection.AddTransient<MainViewModel>();
             serviceCollection.AddTransient<RecipeListViewModel>();
             serviceCollection.AddTransient<RecipeDetailsViewModel>();
+            serviceCollection.AddTransient<RecipeItemViewModel>();
+            serviceCollection.AddTransient<SettingsViewModel>();
+            serviceCollection.AddSingleton<IThemeService, ThemeService>();
             serviceCollection.AddSingleton<IRecipeRepository, RecipeRepository>();
             serviceCollection.AddSingleton<INavigationService, NavigationService>();
             _serviceProvider = serviceCollection.BuildServiceProvider();

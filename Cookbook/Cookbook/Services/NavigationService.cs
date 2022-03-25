@@ -37,12 +37,13 @@ namespace Cookbook.Services
         public void NavigateToSettingsViewModel()
         {
             //var vm = App.Locator.RecipeListViewModel;
-
+            var vm = App.Locator.SettingsViewModel;
+            //vm.MealName = mealName;
             Application.
                 Current.
                 MainPage.
                 Navigation.
-                PushModalAsync(new Settings());
+                PushModalAsync(new Settings { BindingContext = vm});
 
             //throw new NotImplementedException();
         }

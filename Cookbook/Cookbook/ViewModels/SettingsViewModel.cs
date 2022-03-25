@@ -14,10 +14,8 @@ namespace Cookbook.ViewModels
     internal partial class SettingsViewModel : BaseViewModel
     {
         private readonly INavigationService _navigationService;
-        private readonly IThemeService _themeService;
-        
+        private readonly IThemeService _themeService;      
         private bool _switchTheme;
-
         public SettingsViewModel(INavigationService navigationService,IThemeService themeService)
         {
             _themeService = themeService;
@@ -25,7 +23,6 @@ namespace Cookbook.ViewModels
             SwitchThemeCommand = new Command(OnSwitchThemeCommand);
             SwitchTheme = _themeService.GetCurrentTheme() == "Light";
         }
-
         public ICommand SwitchThemeCommand { get; }
         public bool SwitchTheme 
         {
@@ -36,13 +33,10 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(SwitchTheme));
             }
         }
-
         private void OnSwitchThemeCommand(object obj)
         {
             var currentTheme = Preferences.Get("currentTheme", "Light");
-            _themeService.SwitchTheme(currentTheme);
-            
-            
+            _themeService.SwitchTheme(currentTheme);          
         }
     }
 }

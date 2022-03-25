@@ -18,20 +18,14 @@ namespace Cookbook.DataAccess
         //jsonconvert.deserializeObject<RecipeList>("recipe.json content");
         private List<Recipe> _recipes = new List<Recipe>();
         private const string FileName = "recipe.json";
-
-
         public RecipeRepository()
         {
             LoadRecipes();
-
         }
-        
-
         public IEnumerable<Recipe> GetAllRecipes()
         {
             return _recipes.ToList();
         }
-
         private async void LoadRecipes()
         {
             var fileName = "recipe.json";
@@ -45,7 +39,6 @@ namespace Cookbook.DataAccess
                 }
             }
         }
-
         //private void Save()
         //{
         //    File.WriteAllText(Path.Combine(FileSystem.AppDataDirectory, FileName), JsonConvert.SerializeObject(_recipes));
@@ -62,20 +55,15 @@ namespace Cookbook.DataAccess
         //    _recipes = _recipes.Where(n => n.Id != id).ToList();
         //    Save();
         //}
-
         public List<Recipe> GetRecipesForType(string mealName)
         {
             // load from json
             //filter by type
             //return List of recipes
             LoadRecipes();
-            //var recipes = GetAllRecipes();
-
-            
+            //var recipes = GetAllRecipes();            
            var recipeToDisplay = _recipes.Where(i => i.Type == mealName).ToList();
            return recipeToDisplay;
         }
-
-
     }
 }

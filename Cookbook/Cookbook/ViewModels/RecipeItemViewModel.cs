@@ -45,15 +45,10 @@ namespace Cookbook.ViewModels
                 _thumbnailImage = value;
                 OnPropertyChanged(nameof(ThumbnailImage));
             }
-        }
-
-        
+        }       
         public Recipe GetRecipe()
         {
             return _recipe;
         }
-        
-
-
     }
 }

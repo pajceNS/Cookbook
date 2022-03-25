@@ -12,7 +12,6 @@ namespace Cookbook.ViewModels
     {
         private readonly IRecipeRepository _recipeRepository;
         private readonly INavigationService _navigationService;
-
         public MainViewModel(INavigationService navigationService, IRecipeRepository recipeRepository)
         {
             _navigationService = navigationService;
@@ -20,9 +19,6 @@ namespace Cookbook.ViewModels
             ButtonSettings = new Command(OnButtonSettings);
             MealButton = new Command<string>(OnMealButton);
         }
-
-        
-
         public ICommand ButtonSettings { get; }
         public ICommand MealButton { get; }
 
@@ -31,8 +27,7 @@ namespace Cookbook.ViewModels
             _navigationService.NavigateToSettingsViewModel();
         }
         private void OnMealButton(string mealName)
-        {
-            
+        {           
             _navigationService.NavigateToRecipeListViewModel(mealName);
         }
     }

@@ -12,14 +12,12 @@ namespace Cookbook
     {
         private static ViewModelLocator _viewLocator;
         private static IServiceProvider _serviceProvider;
-
         public App()
         {
             InitializeComponent();
             SetupServices();
             MainPage = new NavigationPage(new MainPage { BindingContext = Locator.MainViewModel });
         }
-
         internal static ViewModelLocator Locator
         {
             get
@@ -31,15 +29,12 @@ namespace Cookbook
                 return _viewLocator;
             }
         }
-
         protected override void OnStart()
         {
         }
-
         protected override void OnSleep()
         {
         }
-
         protected override void OnResume()
         {
         }

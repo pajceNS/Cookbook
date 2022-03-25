@@ -9,11 +9,8 @@
         <Setter Property="TextColor" Value="Cyan"/>
     </Style>
     <Style x:Key="ButtonMainPage" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="#acbdbd"/>
+        <Setter Property="BackgroundColor" Value="Cyan"/>
         <Setter Property="TextColor" Value="Black"/>
         <Setter Property="CornerRadius" Value="10"/>
-    </Style>
-    <Style x:Key="GridMainPage" TargetType="Grid">
-        <Setter Property="BackgroundColor" Value="#c4d7d7"/>
     </Style>
 </ResourceDictionary>

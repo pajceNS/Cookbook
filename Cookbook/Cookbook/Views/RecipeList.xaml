@@ -5,9 +5,7 @@
              x:Class="Cookbook.Views.RecipeList"
              x:DataType="viewmodels:RecipeListViewModel"
              BindingContext="RecipeListViewModel">
-
-
-    <Grid >
+    <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
@@ -30,7 +28,7 @@
                 BackgroundColor="Transparent"
                 VerticalOptions="Center"
                 Command="{Binding BackButtonClicked}"/>
-            <Label
+            <Label Style="{DynamicResource LabelStyle}"
                 Grid.Column="1"
                 Grid.ColumnSpan="3"
                 VerticalOptions="Center"
@@ -59,7 +57,6 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-
                             <Image
                                 Grid.Column="0"
                                 Grid.Row="0"

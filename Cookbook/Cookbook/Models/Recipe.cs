@@ -19,7 +19,6 @@ namespace Cookbook.Models
             {
                 throw new InvalidOperationException(nameof(shortDescription));
             }
-
             Name = name;
             ShortDescription = shortDescription;
             ThumbnailImage = thumbnailImage;

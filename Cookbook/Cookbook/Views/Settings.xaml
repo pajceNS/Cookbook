@@ -5,10 +5,7 @@
              x:Class="Cookbook.Views.Settings"
              x:DataType="viewmodels:SettingsViewModel"
              NavigationPage.HasNavigationBar="False"
-             BindingContext="SettingsViewModel"
-             >
-
-
+             BindingContext="SettingsViewModel">
     <Grid Style="{DynamicResource GridStyle}"
           Padding="20,20,20,20">
         <Grid.RowDefinitions>

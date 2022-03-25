@@ -5,7 +5,6 @@
              x:Class="Cookbook.MainPage"
              x:DataType="viewmodels:MainViewModel"
              BindingContext="MainViewModel">
-
     <Grid Style="{DynamicResource GridStyle}"
           Padding="20, 20, 20, 200" RowSpacing="20" ColumnSpacing="20">
         <Grid.ColumnDefinitions>
@@ -47,7 +46,7 @@
                      Scale="0.5"
                      Source="settingsicon"
                      Command ="{Binding ButtonSettings}"/>
-        <Button Style="{StaticResource ButtonMainPage}"
+        <Button Style="{DynamicResource ButtonMainPage}"
                 Grid.Row="1"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
@@ -55,7 +54,7 @@
                 Text="Breakfast"
                 CommandParameter="Breakfast"
                 Command="{Binding MealButton}"/>
-        <Button Style="{StaticResource ButtonMainPage}"
+        <Button Style="{DynamicResource ButtonMainPage}"
                 Grid.Row="1"
                 Grid.Column="2"
                 Grid.ColumnSpan="2"
@@ -63,7 +62,7 @@
                 Text="Lunch"
                 CommandParameter="Lunch"
                 Command="{Binding MealButton}"/>
-        <Button Style="{StaticResource ButtonMainPage}"
+        <Button Style="{DynamicResource ButtonMainPage}"
                 Grid.Row="2"
                 Grid.ColumnSpan="2"
                 FontSize="20"

@@ -11,14 +11,10 @@ namespace Cookbook.Services
     {
 
         private readonly string MyThemeKey = "currentTheme";
-
-
         public string GetCurrentTheme()
         {
             return Preferences.Get(MyThemeKey, "Light");
         } 
-
-
         public void SwitchTheme(string theme)
         {
             var dictionaries = Application.Current.Resources.MergedDictionaries;
@@ -33,11 +29,7 @@ namespace Cookbook.Services
             {
                 dictionaries.Add(new Dark());
                 Preferences.Set(MyThemeKey, "Dark");
-            }
-            
-
-           
-            
+            }          
         }
     }
 }

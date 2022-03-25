@@ -4,18 +4,5 @@
              x:Class="Cookbook.App">
     <Application.Resources>
         <ResourceDictionary Source="Resources/Light.xaml"/>
-        <Style 
-            TargetType="Button"
-            x:Key="ButtonMainPage">
-            <Setter Property="BackgroundColor" Value="#acbdbd"/>
-            <Setter Property="TextColor" Value="Black"/>
-            <Setter Property="CornerRadius" Value="10"/>
-
-        </Style>
-
-        <Style TargetType="Grid"
-               x:Key="GridMainPage">
-            <Setter Property="BackgroundColor" Value="#c4d7d7"/>
-        </Style>
     </Application.Resources>
 </Application>

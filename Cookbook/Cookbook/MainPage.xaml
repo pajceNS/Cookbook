@@ -5,7 +5,7 @@
              x:Class="Cookbook.MainPage"
              x:DataType="viewmodels:MainViewModel"
              BindingContext="MainViewModel">
-    
+
     <Grid Style="{DynamicResource GridStyle}"
           Padding="20, 20, 20, 200" RowSpacing="20" ColumnSpacing="20">
         <Grid.ColumnDefinitions>
@@ -23,25 +23,20 @@
         <Grid.Resources>
             <Style 
                 TargetType="Button">
-                    <Setter Property="BackgroundColor" Value="#acbdbd"/>
-                    <Setter Property="TextColor" Value="Black"/>
-                    <Setter Property="CornerRadius" Value="10"/>
-
-                
+                <Setter Property="BackgroundColor" Value="#acbdbd"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="10"/>
             </Style>
         </Grid.Resources>
-        
-        <Label 
-               Style="{DynamicResource LabelStyle}"
+        <Label Style="{DynamicResource LabelStyle}"
                Grid.Row="0"
                Grid.Column="0"
                Grid.ColumnSpan="3"
                Margin="0,0,0,0"
-               FontSize="40"
+               FontSize="30"
                HorizontalOptions="Center"
                VerticalOptions="Center"
-               Text="Cookbook"/>
-        
+               Text="Magic Cookbook"/>
         <ImageButton Grid.Row="0"
                      Grid.Column="3"
                      x:Name="Settings"
@@ -51,9 +46,7 @@
                      BackgroundColor="Transparent"
                      Scale="0.5"
                      Source="settingsicon"
-                     Command ="{Binding ButtonSettings}"
-                     />
-        
+                     Command ="{Binding ButtonSettings}"/>
         <Button Style="{StaticResource ButtonMainPage}"
                 Grid.Row="1"
                 Grid.Column="0"
@@ -61,9 +54,7 @@
                 FontSize="20"
                 Text="Breakfast"
                 CommandParameter="Breakfast"
-                Command="{Binding MealButton}"
-                />
-        
+                Command="{Binding MealButton}"/>
         <Button Style="{StaticResource ButtonMainPage}"
                 Grid.Row="1"
                 Grid.Column="2"
@@ -72,7 +63,6 @@
                 Text="Lunch"
                 CommandParameter="Lunch"
                 Command="{Binding MealButton}"/>
-        
         <Button Style="{StaticResource ButtonMainPage}"
                 Grid.Row="2"
                 Grid.ColumnSpan="2"
@@ -81,5 +71,4 @@
                 CommandParameter="Dinner"
                 Command="{Binding MealButton}"/>
     </Grid>
-
 </ContentPage>

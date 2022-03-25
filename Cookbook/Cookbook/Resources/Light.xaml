@@ -5,8 +5,15 @@
     <Style x:Key="GridStyle" TargetType="Grid">
         <Setter Property="BackgroundColor" Value="LightGray"/>
     </Style>
-    
     <Style x:Key="LabelStyle" TargetType="Label">
         <Setter Property="TextColor" Value="White" />
+    </Style>
+    <Style x:Key="ButtonMainPage" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#acbdbd"/>
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="CornerRadius" Value="10"/>
+    </Style>
+    <Style x:Key="GridMainPage" TargetType="Grid">
+        <Setter Property="BackgroundColor" Value="#c4d7d7"/>
     </Style>
 </ResourceDictionary>

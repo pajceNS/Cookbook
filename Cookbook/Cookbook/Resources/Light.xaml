@@ -13,4 +13,7 @@
         <Setter Property="TextColor" Value="Black"/>
         <Setter Property="CornerRadius" Value="10"/>
     </Style>
+    <Style x:Key="LabelCW" TargetType="Label">
+        <Setter Property="BackgroundColor" Value="LightGoldenrodYellow"/>
+    </Style>
 </ResourceDictionary>

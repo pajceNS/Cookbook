@@ -10,7 +10,8 @@
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0"
+              Margin="0,0,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -40,13 +41,14 @@
         </Grid>
         <Grid Grid.Row="1">
             <CollectionView
-                Margin="0,20,0,0"
-                BackgroundColor="Wheat"
+                Margin="0,20,0,0"              
+                
                 SelectionMode="Single"
-                ItemsSource="{Binding RecipeSource}">
+                ItemsSource="{Binding RecipeSource}"
+                >
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewmodels:RecipeItemViewModel">
-                        <Grid>
+                        <Grid Style="{DynamicResource GridSecondPage}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
@@ -66,12 +68,16 @@
                                 Grid.Column="1"
                                 Grid.Row="0"
                                 Grid.ColumnSpan="2"
+                                FontSize="16"
+                                TextColor="Black"
                                 Text="{Binding Name}"/>
                             <Label
                                 LineBreakMode="TailTruncation"
                                 Grid.Column="1"
                                 Grid.Row="1"
                                 Grid.ColumnSpan="2"
+                                FontSize="15"
+                                TextColor="Black"
                                 Text="{Binding ShortDescription}"/>
                         </Grid>
                     </DataTemplate>

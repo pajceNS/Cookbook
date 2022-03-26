@@ -7,7 +7,7 @@
              BindingContext="RecipeListViewModel">
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="0.1*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
@@ -41,7 +41,7 @@
         <Grid Grid.Row="1">
             <CollectionView
                 Margin="0,20,0,0"
-                BackgroundColor="Transparent"
+                BackgroundColor="Wheat"
                 SelectionMode="Single"
                 ItemsSource="{Binding RecipeSource}">
                 <CollectionView.ItemTemplate>

@@ -41,45 +41,46 @@
         </Grid>
         <Grid Grid.Row="1">
             <CollectionView
-                Margin="0,20,0,0"              
-                
+                Margin="0,20,0,0"               
                 SelectionMode="Single"
-                ItemsSource="{Binding RecipeSource}"
-                >
+                ItemsSource="{Binding RecipeSource}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewmodels:RecipeItemViewModel">
-                        <Grid Style="{DynamicResource GridSecondPage}">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Image
-                                Grid.Column="0"
-                                Grid.Row="0"
-                                Grid.RowSpan="2"
-                                Source="{Binding ThumbnailImage}"/>
-                            <Label
-                                LineBreakMode="TailTruncation"
-                                Grid.Column="1"
-                                Grid.Row="0"
-                                Grid.ColumnSpan="2"
-                                FontSize="16"
-                                TextColor="Black"
-                                Text="{Binding Name}"/>
-                            <Label
-                                LineBreakMode="TailTruncation"
-                                Grid.Column="1"
-                                Grid.Row="1"
-                                Grid.ColumnSpan="2"
-                                FontSize="15"
-                                TextColor="Black"
-                                Text="{Binding ShortDescription}"/>
-                        </Grid>
+                        <StackLayout Padding="10">
+                            <Grid Style="{DynamicResource GridSecondPage}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image
+                                    Grid.Column="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Source="{Binding ThumbnailImage}"/>
+                                <Label
+                                    LineBreakMode="TailTruncation"
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="2"
+                                    FontSize="16"
+                                    TextColor="Black"
+                                    Text="{Binding Name}"/>
+                                <Label
+                                    LineBreakMode="TailTruncation"
+                                    Grid.Column="1"
+                                    Grid.Row="1"
+                                    Grid.ColumnSpan="2"
+                                    FontSize="15"
+                                    TextColor="Black"
+                                    Text="{Binding ShortDescription}"/>
+                            </Grid>
+                        </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

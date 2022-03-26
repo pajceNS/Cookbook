@@ -17,7 +17,7 @@ namespace Cookbook.DataAccess
     {
         //jsonconvert.deserializeObject<RecipeList>("recipe.json content");
         private List<Recipe> _recipes = new List<Recipe>();
-        private const string FileName = "recipe.json";
+        private const string FileName = "Cookbook.Resources.recipe.json";
         public RecipeRepository()
         {
             LoadRecipes();
@@ -28,16 +28,15 @@ namespace Cookbook.DataAccess
         }
         private async void LoadRecipes()
         {
-            var fileName = "recipe.json";
-            using (var stream = await FileSystem.OpenAppPackageFileAsync(fileName))
-            {
-                using (var reader = new StreamReader(stream))
+            var assembly = typeof(RecipeRepository).Assembly;
+            var file = assembly.GetManifestResourceStream(FileName);
+
+                using (var reader = new StreamReader(file))
                 {
                     var fileContents = await reader.ReadToEndAsync();
                     var listRecipes = JsonConvert.DeserializeObject<Models.RecipeList>(fileContents);
                     _recipes = listRecipes.Recipe;
                 }
-            }
         }
         //private void Save()
         //{

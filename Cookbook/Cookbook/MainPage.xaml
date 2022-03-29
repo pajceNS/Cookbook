@@ -4,7 +4,8 @@
              xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
              x:Class="Cookbook.MainPage"
              x:DataType="viewmodels:MainViewModel"
-             BindingContext="MainViewModel">
+             BindingContext="MainViewModel"
+             NavigationPage.HasNavigationBar="False">
     <Grid Style="{DynamicResource GridStyle}"
           Padding="20, 20, 20, 200" RowSpacing="20" ColumnSpacing="20">
         <Grid.ColumnDefinitions>

@@ -41,16 +41,18 @@
         </Grid>
         <Grid Grid.Row="1">
             <CollectionView
-                Margin="0,20,0,0"               
+                Margin="0,20,0,0"
+                
                 SelectionMode="Single"
                 ItemsSource="{Binding RecipeSource}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewmodels:RecipeItemViewModel">
-                        <StackLayout Padding="10">
-                            <Grid Style="{DynamicResource GridSecondPage}">
+                        <Frame CornerRadius="20" Style="{DynamicResource FrameSecondPage}" Padding="10">
+                           
+                            <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
@@ -58,8 +60,9 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Image
-                                    Grid.Column="0"
+                                    
                                     HorizontalOptions="CenterAndExpand"
+                                    Grid.Column="0"
                                     Grid.Row="0"
                                     Grid.RowSpan="2"
                                     Source="{Binding ThumbnailImage}"/>
@@ -80,7 +83,8 @@
                                     TextColor="Black"
                                     Text="{Binding ShortDescription}"/>
                             </Grid>
-                        </StackLayout>
+                        
+                        </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

@@ -16,4 +16,7 @@
     <Style x:Key="LabelCW" TargetType="Label">
         <Setter Property="BackgroundColor" Value="LightGoldenrodYellow"/>
     </Style>
+    <Style x:Key="FrameSecondPage" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="Yellow"/>
+    </Style>
 </ResourceDictionary>

@@ -14,7 +14,7 @@
               Margin="0,0,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -30,13 +30,13 @@
                 VerticalOptions="Center"
                 Command="{Binding BackButtonClicked}"/>
             <Label Style="{DynamicResource LabelStyle}"
-                Grid.Column="1"
-                Grid.ColumnSpan="3"
+                Grid.Column="2"
+                Grid.ColumnSpan="2"
                 VerticalOptions="Center"
-                HorizontalTextAlignment="Center"
+                HorizontalTextAlignment="Start"
                 BackgroundColor="Transparent"
                 Margin="0,20,0,0"
-                FontSize="30"
+                FontSize="36"
                 Text="{Binding MealName}"/>
         </Grid>
         <Grid Grid.Row="1">

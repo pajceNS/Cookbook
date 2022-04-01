@@ -63,5 +63,10 @@ namespace Cookbook.DataAccess
            var recipeToDisplay = _recipes.Where(i => i.Type == mealName).ToList();
            return recipeToDisplay;
         }
+        public List<Recipe> GetRecipeForId(Guid id)
+        {
+            var recipeToDisplay = _recipes.Where(i => i.Id == id).ToList();
+            return recipeToDisplay;
+        }
     }
 }

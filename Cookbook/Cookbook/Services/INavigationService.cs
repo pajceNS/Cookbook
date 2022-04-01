@@ -9,5 +9,6 @@ namespace Cookbook.Services
         void NavigateToRecipeListViewModel(string mealName);
         void NavigateToSettingsViewModel();
         void GoBack();
+        void NavigateToRecipeDetailsViewModel(Guid id);
     }
 }

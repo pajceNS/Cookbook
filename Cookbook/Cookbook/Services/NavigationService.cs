@@ -20,6 +20,19 @@ namespace Cookbook.Services
             //    mainViewModel.LoadNotes();
             //}
         }
+
+        public void NavigateToRecipeDetailsViewModel(Guid id)
+        {
+            var vm = App.Locator.RecipeDetailsViewModel;
+            vm.LoadRecipeWithId(id);
+            
+            Application.
+                Current.
+                MainPage.
+                Navigation.
+                PushModalAsync(new RecipeDetails { BindingContext = vm });
+        }
+
         public void NavigateToRecipeListViewModel(string mealName)
         {
             var vm = App.Locator.RecipeListViewModel;

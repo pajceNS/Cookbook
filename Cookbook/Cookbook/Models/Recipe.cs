@@ -7,8 +7,9 @@ namespace Cookbook.Models
 {
     public class Recipe
     {
-        public Recipe(Guid id, string name, string shortDescription, string thumbnailImage)
+        public Recipe(Guid id, string name, string backgroundImage, string thumbnailImage, string shortDescription, string longDescription, string text, string stepImage, string ingredientName,string unit, string amount, string type)
         {
+            
             Id = id;
             if (string.IsNullOrEmpty(name))
             {
@@ -20,8 +21,17 @@ namespace Cookbook.Models
                 throw new InvalidOperationException(nameof(shortDescription));
             }
             Name = name;
-            ShortDescription = shortDescription;
+            BackgroundImage = backgroundImage;
             ThumbnailImage = thumbnailImage;
+            ShortDescription = shortDescription;
+            LongDescription = longDescription;
+            //StepImage = stepImage;
+            Text = text;
+            //StepImage = stepImage;
+            //Amount = amount;
+            Type = type;
+            //Unit = unit;
+            //IngredientName = ingredientName;
         }
 
             [JsonProperty("id")]
@@ -46,9 +56,32 @@ namespace Cookbook.Models
             public string ShortDescription { get; set; }
 
             [JsonProperty("longDescription")]
+
             public string LongDescription { get; set; }
 
             [JsonProperty("type")]
-            public string Type { get; set; } 
+            public string Type { get; set; }
+
+
+        //// Steps properties
+
+        [JsonProperty("text")]
+        public string Text { get; set; }
+
+        //    [JsonProperty("image")]
+        //    public string StepImage { get; set; }
+
+
+        //// Ingredients properties
+
+        //    [JsonProperty("name")]
+        //    public string IngredientName { get; set; }
+
+        //    [JsonProperty("unit")]
+        //    public string Unit { get; set; }
+
+        //    [JsonProperty("amount")]
+        //    public string Amount { get; set; }
+
     }
 }

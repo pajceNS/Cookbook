@@ -77,5 +77,10 @@ namespace Cookbook.DataAccess
             
             return UniqueTypeRecipes;
         }
+        public List<Recipe> GetRecipeForId(Guid id)
+        {
+            var recipeToDisplay = _recipes.Where(i => i.Id == id).ToList();
+            return recipeToDisplay;
+        }
     }
 }

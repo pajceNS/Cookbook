@@ -18,10 +18,17 @@ namespace Cookbook.ViewModels
         private bool _switchTheme;
         public SettingsViewModel(INavigationService navigationService,IThemeService themeService)
         {
+            BackButtonClicked = new Command(OnBackButtonClicked);
             _themeService = themeService;
             _navigationService = navigationService;
             SwitchThemeCommand = new Command<ToggledEventArgs>(OnSwitchThemeCommand);
             SwitchTheme = _themeService.GetCurrentTheme() != "Light";
+        }
+
+        public ICommand BackButtonClicked { get; }
+        private void OnBackButtonClicked()
+        {
+            _navigationService.GoBack();
         }
         public ICommand SwitchThemeCommand { get; }
         public bool SwitchTheme 

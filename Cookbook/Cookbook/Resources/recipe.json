@@ -1,8 +1,10 @@
 {
-	"recipe": [{
+	"recipe": [
+		{
 			"id": "63eac511-4450-402d-aad1-3d83ce512a0d",
 			"name": "Losos na roštilju sa prelivom od tri začina",
-			"steps": [{
+			"steps": [
+				{
 					"text": "Napravite preliv tako što sitno iseckajte prešun, dodajte ostale sastojke, dobro izmešajte i ostavite da odstoji bar pola sata kako bi se ukusi sjedinili."
 				},
 				{
@@ -14,7 +16,8 @@
 			],
 			"backgroundImage": "background1.png",
 			"thumbnailImage": "thumbnail1.png",
-			"ingredients": [{
+			"ingredients": [
+				{
 					"name": "fileta lososa",
 					"unit": "kg",
 					"amount": "1"
@@ -56,7 +59,8 @@
 		{
 			"id": "6a5b3a53-d8ed-4a8f-bf40-940a09adf016",
 			"name": "Ramstek sa prelivom od soja sosa",
-			"steps": [{
+			"steps": [
+				{
 					"text": "Ramstek posuti sa malo maslinovog ulja, staviti u najlon kesu i lagano izlupati tučkom preko kese kako ne bi oštetili strukturu mesa. Ostaviti u frižideru preko noći, a može i koji dan više. Ako nemate toliko vremena uradite to isto i ostavite koji sat na sobnoj temperaturi."
 				},
 				{
@@ -74,7 +78,8 @@
 			],
 			"backgroundImage": "background2.png",
 			"thumbnailImage": "thumbnail2.png",
-			"ingredients": [{
+			"ingredients": [
+				{
 					"name": "ramsteka",
 					"unit": "gr",
 					"amount": "400-500"
@@ -121,7 +126,8 @@
 		{
 			"id": "9ce41e7a-beef-4125-9717-167e92a235b0",
 			"name": "Vegan špagete",
-			"steps": [{
+			"steps": [
+				{
 					"text": "Sitno isecite luk i prodinstajte u tiganju na ulju dok ne porumeni."
 				},
 				{
@@ -145,7 +151,8 @@
 			],
 			"backgroundImage": "background3.png",
 			"thumbnailImage": "thumbnail3.png",
-			"ingredients": [{
+			"ingredients": [
+				{
 					"name": "A",
 					"unit": "A",
 					"amount": "A"
@@ -193,7 +200,8 @@
 		{
 			"id": "e4218673-904c-4962-baee-fc47b095ecb0",
 			"name": "Voćni doručak sa kiselim mlekom",
-			"steps": [{
+			"steps": [
+				{
 					"text": "Oljuštiti i na komade iseći kivi, pa ga staviti u šerpu. Sipati 50 ml vode i 20 gr šećera i kuvati 5 minuta od kada smesa provri. Štapnim mikserom izblendirati smesu."
 				},
 				{
@@ -208,7 +216,8 @@
 			],
 			"backgroundImage": "background4.png",
 			"thumbnailImage": "thumbnail4.png",
-			"ingredients": [{
+			"ingredients": [
+				{
 					"name": "vode",
 					"unit": "ml",
 					"amount": "50"
@@ -253,7 +262,8 @@
 		{
 			"id": "801d4b9c-5e85-4d08-ab40-7044fc33bca9",
 			"name": "Pogačice/grickalice",
-			"steps": [{
+			"steps": [
+				{
 					"text": "U zdjelu za miješanje dodate toplo mlijeko ,mineralnu vodu šećer i kvasac/mlijeko možete malo više zagrijati tako kad dodate mineralnu da temperatura bude optimalna/miješate rukom da se sve otopi ostavite stajati minutu -dvije .Dodate ulje ,promiješate pa postepeno dodate brašno i sol . izmiješate sve u fino tijesto,stavite na lagano pobrašnjeni radni stol pa nastavite miješati da tijesto bude fino mekano i da se ne lijep,dodate toliko brašna koliko je potrebno. ,pokrijte običnom kesom ili ako ima posuda poklopac pa ostavite stajati 45 min. na toplom mjestu.Pripremite meso tako da sve sastojke zamiješale zajedno ,isprobate slanost i začinjenost tako da komadić mesa ispečete na suhoj tavi ako ste zadovoljni ostavite stajati dok se tijesto ne digne."
 				},
 				{
@@ -276,7 +286,8 @@
 			],
 			"backgroundImage": "background5.png",
 			"thumbnailImage": "thumbnail5.png",
-			"ingredients": [{
+			"ingredients": [
+				{
 					"name": "brašna",
 					"unit": "g",
 					"amount": "500-550"
@@ -327,6 +338,62 @@
 			"shortDescription": "Fine grickalice punjene mljevenim mesom. Ako ne volite sa mljevenim mesom možete koristi sir ,feta sir ,špinat i sl.",
 			"longDescription": "Fine grickalice punjene mljevenim mesom. Ako ne volite sa mljevenim mesom možete koristi sir ,feta sir ,špinat i sl.",
 			"type": "Snack"
+		},
+		{
+			"id": "63eac511-4450-402d-aad1-3883ce512a0d",
+			"name": "Losos na roštilju sa prelivom od tri začina",
+			"steps": [
+				{
+					"text": "Napravite preliv tako što sitno iseckajte prešun, dodajte ostale sastojke, dobro izmešajte i ostavite da odstoji bar pola sata kako bi se ukusi sjedinili."
+				},
+				{
+					"text": "Filetu lososa skinite kožu, i isecite na komade, na primer, kao trouglovi i pokapajte maslinovim uljem."
+				},
+				{
+					"text": "Na vrelom roštilj tiganju ili roštilju ispecite losos 3 minuta sa jedne strane i 2 minuta sa druge strane, dopeći će se još stajanjem koji minut pre služenja. Kad skinete losos sa roštilja prelijte pripremljenim prelivom."
+				}
+			],
+			"backgroundImage": "background1.png",
+			"thumbnailImage": "thumbnail1.png",
+			"ingredients": [
+				{
+					"name": "fileta lososa",
+					"unit": "kg",
+					"amount": "1"
+				},
+				{
+					"name": "veze peršuna",
+					"amount": "1/2"
+				},
+				{
+					"name": "kašičice suve nane (mente)",
+					"amount": "1/2"
+				},
+				{
+					"name": "kašičice origana",
+					"amount": "1/2"
+				},
+				{
+					"name": "kašika kapra",
+					"amount": "1"
+				},
+				{
+					"name": "limuna rendana kora i sok",
+					"amount": "1/2"
+
+				},
+				{
+					"name": "maslinovog ulja",
+					"unit": "ml",
+					"amount": "50-70"
+				},
+				{
+					"name": "so i biber"
+				}
+			],
+			"shortDescription": "Za ljubitelje lososa jednostavno, brzo i veoma ukusno, sta je više potrebno.",
+			"longDescription": "Za ljubitelje lososa jednostavno, brzo i veoma ukusno, sta je više potrebno.",
+			"type": "Lunch"
 		}
 	]
 }

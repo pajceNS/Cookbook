@@ -4,6 +4,7 @@ using Cookbook.Views;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -38,6 +39,7 @@ namespace Cookbook.DataAccess
                     _recipes = listRecipes.Recipe;
                 }
         }
+        
         //private void Save()
         //{
         //    File.WriteAllText(Path.Combine(FileSystem.AppDataDirectory, FileName), JsonConvert.SerializeObject(_recipes));
@@ -62,6 +64,18 @@ namespace Cookbook.DataAccess
             //var recipes = GetAllRecipes();            
            var recipeToDisplay = _recipes.Where(i => i.Type == mealName).ToList();
            return recipeToDisplay;
+        }
+
+        public ObservableCollection<MainButtonViewModel> GetUniqueTypesOfFood()
+        {
+           var UniqueTypeRecipesTemporary = _recipes
+                .GroupBy(p => p.Type)
+                .Select(g => g.First())
+                .Select(r => new MainButtonViewModel(r))
+                .ToList();
+            var UniqueTypeRecipes = new ObservableCollection<MainButtonViewModel>(UniqueTypeRecipesTemporary);
+            
+            return UniqueTypeRecipes;
         }
     }
 }

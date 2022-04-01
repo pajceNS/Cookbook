@@ -6,7 +6,7 @@
              x:DataType="viewmodels:MainViewModel"
              BindingContext="MainViewModel">
     <Grid Style="{DynamicResource GridStyle}"
-          Padding="20, 20, 20, 200" RowSpacing="20" ColumnSpacing="20">
+          Padding="10, 10, 10, 10" RowSpacing="20" ColumnSpacing="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -15,9 +15,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
-            <RowDefinition Height="0.3*"/>
-            <RowDefinition Height="0.3*"/>
-            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.Resources>
             <Style 
@@ -46,7 +44,34 @@
                      Scale="0.5"
                      Source="settingsicon"
                      Command ="{Binding ButtonSettings}"/>
-        <Button Style="{DynamicResource ButtonMainPage}"
+
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="4">
+            <CollectionView 
+            Grid.Row="0"
+            SelectionMode="Single"
+            ItemsSource="{Binding UniqueTypeRecipes}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                Span="2" />
+                </CollectionView.ItemsLayout>
+                
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="viewmodels:MainButtonViewModel">
+                        <StackLayout Padding="10">
+                            <Button
+                               Style="{DynamicResource ButtonMainPage}"
+                               Text="{Binding Type}"
+                               CommandParameter="{Binding Type}"
+                               Command="{Binding MealButton}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+        </Grid>
+
+        <!--<Button Style="{DynamicResource ButtonMainPage}"
                 Grid.Row="1"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
@@ -68,6 +93,6 @@
                 FontSize="20"
                 Text="Dinner"
                 CommandParameter="Dinner"
-                Command="{Binding MealButton}"/>
+                Command="{Binding MealButton}"/>-->
     </Grid>
 </ContentPage>

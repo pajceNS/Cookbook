@@ -7,8 +7,10 @@ namespace Cookbook.Models
 {
     public class Recipe
     {
-        public Recipe(Guid id, string name, string shortDescription, string thumbnailImage)
+
+        public Recipe(Guid id, string name, string shortDescription, string thumbnailImage, string type)
         {
+            Type = type;
             Id = id;
             if (string.IsNullOrEmpty(name))
             {
@@ -24,7 +26,7 @@ namespace Cookbook.Models
             ThumbnailImage = thumbnailImage;
         }
 
-            [JsonProperty("id")]
+        [JsonProperty("id")]
             public Guid Id { get; set; }
 
             [JsonProperty("name")]

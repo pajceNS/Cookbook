@@ -12,22 +12,31 @@ namespace Cookbook.ViewModels
     {
         private readonly INavigationService _navigationService;
         private readonly IRecipeRepository _recipeRepository;
-        private ObservableCollection<RecipeStepItemViewModel> _stepSoruce;
+        private ObservableCollection<RecipeStepItemViewModel> _stepSource;
+        private ObservableCollection<RecipeStepItemViewModel> _ingredientsSource;
         private string _longDescription;
         public RecipeDetailsViewModel(INavigationService navigationService, IRecipeRepository recipeRepository)
         {
             _navigationService = navigationService;
             _recipeRepository = recipeRepository;
-
+        }
+        public ObservableCollection<RecipeStepItemViewModel> IngredientsSource
+        {
+            get => _ingredientsSource;
+            set
+            {
+                _ingredientsSource = value;
+                OnPropertyChanged(nameof(IngredientsSource));
+            }
         }
 
 
         public ObservableCollection<RecipeStepItemViewModel> StepsSource
         {
-            get => _stepSoruce;
+            get => _stepSource;
             set
             {
-                _stepSoruce= value;
+                _stepSource= value;
                 OnPropertyChanged(nameof(StepsSource));
             }
         }
@@ -44,6 +53,8 @@ namespace Cookbook.ViewModels
         {
             var recipe = _recipeRepository.GetRecipeForId(id);
             LongDescription = recipe[0].LongDescription;
+            StepsSource = new ObservableCollection<RecipeStepItemViewModel>( recipe[0].Steps.Select(r => new RecipeStepItemViewModel(r)));
+            IngredientsSource = new ObservableCollection<RecipeStepItemViewModel>(recipe[0].Ingredients.Select(r => new RecipeStepItemViewModel(r)));
         }
 
     }

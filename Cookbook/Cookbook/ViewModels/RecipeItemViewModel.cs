@@ -11,6 +11,7 @@ namespace Cookbook.ViewModels
         private string _shortDescription;
         private string _thumbnailImage;
         private readonly Recipe _recipe;
+        private string _type;
         //private string _backgroundImage;
         //private string _longDescription;
         //private string _text;
@@ -18,19 +19,15 @@ namespace Cookbook.ViewModels
         //private string _unit;
         //private string _ingredientName;
         //private string _amount;
-        //private string _type;
         //private Guid _id;
 
         public RecipeItemViewModel(Recipe recipe)
         {
             _recipe = recipe;   
-
-            //_step.
-
             Name = recipe.Name;
             ShortDescription = recipe.ShortDescription;
             ThumbnailImage = recipe.ThumbnailImage;
-
+            Type = recipe.Type;
 
 
             //BackgroundImage = recipe.BackgroundImage;
@@ -75,7 +72,15 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(ThumbnailImage));
             }
         }
-
+        public string Type
+        {
+            get => _type;
+            set
+            {
+                _type = value;
+                OnPropertyChanged(nameof(Type));
+            }
+        }
         //public Guid Id
         //{
         //    get => _id;
@@ -85,15 +90,7 @@ namespace Cookbook.ViewModels
         //        OnPropertyChanged(nameof(Id));
         //    }
         //}
-        //public string Type
-        //{
-        //    get => _type;
-        //    set
-        //    {
-        //        _type = value;
-        //        OnPropertyChanged(nameof(Type));
-        //    }
-        //}
+
         //public string Amount
         //{
         //    get => _amount;

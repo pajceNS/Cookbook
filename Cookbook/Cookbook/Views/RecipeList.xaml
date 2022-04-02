@@ -36,7 +36,7 @@
                 HorizontalTextAlignment="Start"
                 BackgroundColor="Transparent"
                 Margin="0,20,0,0"
-                FontSize="36"
+                FontSize="Title"
                 Text="{Binding MealName}"/>
         </Grid>
         <Grid Grid.Row="1">

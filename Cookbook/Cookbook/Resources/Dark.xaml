@@ -8,12 +8,6 @@
     <Style x:Key="LabelStyle" TargetType="Label">
         <Setter Property="TextColor" Value="Cyan"/>
     </Style>
-    <Style x:Key="ButtonMainPage" TargetType="Button">
-        <Setter Property="BackgroundColor" Value="Cyan"/>
-        <Setter Property="TextColor" Value="Black"/>
-        <Setter Property="CornerRadius" Value="10"/>
-    </Style>
-    
     <Style x:Key="FrameSecondPage" TargetType="Frame">
         <Setter Property="BackgroundColor" Value="Cyan"/>
     </Style>

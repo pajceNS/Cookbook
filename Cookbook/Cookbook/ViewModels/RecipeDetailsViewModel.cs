@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace Cookbook.ViewModels
 {
@@ -19,6 +21,7 @@ namespace Cookbook.ViewModels
         {
             _navigationService = navigationService;
             _recipeRepository = recipeRepository;
+            BackButtonClicked1 = new Command(OnBackButtonClicked);
         }
         public ObservableCollection<RecipeStepItemViewModel> IngredientsSource
         {
@@ -30,7 +33,7 @@ namespace Cookbook.ViewModels
             }
         }
 
-
+        public ICommand BackButtonClicked1 { get; }
         public ObservableCollection<RecipeStepItemViewModel> StepsSource
         {
             get => _stepSource;
@@ -39,6 +42,10 @@ namespace Cookbook.ViewModels
                 _stepSource= value;
                 OnPropertyChanged(nameof(StepsSource));
             }
+        }
+        private void OnBackButtonClicked()
+        {
+            _navigationService.GoBack();
         }
         public string LongDescription
         {

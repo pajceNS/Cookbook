@@ -4,6 +4,7 @@
              xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
              x:Class="Cookbook.Views.RecipeDetails"
              BindingContext="RecipeDetailsViewModel">
+
     <StackLayout>
         <Grid Style="{DynamicResource GridStyle}"
               Padding="20, 20, 20, 20" RowSpacing="20" ColumnSpacing="20">
@@ -11,31 +12,26 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.1*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0"
-                  Margin="0,0,0,0">
+            <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0.2*"/>
-                </Grid.RowDefinitions>
 
                 <ImageButton
-                    Source="BackButton.png"
-                    Margin="0,20,0,0"
-                    Grid.Column="0"
-                    Grid.Row="0"
-                    BackgroundColor="Transparent"
-                    VerticalOptions="Center"
-                
-                    />
+                Source="BackButton.png"
+                Margin="0,20,0,0"
+                Grid.Column="0"
+                Grid.Row="0"
+                BackgroundColor="Transparent"
+                VerticalOptions="Center"
+                Command="{Binding BackButtonClicked1}"/>
                 <Label Style="{DynamicResource LabelStyle}"
                     Grid.Column="2"
                     Grid.ColumnSpan="2"
@@ -45,84 +41,192 @@
                     Margin="0,20,0,0"
                     FontSize="Title"
                     Text="TEST"/>
-
             </Grid>
-            <Grid Grid.Row="1"
-                  BackgroundColor="red">
-                <Image
-                    Grid.ColumnSpan="4"
-                    Source="background1">
+            <Grid Grid.Row="1">
+                <ScrollView>
+                    <StackLayout>
+                        <Frame BackgroundColor="red"
+                               CornerRadius="30">
+                            <Image
+                                    Grid.ColumnSpan="4"
+                                    Source="background1">
+                            </Image>
+                        </Frame>
+                        <Frame>
+                            <Label
+                                TextColor="black"
+                                FontSize="20"
+                                Text="{Binding LongDescription}">
+                            </Label>
+                        </Frame>
+                        
+                        <Frame>
+                            <StackLayout>
+                                <Label Text="Ingredients"
+                                   FontSize="30"
+                                   TextColor="black">
 
-                </Image>
+                                </Label>
+                                <CollectionView
+                                 ItemsSource="{Binding IngredientsSource}">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate x:DataType="viewmodels:RecipeStepItemViewModel">
+                                            <StackLayout>
+                                                <Frame CornerRadius="20" Style="{DynamicResource FrameSecondPage}" Padding="10">
 
+                                                    <Grid>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                            <RowDefinition Height="*"/>
+                                                        </Grid.RowDefinitions>
+
+                                                        <Label 
+                                                        Grid.Row="0"
+                                                        TextColor="Black">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span
+                                                                    Text="Name: "
+                                                                    />
+                                                                    <Span
+                                                                    Text="{Binding Name}"
+                                                                    FontAttributes="Bold"
+                                                                    />
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+
+                                                        <Label 
+                                                        Grid.Row="1"
+                                                        TextColor="Black">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span
+                                                                    Text="Amount: "
+                                                                    />
+                                                                    <Span
+                                                                    Text="{Binding Amount}"
+                                                                    FontAttributes="Bold"
+                                                                    />
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+
+                                                        <Label 
+                                                        Grid.Row="2"
+                                                        TextColor="Black">
+                                                            <Label.FormattedText>
+                                                                <FormattedString>
+                                                                    <Span
+                                                                    Text="Unit: "
+                                                                    />
+                                                                    <Span
+                                                                    Text="{Binding Unit}"
+                                                                    FontAttributes="Bold"
+                                                                    />
+                                                                </FormattedString>
+                                                            </Label.FormattedText>
+                                                        </Label>
+                                                    </Grid>
+
+                                                </Frame>
+                                                
+                                                <Label>
+                                                    
+                                                </Label>
+                                            </StackLayout>
+                                            
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                        </Frame>
+                        
+                        <Frame BackgroundColor="Transparent">
+                            <CollectionView
+                                    Margin="0,20,0,0"
+                                    ItemsSource="{Binding StepsSource}">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate x:DataType="viewmodels:RecipeStepItemViewModel">
+                                        <StackLayout>
+                                            <Frame CornerRadius="20" Style="{DynamicResource FrameSecondPage}" Padding="10">
+
+                                                <StackLayout>
+
+                                                    <Label 
+                                                        TextColor="Black"
+                                                        Text="Step number x ">
+                                                      
+                                                    </Label>
+
+                                                    <Label 
+                                                        TextColor="Black">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span
+                                                                    Text="To do: "
+                                                                    />
+                                                                <Span
+                                                                    Text="{Binding Text}"
+                                                                    FontAttributes="Bold"
+                                                                    />
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+
+                                                    <Image
+                                                        Source="{Binding StepImage}"
+                                                        />
+
+                                                </StackLayout>
+
+                                            </Frame>
+
+                                            <Label>
+
+                                            </Label>
+                                        </StackLayout>
+
+                                        <!--<Frame CornerRadius="20" Style="{DynamicResource FrameSecondPage}" Padding="10">
+
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image
+                                    
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        Grid.Column="0"
+                                                        Grid.Row="0"
+                                                        Grid.RowSpan="2"
+                                                        />
+                                                <Label
+                                                        LineBreakMode="TailTruncation"
+                                                        Grid.Column="1"
+                                                        Grid.Row="0"
+                                                        Grid.ColumnSpan="2"
+                                                        FontSize="16"
+                                                        Text="{Binding Text}"
+                                                        TextColor="Black"
+                                                        />
+                                            </Grid>
+
+                                        </Frame>-->
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </Frame>
+                    </StackLayout>
+                </ScrollView>
             </Grid>
         </Grid>
-        
-        
-        
-        <Grid>
-                <Frame>
-                    <Grid>
-                        <ScrollView>
-                            <Label
-                            TextColor="black"
-                            FontSize="20"
-                            Text="{Binding LongDescription}">
-
-                            </Label>
-                        </ScrollView>
-                    </Grid>
-
-                </Frame>
-                <CollectionView>
-
-                </CollectionView>
-
-                <CollectionView
-                    Margin="0,20,0,0"
-                    Grid.Row="3"
-                    SelectionMode="Single"
-                    ItemsSource="{Binding StepsSource}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="viewmodels:RecipeStepItemViewModel">
-                            <Frame CornerRadius="20" Style="{DynamicResource FrameSecondPage}" Padding="10">
-
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="auto"/>
-                                        <RowDefinition Height="auto"/>
-                                        <RowDefinition Height="auto"/>
-                                    </Grid.RowDefinitions>
-
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image
-                                    
-                                        HorizontalOptions="CenterAndExpand"
-                                        Grid.Column="0"
-                                        Grid.Row="0"
-                                        Grid.RowSpan="2"
-                                        />
-                                    <Label
-                                        LineBreakMode="TailTruncation"
-                                        Grid.Column="1"
-                                        Grid.Row="0"
-                                        Grid.ColumnSpan="2"
-                                        FontSize="16"
-                                        Text="{Binding Text}"
-                                        TextColor="Black"
-                                        />
-                                </Grid>
-
-                            </Frame>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </Grid>
-
-
-        <!--</Grid>-->
     </StackLayout>
 </ContentPage>

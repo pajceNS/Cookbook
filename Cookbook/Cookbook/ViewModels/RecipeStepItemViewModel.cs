@@ -21,7 +21,11 @@ namespace Cookbook.ViewModels
         {
             _name = ingredient.Name;
             _amount = ingredient.Amount;
-            _unit = ingredient.Unit;
+            if(ingredient.Unit == null)
+            {
+                _unit = "/";
+            }else _unit = ingredient.Unit;
+
 
         }
         public string Name

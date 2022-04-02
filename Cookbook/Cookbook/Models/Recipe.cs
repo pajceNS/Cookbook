@@ -26,7 +26,7 @@ namespace Cookbook.Models
             ShortDescription = shortDescription;
             LongDescription = longDescription;
             //StepImage = stepImage;
-            Text = text;
+            //Text = text;
             //StepImage = stepImage;
             //Amount = amount;
             Type = type;
@@ -65,8 +65,8 @@ namespace Cookbook.Models
 
         //// Steps properties
 
-        [JsonProperty("text")]
-        public string Text { get; set; }
+        //[JsonProperty("text")]
+        //public string Text { get; set; }
 
         //    [JsonProperty("image")]
         //    public string StepImage { get; set; }

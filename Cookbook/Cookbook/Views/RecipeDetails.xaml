@@ -40,7 +40,7 @@
                     BackgroundColor="Transparent"
                     Margin="0,20,0,0"
                     FontSize="Title"
-                    Text="TEST"/>
+                    Text="Test"/>
             </Grid>
             <Grid Grid.Row="1">
                 <ScrollView>

@@ -17,8 +17,8 @@ namespace Cookbook.ViewModels
         private ObservableCollection<RecipeStepItemViewModel> _stepSource;
         private ObservableCollection<RecipeStepItemViewModel> _ingredientsSource;
         private string _longDescription;
-        //private string _name;
-        //private string _backgroundImage;
+        private string _name;
+        private string _backgroundImage;
         public RecipeDetailsViewModel(INavigationService navigationService, IRecipeRepository recipeRepository)
         {
             _navigationService = navigationService;
@@ -49,15 +49,15 @@ namespace Cookbook.ViewModels
         {
             _navigationService.GoBack();
         }
-        /*public string BackgroundImage
+        public string BackgroundImage
         {
             get => _backgroundImage; set
             {
                 _backgroundImage = value;
                 OnPropertyChanged(nameof(BackgroundImage));
             }
-        }*/
-        /*public string Name
+        }
+        public string Name
         {
             get => _name;
             set
@@ -65,7 +65,7 @@ namespace Cookbook.ViewModels
                 _name= value;
                 OnPropertyChanged(nameof(Name));
             }
-        }*/
+        }
         public string LongDescription
         {
             get => _longDescription;
@@ -79,8 +79,9 @@ namespace Cookbook.ViewModels
         {
             var recipe = _recipeRepository.GetRecipeForId(id);
             LongDescription = recipe[0].LongDescription;
-            //Name = recipe[0].Name;
-            //BackgroundImage = recipe[0].BackgroundImage;
+
+            Name = recipe[0].Name;
+            BackgroundImage = recipe[0].BackgroundImage;
             StepsSource = new ObservableCollection<RecipeStepItemViewModel>( recipe[0].Steps.Select(r => new RecipeStepItemViewModel(r)));
             IngredientsSource = new ObservableCollection<RecipeStepItemViewModel>(recipe[0].Ingredients.Select(r => new RecipeStepItemViewModel(r)));
         }

@@ -40,7 +40,7 @@
                     BackgroundColor="Transparent"
                     Margin="0,20,0,0"
                     FontSize="Title"
-                    Text="Test"/>
+                    Text="{Binding Name}"/>
             </Grid>
             <Grid Grid.Row="1">
                 <ScrollView>
@@ -49,7 +49,7 @@
                                CornerRadius="30">
                             <Image
                                     Grid.ColumnSpan="4"
-                                    Source="background1">
+                                    Source="{Binding BackgroundImage}">
                             </Image>
                         </Frame>
                         <Frame>

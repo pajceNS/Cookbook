@@ -12,7 +12,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -55,6 +55,7 @@
                         <Frame>
                             <Label
                                 FontSize="20"
+                                TextColor="Black"
                                 Text="{Binding LongDescription}">
                             </Label>
                         </Frame>
@@ -62,6 +63,7 @@
                         <Frame>
                             <StackLayout>
                                 <Label Text="Ingredients"
+                                       TextColor="Black"
                                        HorizontalOptions="Center"
                                    FontSize="Title">
 

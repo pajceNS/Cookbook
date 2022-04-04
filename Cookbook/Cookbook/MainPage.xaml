@@ -60,6 +60,10 @@
                                     <Label
                                        Text="{Binding Type}"
                                         TextColor="Black"
+                                        HeightRequest="40"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        FontSize="Title"
                                        />
                                 </Frame>
                             </StackLayout>

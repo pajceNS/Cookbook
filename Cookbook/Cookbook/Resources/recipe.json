@@ -338,62 +338,6 @@
 			"shortDescription": "Fine grickalice punjene mljevenim mesom. Ako ne volite sa mljevenim mesom možete koristi sir ,feta sir ,špinat i sl.",
 			"longDescription": "Fine grickalice punjene mljevenim mesom. Ako ne volite sa mljevenim mesom možete koristi sir ,feta sir ,špinat i sl.",
 			"type": "Snack"
-		},
-		{
-			"id": "63eac511-4450-402d-aad1-3883ce512a0d",
-			"name": "Losos na roštilju sa prelivom od tri začina",
-			"steps": [
-				{
-					"text": "Napravite preliv tako što sitno iseckajte prešun, dodajte ostale sastojke, dobro izmešajte i ostavite da odstoji bar pola sata kako bi se ukusi sjedinili."
-				},
-				{
-					"text": "Filetu lososa skinite kožu, i isecite na komade, na primer, kao trouglovi i pokapajte maslinovim uljem."
-				},
-				{
-					"text": "Na vrelom roštilj tiganju ili roštilju ispecite losos 3 minuta sa jedne strane i 2 minuta sa druge strane, dopeći će se još stajanjem koji minut pre služenja. Kad skinete losos sa roštilja prelijte pripremljenim prelivom."
-				}
-			],
-			"backgroundImage": "background1.png",
-			"thumbnailImage": "thumbnail1.png",
-			"ingredients": [
-				{
-					"name": "fileta lososa",
-					"unit": "kg",
-					"amount": "1"
-				},
-				{
-					"name": "veze peršuna",
-					"amount": "1/2"
-				},
-				{
-					"name": "kašičice suve nane (mente)",
-					"amount": "1/2"
-				},
-				{
-					"name": "kašičice origana",
-					"amount": "1/2"
-				},
-				{
-					"name": "kašika kapra",
-					"amount": "1"
-				},
-				{
-					"name": "limuna rendana kora i sok",
-					"amount": "1/2"
-
-				},
-				{
-					"name": "maslinovog ulja",
-					"unit": "ml",
-					"amount": "50-70"
-				},
-				{
-					"name": "so i biber"
-				}
-			],
-			"shortDescription": "Za ljubitelje lososa jednostavno, brzo i veoma ukusno, sta je više potrebno.",
-			"longDescription": "Za ljubitelje lososa jednostavno, brzo i veoma ukusno, sta je više potrebno.",
-			"type": "Lunch"
 		}
 	]
 }

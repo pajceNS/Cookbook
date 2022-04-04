@@ -12,7 +12,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -34,7 +34,7 @@
                 Command="{Binding BackButtonClicked1}"/>
                 <Label Style="{DynamicResource LabelStyle}"
                     Grid.Column="1"
-                    Grid.ColumnSpan="2"
+                    Grid.ColumnSpan="3"
                     VerticalOptions="Center"
                     HorizontalTextAlignment="Start"
                     BackgroundColor="Transparent"
@@ -45,7 +45,7 @@
             <Grid Grid.Row="1">
                 <ScrollView>
                     <StackLayout>
-                        <Frame BackgroundColor="red"
+                        <Frame BackgroundColor="Transparent"
                                CornerRadius="30">
                             <Image
                                     Grid.ColumnSpan="4"
@@ -54,7 +54,6 @@
                         </Frame>
                         <Frame>
                             <Label
-                                TextColor="black"
                                 FontSize="20"
                                 Text="{Binding LongDescription}">
                             </Label>
@@ -63,8 +62,8 @@
                         <Frame>
                             <StackLayout>
                                 <Label Text="Ingredients"
-                                   FontSize="30"
-                                   TextColor="black">
+                                       HorizontalOptions="Center"
+                                   FontSize="Title">
 
                                 </Label>
                                 <CollectionView

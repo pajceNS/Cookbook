@@ -12,7 +12,7 @@ namespace Cookbook.ViewModels
     internal class MainButtonViewModel : BaseViewModel
     {
         private string _type;
-        private readonly INavigationService _navigationService;
+        //private readonly INavigationService _navigationService;
 
         public MainButtonViewModel(Recipe recipe)
         {
@@ -31,14 +31,12 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(Type));
             }
         }   
-        private void OnSelectedMealTypeCommand(string mealType)
-        {
-            if(mealType != null)
-            {
-                _navigationService.NavigateToRecipeListViewModel(mealType);
-            }
-
-
-        }
+        //private void OnSelectedMealTypeCommand(string mealType)
+        //{
+        //    if(mealType != null)
+        //    {
+        //        _navigationService.NavigateToRecipeListViewModel(mealType);
+        //    }
+        //}
     }
 }

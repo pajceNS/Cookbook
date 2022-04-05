@@ -44,6 +44,7 @@
                         HorizontalOptions="Start"
                         VerticalOptions="Start"
                         CornerRadius="20"
+                        
                         BackgroundColor="#efdcd5">
                         <ImageButton
                                 HorizontalOptions="Center"
@@ -60,6 +61,7 @@
                 <StackLayout>
                     <Label
                         Text="Meal name:"
+                                                    TextColor="Black"
                         HorizontalTextAlignment="Center"
                         FontSize="Subtitle">
                     </Label>
@@ -78,6 +80,7 @@
                         <StackLayout>
                             <Label
                                 Text="Description:"
+                                                    TextColor="Black"
                                 HorizontalTextAlignment="Center"
                                 FontSize="Subtitle"
                         >
@@ -101,11 +104,14 @@
                 Padding="2"
                 BackgroundColor="#f1e7e3"
                 >
-                <StackLayout>
+                <StackLayout
+                        BackgroundColor="#420000">
                     <Label 
                         Text="Ingredients"
-                        HorizontalOptions="Center"
-                        FontSize="Subtitle">
+                        FontAttributes="Bold"
+                        FontSize="Title"
+                        TextColor="#fff2f2"
+                        HorizontalOptions="Center">
                     </Label>
                     
                     <CollectionView 
@@ -113,7 +119,15 @@
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="viewmodels:RecipeStepItemViewModel">
                                 <StackLayout>
-                                    <Frame CornerRadius="20" Style="{DynamicResource FrameSecondPage}" Padding="10">
+                                    <Frame 
+                                        BorderColor="#a4392a"
+                                        CornerRadius="20"  
+                                        Padding="10"
+                                        
+                                        
+                                        
+                                        BackgroundColor="#6f0000"
+                                        >
 
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -124,7 +138,7 @@
 
                                             <Label 
                                                             Grid.Row="0"
-                                                            TextColor="Black">
+                                                            TextColor="#fff2f2">
                                                 <Label.FormattedText>
                                                     <FormattedString>
                                                         <Span
@@ -140,7 +154,7 @@
 
                                             <Label 
                                                             Grid.Row="1"
-                                                            TextColor="Black">
+                                                            TextColor="#fff2f2">
                                                 <Label.FormattedText>
                                                     <FormattedString>
                                                         <Span
@@ -156,7 +170,7 @@
 
                                             <Label 
                                                             Grid.Row="2"
-                                                            TextColor="Black">
+                                                            TextColor="#fff2f2">
                                                 <Label.FormattedText>
                                                     <FormattedString>
                                                         <Span
@@ -189,27 +203,47 @@
                 Padding="2"
                 BackgroundColor="#f1e7e3"
                 >
-                <StackLayout>
+                <StackLayout
+                    
+                    
+                    BackgroundColor="#fff2f2"
+                    
+                    
+                    >
                     <Label 
                         Text="Steps"
-                        HorizontalOptions="Center"
-                        FontSize="Subtitle">
+                        TextColor="#7f0000"
+                        FontAttributes="Bold"
+                        FontSize="Title"
+                        HorizontalOptions="Center">
+                        
                     </Label>
 
                     <CollectionView 
+                                                BackgroundColor="#ffff"
                         ItemsSource="{Binding StepsSource}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="viewmodels:RecipeStepItemViewModel">
-                                <StackLayout>
-                                    <Frame CornerRadius="20" Style="{DynamicResource FrameSecondPage}" Padding="10">
+                                <StackLayout
+                                    BackgroundColor="#fff2f2">
+                                    <Frame 
+                                        CornerRadius="20"  
+                                        Padding="10"
+                                        
+                                        
+                                        BorderColor="#a4392a"
+                                        
+                                        >
                                         <StackLayout>
                                             <StackLayout
                                                 >
                                                 <Label
+                                                    TextColor="#7f0000"
                                                     Text="{Binding StepCounter, StringFormat='Step: {0:D}'}"
                                                     >
                                                 </Label>
                                                 <Label
+                                                    TextColor="#7f0000"
                                                     IsVisible="{Binding IsStepTextLabelVisible}"
                                                     >
                                                     <Label.FormattedText>

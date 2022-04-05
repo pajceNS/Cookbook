@@ -24,7 +24,8 @@ namespace Cookbook.Services
 
         public void NavigateToRecipeDetailsViewModel(Guid id)
         {
-            Preferences.Set("stepCounter", 1);
+            Preferences.Set("stepCounter", 0
+                );
             var vm = App.Locator.RecipeDetailsViewModel;
             vm.LoadRecipeWithId(id);
             Application.

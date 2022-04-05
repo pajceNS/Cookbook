@@ -76,17 +76,14 @@ namespace Cookbook.DataAccess
 
             return UniqueTypeRecipes;
         }
-        //public ObservableCollection<string> GetUniqueTypesOfFood()
+
+        //public List<string> GetUniqueTypesOfFood()
         //{
         //    var UniqueTypeRecipesTemporary = _recipes
-        //         .GroupBy(p => p.Type)
-        //         .Select(g => g.First())
-        //         .Select(r => new MainButtonViewModel(r))
-        //         .ToList();
-        //    var UniqueTypeRecipes = new ObservableCollection<MainButtonViewModel>(UniqueTypeRecipesTemporary);
-        //    var list = UniqueTypeRecipes.Select(r => r.Type).ToList();
-        //    var outputList = new ObservableCollection<string>(list);
-        //    return outputList;
+        //        .Select(i => i.Type)
+        //        .Distinct()
+        //        .ToList();
+        //    return UniqueTypeRecipesTemporary;
         //}
         public List<Recipe> GetRecipeForId(Guid id)
         {

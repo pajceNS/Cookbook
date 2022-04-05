@@ -24,6 +24,9 @@ namespace Cookbook.ViewModels
             _recipeRepository = recipeRepository;
 
             UniqueTypeRecipes = recipeRepository.GetUniqueTypesOfFood();
+
+
+
             ButtonSettings = new Command(OnButtonSettings);
             SelectedMealTypeCommand = new Command(OnSelectedMealTypeCommand);
         }

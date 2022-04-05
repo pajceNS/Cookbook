@@ -7,6 +7,7 @@ namespace Cookbook.ViewModels
 {
     internal class RecipeItemViewModel : BaseViewModel
     {
+        private string _type;
         private string _name;
         private string _shortDescription;
         private string _thumbnailImage;
@@ -23,7 +24,8 @@ namespace Cookbook.ViewModels
 
         public RecipeItemViewModel(Recipe recipe)
         {
-            _recipe = recipe;   
+            _recipe = recipe;
+            Type = recipe.Type;
             Name = recipe.Name;
             ShortDescription = recipe.ShortDescription;
             ThumbnailImage = recipe.ThumbnailImage;

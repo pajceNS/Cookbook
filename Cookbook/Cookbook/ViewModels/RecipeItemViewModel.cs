@@ -12,7 +12,6 @@ namespace Cookbook.ViewModels
         private string _shortDescription;
         private string _thumbnailImage;
         private readonly Recipe _recipe;
-        private string _type;
         //private string _backgroundImage;
         //private string _longDescription;
         //private string _text;

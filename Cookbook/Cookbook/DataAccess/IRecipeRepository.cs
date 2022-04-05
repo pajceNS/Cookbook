@@ -13,6 +13,6 @@ namespace Cookbook.DataAccess
         IEnumerable<Recipe> GetAllRecipes();
         List<Recipe> GetRecipesForType(string mealName);
         List<Recipe> GetRecipeForId(Guid id);
-        ObservableCollection<MainButtonViewModel> GetUniqueTypesOfFood ();
+        ObservableCollection<MainButtonViewModel> GetUniqueTypesOfFood();
     }
 }

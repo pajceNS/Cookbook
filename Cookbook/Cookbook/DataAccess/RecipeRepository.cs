@@ -65,18 +65,29 @@ namespace Cookbook.DataAccess
            var recipeToDisplay = _recipes.Where(i => i.Type == mealName).ToList();
            return recipeToDisplay;
         }
-
         public ObservableCollection<MainButtonViewModel> GetUniqueTypesOfFood()
         {
-           var UniqueTypeRecipesTemporary = _recipes
-                .GroupBy(p => p.Type)
-                .Select(g => g.First())
-                .Select(r => new MainButtonViewModel(r))
-                .ToList();
+            var UniqueTypeRecipesTemporary = _recipes
+                 .GroupBy(p => p.Type)
+                 .Select(g => g.First())
+                 .Select(r => new MainButtonViewModel(r))
+                 .ToList();
             var UniqueTypeRecipes = new ObservableCollection<MainButtonViewModel>(UniqueTypeRecipesTemporary);
-            
+
             return UniqueTypeRecipes;
         }
+        //public ObservableCollection<string> GetUniqueTypesOfFood()
+        //{
+        //    var UniqueTypeRecipesTemporary = _recipes
+        //         .GroupBy(p => p.Type)
+        //         .Select(g => g.First())
+        //         .Select(r => new MainButtonViewModel(r))
+        //         .ToList();
+        //    var UniqueTypeRecipes = new ObservableCollection<MainButtonViewModel>(UniqueTypeRecipesTemporary);
+        //    var list = UniqueTypeRecipes.Select(r => r.Type).ToList();
+        //    var outputList = new ObservableCollection<string>(list);
+        //    return outputList;
+        //}
         public List<Recipe> GetRecipeForId(Guid id)
         {
             var recipeToDisplay = _recipes.Where(i => i.Id == id).ToList();

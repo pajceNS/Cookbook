@@ -17,15 +17,10 @@ namespace Cookbook.ViewModels
         public MainButtonViewModel(Recipe recipe)
         {
             Type = recipe.Type;
-            SelectedMealTypeCommand = new Command<string>(OnSelectedMealTypeCommand);
+            //SelectedMealTypeCommand = new Command<string>(OnSelectedMealTypeCommand);
         }
-        public MainButtonViewModel(INavigationService navigationService)
-        {
-            _navigationService = navigationService;
-            MealButton = new Command<string>(OnMealButton);
-        }
-        public ICommand MealButton { get; }
-        public ICommand SelectedMealTypeCommand { get; }
+        
+        //public ICommand SelectedMealTypeCommand { get; }
         
         public string Type
         {
@@ -35,11 +30,7 @@ namespace Cookbook.ViewModels
                 _type = value;
                 OnPropertyChanged(nameof(Type));
             }
-        }
-        private void OnMealButton(string mealName)
-        {
-            _navigationService.NavigateToRecipeListViewModel(mealName);
-        }
+        }   
         private void OnSelectedMealTypeCommand(string mealType)
         {
             if(mealType != null)

@@ -45,7 +45,9 @@
               Grid.ColumnSpan="4">
             <CollectionView 
                 Grid.Row="0"
-                SelectionMode="None"
+                SelectionMode="Single"
+                SelectedItem="{Binding SelectedRecipe}"
+                SelectionChangedCommand="{Binding SelectedMealTypeCommand}"
                 ItemsSource="{Binding UniqueTypeRecipes}">
                 
                     <CollectionView.ItemsLayout>
@@ -56,17 +58,14 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="viewmodels:MainButtonViewModel">
                             <StackLayout Padding="10">
-                                <Frame CornerRadius="10"
-                                       Padding="-10">
-                                    <Button
+                                <Frame CornerRadius="15">
+                                    <Label
                                        Text="{Binding Type}"
                                         TextColor="Black"
-                                        HeightRequest="100"
-                                        HorizontalOptions="FillAndExpand"
-                                        VerticalOptions="FillAndExpand"
-                                        FontSize="Subtitle"
-                                        CommandParameter="{Binding Type}"
-                                        Command="{Binding SelectedMealTypeCommand}"
+                                        HeightRequest="40"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center"
+                                        FontSize="Title"
                                        />
                                 </Frame>
                             </StackLayout>

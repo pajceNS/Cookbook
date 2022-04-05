@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Cookbook.Services
@@ -23,9 +24,9 @@ namespace Cookbook.Services
 
         public void NavigateToRecipeDetailsViewModel(Guid id)
         {
+            Preferences.Set("stepCounter", 1);
             var vm = App.Locator.RecipeDetailsViewModel;
             vm.LoadRecipeWithId(id);
-            
             Application.
                 Current.
                 MainPage.

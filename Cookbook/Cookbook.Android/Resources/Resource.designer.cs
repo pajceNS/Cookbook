@@ -22242,46 +22242,49 @@ namespace Cookbook.Droid
 			public const int notify_panel_notification_icon_bg = 2131165329;
 			
 			// aapt resource value: 0x7F070092
-			public const int preference_list_divider_material = 2131165330;
+			public const int outline_arrow_back_ios_24 = 2131165330;
 			
 			// aapt resource value: 0x7F070093
-			public const int settingsicon = 2131165331;
+			public const int preference_list_divider_material = 2131165331;
 			
 			// aapt resource value: 0x7F070094
-			public const int step5_1 = 2131165332;
+			public const int settingsicon = 2131165332;
 			
 			// aapt resource value: 0x7F070095
-			public const int step5_2 = 2131165333;
+			public const int step5_1 = 2131165333;
 			
 			// aapt resource value: 0x7F070096
-			public const int step5_3 = 2131165334;
+			public const int step5_2 = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int step5_4 = 2131165335;
+			public const int step5_3 = 2131165335;
 			
 			// aapt resource value: 0x7F070098
-			public const int test_custom_background = 2131165336;
+			public const int step5_4 = 2131165336;
 			
 			// aapt resource value: 0x7F070099
-			public const int thumbnail1 = 2131165337;
+			public const int test_custom_background = 2131165337;
 			
 			// aapt resource value: 0x7F07009A
-			public const int thumbnail2 = 2131165338;
+			public const int thumbnail1 = 2131165338;
 			
 			// aapt resource value: 0x7F07009B
-			public const int thumbnail3 = 2131165339;
+			public const int thumbnail2 = 2131165339;
 			
 			// aapt resource value: 0x7F07009C
-			public const int thumbnail4 = 2131165340;
+			public const int thumbnail3 = 2131165340;
 			
 			// aapt resource value: 0x7F07009D
-			public const int thumbnail5 = 2131165341;
+			public const int thumbnail4 = 2131165341;
 			
 			// aapt resource value: 0x7F07009E
-			public const int tooltip_frame_dark = 2131165342;
+			public const int thumbnail5 = 2131165342;
 			
 			// aapt resource value: 0x7F07009F
-			public const int tooltip_frame_light = 2131165343;
+			public const int tooltip_frame_dark = 2131165343;
+			
+			// aapt resource value: 0x7F0700A0
+			public const int tooltip_frame_light = 2131165344;
 			
 			static Drawable()
 			{

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Essentials;
 
 namespace Cookbook.ViewModels
 {
@@ -12,10 +13,26 @@ namespace Cookbook.ViewModels
         private string _name;
         private string _unit;
         private string _amount;
+        private int _stepCounter;
+        private bool _isStepTextLabelVisible;
         public RecipeStepItemViewModel(Step step)
         {
-            _text = step.Text;
-            _stepImage = step.Image;
+            if(step.Text != null)
+            {
+                Text = step.Text;
+                IsStepTextLabelVisible = true ;
+            }
+            else
+            {
+                IsStepTextLabelVisible= false ;
+            }
+            StepImage = step.Image;
+            
+
+
+            _stepCounter = Preferences.Get("stepCounter",0);
+            Preferences.Set("stepCounter", ++_stepCounter);
+
         }
         public RecipeStepItemViewModel(Ingredient ingredient)
         {
@@ -27,6 +44,24 @@ namespace Cookbook.ViewModels
             }else _unit = ingredient.Unit;
 
 
+        }
+        public bool IsStepTextLabelVisible
+        {
+            get => _isStepTextLabelVisible;
+            set
+            {
+                _isStepTextLabelVisible = value;
+                OnPropertyChanged(nameof(IsStepTextLabelVisible));
+            }
+        }
+        public int StepCounter
+        {
+            get => _stepCounter;
+            set
+            {
+                _stepCounter = value;
+                OnPropertyChanged(nameof(StepCounter));
+            }
         }
         public string Name
         {

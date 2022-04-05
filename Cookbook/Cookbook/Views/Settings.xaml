@@ -6,6 +6,12 @@
              x:DataType="viewmodels:SettingsViewModel"
              NavigationPage.HasNavigationBar="False"
              BindingContext="SettingsViewModel">
+    
+    
+    
+    
+    
+    
     <Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>

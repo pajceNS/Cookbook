@@ -5,7 +5,132 @@
              x:Class="Cookbook.Views.RecipeList"
              x:DataType="viewmodels:RecipeListViewModel"
              BindingContext="RecipeListViewModel">
-    <Grid Style="{DynamicResource GridStyle}">
+
+    <StackLayout
+            BackgroundColor="#420000"
+            Padding="5">
+
+        <Frame Padding="0"
+                   BackgroundColor="Transparent"
+                   CornerRadius="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.20*"/>
+                    <ColumnDefinition Width="0.80*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+
+
+                <Frame
+                        Grid.Column="0"
+                        Opacity="0.7"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        CornerRadius="20"
+                        
+                        BackgroundColor="#6f0000">
+                        <ImageButton
+                                HorizontalOptions="Center"
+                                BackgroundColor="Transparent"
+                                Source="outline_arrow_back_ios_24"
+                                VerticalOptions="Center"
+                                Command="{Binding BackButtonClicked}"/>
+                    </Frame>
+                <Frame
+                    Padding="0"
+                    Grid.Column="1"
+                    CornerRadius="10">
+                    <Label Style="{DynamicResource LabelStyle}"
+                           BackgroundColor="Pink"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"
+                FontSize="Title"
+                Text="{Binding MealName}"/>
+                    <!--BackgroundColor="Transparent"-->
+                </Frame>
+            </Grid>
+        </Frame>
+        <CollectionView
+                
+                SelectionMode="Single"
+                SelectedItem="{Binding SelectedRecipe}"
+                ItemsSource="{Binding RecipeSource}"
+                SelectionChangedCommand="{Binding SelectedRecipeCommand}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="viewmodels:RecipeItemViewModel">
+                    <StackLayout
+                        Spacing="-10"
+                        >
+                        <Frame CornerRadius="10" 
+                               Padding="0">
+
+                            <Grid
+                                BackgroundColor="Cyan"
+                                >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Frame
+                                    Padding="3"
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="3"
+                                    >
+                                    <Label
+                                        LineBreakMode="TailTruncation"
+                                        Grid.Column="1"
+                                        Grid.Row="0"
+                                        Grid.ColumnSpan="2"
+                                        FontSize="Subtitle"
+                                        HorizontalOptions="CenterAndExpand"
+                                        HorizontalTextAlignment="Center"
+                                        TextColor="Black"
+                                        Text="{Binding Name}"/>
+                                </Frame>
+                                <Image
+                                    VerticalOptions="FillAndExpand"
+                                    HorizontalOptions="FillAndExpand"
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    Source="{Binding ThumbnailImage}"/>
+                                
+                                <Label
+                                    MaxLines="4"
+                                        LineBreakMode="TailTruncation"
+                                        Grid.Column="1"
+                                        Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                        Grid.ColumnSpan="2"
+                                        FontSize="15"
+                                        TextColor="Black"
+                                        Text="{Binding ShortDescription}"/>
+                            </Grid>
+
+                        </Frame>
+
+                        <Label>
+
+                        </Label>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+
+    <!--<Grid Style="{DynamicResource GridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="*"/>
@@ -38,6 +163,7 @@
                 Margin="0,20,0,0"
                 FontSize="Title"
                 Text="{Binding MealName}"/>
+   AAAAAAAAAAAAAAADASLNFNASFNASFJASJKFJASLKFJA
         </Grid>
         <Grid Grid.Row="1">
             <CollectionView
@@ -98,5 +224,5 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
         </Grid>
-    </Grid>
+    </Grid>-->
 </ContentPage>

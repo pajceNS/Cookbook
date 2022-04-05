@@ -14,15 +14,14 @@ namespace Cookbook.ViewModels
     {
         private readonly IRecipeRepository _recipeRepository;
         private readonly INavigationService _navigationService;
-
         private MainButtonViewModel _selectedRecipe;
-
         private ObservableCollection<MainButtonViewModel> _uniqueTypeRecipes;
+
+
         public MainViewModel(INavigationService navigationService, IRecipeRepository recipeRepository)
         {
             _navigationService = navigationService;
             _recipeRepository = recipeRepository;
-
             UniqueTypeRecipes = recipeRepository.GetUniqueTypesOfFood();
 
 
@@ -59,10 +58,11 @@ namespace Cookbook.ViewModels
         private void OnSelectedMealTypeCommand()
         {
 
-
             if (SelectedRecipe != null)
             {
-                _navigationService.NavigateToRecipeListViewModel(SelectedRecipe.Type);
+                var mealType = SelectedRecipe.Type;
+                SelectedRecipe = null;
+                _navigationService.NavigateToRecipeListViewModel(mealType);
             }
         }
 

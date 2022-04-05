@@ -78,9 +78,12 @@ namespace Cookbook.ViewModels
 
         public void OnSelectedRecipeCommand()
         {
-            var clickedRecipe = SelectedRecipe.GetRecipe();
-            var s = clickedRecipe.Id;
-            _navigationService.NavigateToRecipeDetailsViewModel(clickedRecipe.Id);
+            if(SelectedRecipe != null)
+            {
+                var clickedRecipe = SelectedRecipe.GetRecipe();
+                _navigationService.NavigateToRecipeDetailsViewModel(clickedRecipe.Id);
+            }
+            SelectedRecipe = null;
         }
     }
 }

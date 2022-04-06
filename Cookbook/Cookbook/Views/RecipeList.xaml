@@ -32,13 +32,13 @@
                         CornerRadius="20"
                         
                         BackgroundColor="#6f0000">
-                        <ImageButton
+                    <ImageButton
                                 HorizontalOptions="Center"
                                 BackgroundColor="Transparent"
                                 Source="outline_arrow_back_ios_24"
                                 VerticalOptions="Center"
                                 Command="{Binding BackButtonClicked}"/>
-                    </Frame>
+                </Frame>
                 <Frame
                     Padding="0"
                     Grid.Column="1"
@@ -105,7 +105,7 @@
                                     Grid.Row="1"
                                     Grid.RowSpan="3"
                                     Source="{Binding ThumbnailImage}"/>
-                                
+
                                 <Label
                                     MaxLines="4"
                                         LineBreakMode="TailTruncation"
@@ -128,101 +128,4 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
     </StackLayout>
-
-
-    <!--<Grid Style="{DynamicResource GridStyle}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0"
-              Margin="0,0,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="0.5*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.2*"/>
-            </Grid.RowDefinitions>
-            <ImageButton
-                Source="BackButton.png"
-                Margin="0,20,0,0"
-                Grid.Column="0"
-                Grid.Row="0"
-                BackgroundColor="Transparent"
-                VerticalOptions="Center"
-                Command="{Binding BackButtonClicked}"/>
-            <Label Style="{DynamicResource LabelStyle}"
-                Grid.Column="2"
-                Grid.ColumnSpan="2"
-                VerticalOptions="Center"
-                HorizontalTextAlignment="Start"
-                BackgroundColor="Transparent"
-                Margin="0,20,0,0"
-                FontSize="Title"
-                Text="{Binding MealName}"/>
-   AAAAAAAAAAAAAAADASLNFNASFNASFJASJKFJASLKFJA
-        </Grid>
-        <Grid Grid.Row="1">
-            <CollectionView
-                Margin="0,20,0,0"
-                
-                SelectionMode="Single"
-                SelectedItem="{Binding SelectedRecipe}"
-                ItemsSource="{Binding RecipeSource}"
-                SelectionChangedCommand="{Binding SelectedRecipeCommand}">
-                
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="viewmodels:RecipeItemViewModel">
-                        <StackLayout>
-                            <Frame CornerRadius="20" Style="{DynamicResource FrameSecondPage}" Padding="10">
-
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="auto"/>
-                                        <RowDefinition Height="auto"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image
-                                    
-                                        HorizontalOptions="CenterAndExpand"
-                                        Grid.Column="0"
-                                        Grid.Row="0"
-                                        Grid.RowSpan="2"
-                                        Source="{Binding ThumbnailImage}"/>
-                                    <Label
-                                        LineBreakMode="TailTruncation"
-                                        Grid.Column="1"
-                                        Grid.Row="0"
-                                        Grid.ColumnSpan="2"
-                                        FontSize="16"
-                                        TextColor="Black"
-                                        Text="{Binding Name}"/>
-                                    <Label
-                                        LineBreakMode="TailTruncation"
-                                        Grid.Column="1"
-                                        Grid.Row="1"
-                                        Grid.ColumnSpan="2"
-                                        FontSize="15"
-                                        TextColor="Black"
-                                        Text="{Binding ShortDescription}"/>
-                                </Grid>
-
-                            </Frame>
-                            
-                            <Label>
-                                
-                            </Label>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Grid>
-    </Grid>-->
 </ContentPage>

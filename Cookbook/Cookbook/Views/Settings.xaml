@@ -7,16 +7,12 @@
              NavigationPage.HasNavigationBar="False"
              BindingContext="SettingsViewModel">
     
-    
-    
-    
-    
-    
-    <Grid Style="{DynamicResource GridStyle}">
+    <Grid Style="{DynamicResource GridStyleFirstPage}">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
         <Grid Grid.Row="0"
               Margin="0,0,0,0">
             <Grid.ColumnDefinitions>
@@ -28,48 +24,49 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*"/>
             </Grid.RowDefinitions>
-            <ImageButton
-                Source="BackButton.png"
-                Margin="0,20,0,0"
-                Grid.Column="0"
-                Grid.Row="0"
-                BackgroundColor="Transparent"
-                VerticalOptions="Center"
-                Command="{Binding BackButtonClicked}"/>
-            <Label Style="{DynamicResource LabelStyle}"
-                Grid.Column="2"
-                Grid.ColumnSpan="2"
-                VerticalOptions="Center"
-                HorizontalTextAlignment="Start"
-                BackgroundColor="Transparent"
-                Margin="0,20,0,0"
-                FontSize="36"
-                Text="Settings"/>
+            <ImageButton Source="BackButton.png"
+                         Margin="0,20,0,0"
+                         Grid.Column="0"
+                         Grid.Row="0"
+                         BackgroundColor="Transparent"
+                         VerticalOptions="Center"
+                         Command="{Binding BackButtonClicked}"/>
+            <Label Style="{DynamicResource LabelText}"
+                   Grid.Column="2"
+                   Grid.ColumnSpan="2"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Start"
+                   BackgroundColor="Transparent"
+                   Margin="0,20,0,0"
+                   FontSize="36"
+                   Text="Settings"/>
         </Grid>
+        
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-                <Label 
-                       VerticalOptions="Start"
-                        Style="{DynamicResource LabelStyle}"
-                        Grid.Column="0"
-                        Margin="40,60,0,0"
-                        Text="Dark Mode"
-                        FontSize="22"/>
-                <Switch Margin="20,60,40,0"
+            
+            <Label VerticalOptions="Start"
+                       Style="{DynamicResource LabelText}"
+                       Grid.Column="0"
+                       Margin="40,60,0,0"
+                       Text="Dark Mode"
+                       FontSize="22"/>
+            
+            <Switch Margin="20,60,40,0"
                         HorizontalOptions="End"
                         VerticalOptions="Start"
                         IsToggled="{Binding SwitchTheme}"
                         Grid.Column="1">
-                    <Switch.Behaviors>
-                            <xct:EventToCommandBehavior
+                <Switch.Behaviors>
+                    <xct:EventToCommandBehavior
                             EventName="Toggled"
                             Command="{Binding SwitchThemeCommand}"/>
-                    </Switch.Behaviors>
-                </Switch>
-             
+                </Switch.Behaviors>
+            </Switch>
+            
         </Grid>
     </Grid>
 </ContentPage>

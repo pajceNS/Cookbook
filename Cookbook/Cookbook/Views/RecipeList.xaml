@@ -6,13 +6,12 @@
              x:DataType="viewmodels:RecipeListViewModel"
              BindingContext="RecipeListViewModel">
 
-    <StackLayout
-            BackgroundColor="#420000"
-            Padding="5">
+    <StackLayout Style="{DynamicResource StackBackground}"
+                 Padding="5">
 
-        <Frame Padding="0"
-                   BackgroundColor="Transparent"
-                   CornerRadius="20">
+        <Frame Padding="0"              
+               BackgroundColor="Transparent"
+               CornerRadius="20">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.20*"/>
@@ -22,55 +21,46 @@
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
-
-
-                <Frame
-                        Grid.Column="0"
-                        Opacity="0.7"
-                        HorizontalOptions="Start"
-                        VerticalOptions="Start"
-                        CornerRadius="20"
-                        
-                        BackgroundColor="#6f0000">
-                    <ImageButton
-                                HorizontalOptions="Center"
-                                BackgroundColor="Transparent"
-                                Source="outline_arrow_back_ios_24"
-                                VerticalOptions="Center"
-                                Command="{Binding BackButtonClicked}"/>
+                <Frame Grid.Column="0"
+                       Opacity="0.7"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       CornerRadius="20"
+                       Style="{DynamicResource BackButton}">
+                    <ImageButton HorizontalOptions="Center"
+                                 BackgroundColor="Transparent"
+                                 Source="outline_arrow_back_ios_24"
+                                 VerticalOptions="Center"
+                                 Command="{Binding BackButtonClicked}"/>
                 </Frame>
-                <Frame
-                    Padding="0"
-                    Grid.Column="1"
-                    CornerRadius="10">
-                    <Label Style="{DynamicResource LabelStyle}"
-                           BackgroundColor="Pink"
-                VerticalTextAlignment="Center"
-                HorizontalTextAlignment="Center"
-                FontSize="Title"
-                Text="{Binding MealName}"/>
-                    <!--BackgroundColor="Transparent"-->
+                <Frame Padding="0"
+                       Grid.Column="1"
+                       CornerRadius="10"
+                       Style="{DynamicResource FrameBackground}">
+                    <Label Style="{DynamicResource LabelText}"                          
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Title"
+                           Text="{Binding MealName}"
+                           FontAttributes="Bold"/>
                 </Frame>
             </Grid>
         </Frame>
-        <CollectionView
-                
-                SelectionMode="Single"
-                SelectedItem="{Binding SelectedRecipe}"
-                ItemsSource="{Binding RecipeSource}"
-                SelectionChangedCommand="{Binding SelectedRecipeCommand}">
+        <CollectionView SelectionMode="Single"
+                        SelectedItem="{Binding SelectedRecipe}"
+                        ItemsSource="{Binding RecipeSource}"
+                        SelectionChangedCommand="{Binding SelectedRecipeCommand}">
 
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="viewmodels:RecipeItemViewModel">
-                    <StackLayout
-                        Spacing="-10"
-                        >
-                        <Frame CornerRadius="10" 
-                               Padding="0">
-
-                            <Grid
-                                BackgroundColor="Cyan"
-                                >
+                    
+                    <StackLayout Spacing="-10">
+                        
+                        <Frame CornerRadius="7" 
+                               Padding="0"
+                               Style="{DynamicResource FrameBackground}">
+                            
+                            <Grid Style="{DynamicResource DescriptionGridBackground}">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
@@ -82,47 +72,48 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
+                                
                                 <Frame
                                     Padding="3"
                                     Grid.Row="0"
                                     Grid.ColumnSpan="3"
-                                    >
-                                    <Label
-                                        LineBreakMode="TailTruncation"
-                                        Grid.Column="1"
-                                        Grid.Row="0"
-                                        Grid.ColumnSpan="2"
-                                        FontSize="Subtitle"
-                                        HorizontalOptions="CenterAndExpand"
-                                        HorizontalTextAlignment="Center"
-                                        TextColor="Black"
-                                        Text="{Binding Name}"/>
+                                    Style="{DynamicResource FrameBackground}">
+                                    
+                                    <Label Style="{DynamicResource LabelText}"
+                                           LineBreakMode="TailTruncation"
+                                           Grid.Column="1"
+                                           Grid.Row="0"
+                                           Grid.ColumnSpan="2"
+                                           FontSize="Subtitle"
+                                           HorizontalOptions="CenterAndExpand"
+                                           HorizontalTextAlignment="Center" 
+                                           Text="{Binding Name}"
+                                           FontAttributes="Bold"/>
                                 </Frame>
-                                <Image
-                                    VerticalOptions="FillAndExpand"
-                                    HorizontalOptions="FillAndExpand"
-                                    Grid.Column="0"
-                                    Grid.Row="1"
-                                    Grid.RowSpan="3"
-                                    Source="{Binding ThumbnailImage}"/>
+                                
+                                <Image VerticalOptions="FillAndExpand"
+                                       HorizontalOptions="FillAndExpand"
+                                       Grid.Column="0"
+                                       Grid.Row="1"
+                                       Grid.RowSpan="3"
+                                       Source="{Binding ThumbnailImage}"/>
 
-                                <Label
-                                    MaxLines="4"
-                                        LineBreakMode="TailTruncation"
-                                        Grid.Column="1"
-                                        Grid.Row="1"
-                                    Grid.RowSpan="3"
-                                        Grid.ColumnSpan="2"
-                                        FontSize="15"
-                                        TextColor="Black"
-                                        Text="{Binding ShortDescription}"/>
+                                <Label MaxLines="4"
+                                       LineBreakMode="TailTruncation"
+                                       Grid.Column="1"
+                                       Grid.Row="1"
+                                       Grid.RowSpan="3"
+                                       Grid.ColumnSpan="2"
+                                       FontSize="15"
+                                       Style="{DynamicResource LabelText}"
+                                       Text="{Binding ShortDescription}"/>
                             </Grid>
 
                         </Frame>
 
                         <Label>
-
                         </Label>
+                        
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

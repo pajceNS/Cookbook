@@ -6,8 +6,8 @@
              x:DataType="viewmodels:MainViewModel"
              BindingContext="MainViewModel"
              NavigationPage.HasNavigationBar="False">
-    
-    <Grid Style="{DynamicResource GridStyle}"
+
+    <Grid Style="{DynamicResource GridStyleFirstPage}"
           Padding="10, 10, 10, 10" RowSpacing="20" ColumnSpacing="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -20,7 +20,7 @@
             <RowDefinition Height="0.2*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Style="{DynamicResource LabelStyle}"
+        <Label Style="{DynamicResource LabelText}"
                Grid.Row="0"
                Grid.Column="0"
                Grid.ColumnSpan="3"
@@ -28,7 +28,8 @@
                FontSize="30"
                HorizontalOptions="Center"
                VerticalOptions="Center"
-               Text="Magic Cookbook"/>
+               Text="Magic Cookbook"
+               FontAttributes="Bold"/>
         
         <ImageButton Grid.Row="0"
                      Grid.Column="3"
@@ -58,10 +59,12 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewmodels:MainButtonViewModel">
                         <StackLayout Padding="10">
-                            <Frame CornerRadius="15">
+                            <Frame CornerRadius="15" 
+                                   Style="{DynamicResource FrameBackground}">
                                 <Label
-                                       Text="{Binding Type}"
-                                        TextColor="Black"
+                                        Style="{DynamicResource LabelText}"
+                                        Text="{Binding Type}"
+                                        
                                         HeightRequest="40"
                                         HorizontalOptions="Center"
                                         VerticalOptions="Center"

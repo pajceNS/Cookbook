@@ -10,8 +10,7 @@
                  Padding="5">
 
         <Frame Padding="0"              
-               BackgroundColor="Transparent"
-               CornerRadius="10">
+               BackgroundColor="Transparent">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.20*"/>
@@ -25,7 +24,7 @@
                        Opacity="0.7"
                        HorizontalOptions="Start"
                        VerticalOptions="Start"
-                       CornerRadius="10"
+                       CornerRadius="20"
                        Style="{DynamicResource BackButton}">
                     <ImageButton HorizontalOptions="Center"
                                  BackgroundColor="Transparent"
@@ -35,7 +34,7 @@
                 </Frame>
                 <Frame Padding="0"
                        Grid.Column="1"
-                       CornerRadius="10"
+                       CornerRadius="20"
                        Style="{DynamicResource FrameBackground}">
                     <Label Style="{DynamicResource LabelText}"                          
                            VerticalTextAlignment="Center"
@@ -56,9 +55,8 @@
                 <DataTemplate x:DataType="viewmodels:RecipeItemViewModel">
                     
                     <StackLayout Spacing="-10">
-                        
+
                         <Frame CornerRadius="10" 
-                               BorderColor="Cyan"
                                Padding="0"
                                IsClippedToBounds="True"
                                Style="{DynamicResource FrameBackground}">
@@ -83,6 +81,7 @@
                                     IsClippedToBounds="True"
                                     Padding="3"
                                     Grid.Row="0"
+                                    CornerRadius="10" 
                                     Grid.ColumnSpan="3"
                                     Style="{DynamicResource FrameBackground}">
                                     
@@ -99,8 +98,6 @@
                                 </Frame>
                                 <Frame
                                     Margin="3"
-                                    
-                               BorderColor="Cyan"
                                     CornerRadius="10"
                                     Padding="-10"
                                     IsClippedToBounds="True"

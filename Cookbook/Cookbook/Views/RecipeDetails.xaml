@@ -114,7 +114,7 @@
                             <DataTemplate x:DataType="viewmodels:RecipeStepItemViewModel">
 
                                 <StackLayout Spacing="-10">
-                                    <Frame CornerRadius="20"  
+                                    <Frame CornerRadius="20" 
                                            Padding="10"
                                            Style="{DynamicResource FrameBackground}">
                                         <Grid>

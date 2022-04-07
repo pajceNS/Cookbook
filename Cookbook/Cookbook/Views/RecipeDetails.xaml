@@ -6,12 +6,12 @@
              BindingContext="RecipeDetailsViewModel">
     <ScrollView>
         
-        <StackLayout Style="{DynamicResource StackBackground}" Padding="5">
+        <StackLayout Style="{DynamicResource StackBackground}" 
+                     Padding="5">
 
-            <Frame Padding="-5"
+            <Frame Padding="0"
                    BackgroundColor="Transparent"
                    CornerRadius="20">
-
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.20*"/>
@@ -19,30 +19,41 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto"/>
-                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-
-                    <Image VerticalOptions="Start"
-                           HorizontalOptions="Start"
-                           Grid.Row="0"
-                           Grid.RowSpan="2"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="2"
+                    <Frame
+                        Padding="-10"
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        CornerRadius="20"
+                        
+                        Style="{DynamicResource BackButton}"
+                        >
+                        <Image
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
                            Opacity="0.9"
                            Source="{Binding BackgroundImage}">
-                    </Image>
+                        </Image>
+                    </Frame>
 
-                    <Frame Grid.Column="0"
-                           Opacity="0.7"
-                           HorizontalOptions="Start"
-                           VerticalOptions="Start"
-                           CornerRadius="20"                       
-                           Style="{DynamicResource BackButton}"/>
-                    <ImageButton HorizontalOptions="Center"
+
+                    <Frame 
+                       Grid.Column="0"
+                       Opacity="0.7"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       CornerRadius="20"
+                       Style="{DynamicResource BackButton}">
+                        <ImageButton 
                                  BackgroundColor="Transparent"
                                  Source="outline_arrow_back_ios_24"
+                                 HorizontalOptions="Center"
                                  VerticalOptions="Center"
-                                 Command="{Binding BackButtonClicked1}"/>
+                                 Command="{Binding BackButtonClicked}"/>
+                    </Frame>
+
                 </Grid>
             </Frame>
             

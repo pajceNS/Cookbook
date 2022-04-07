@@ -21,6 +21,7 @@
         <Setter Property="BackgroundColor" Value="#7f0000"/>
     </Style>
     <Style x:Key="DescriptionFrameBackground" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="#e0c5e0"/>
         <Setter Property="BackgroundColor" Value="#8c0f0f"/>
     </Style>
     <Style x:Key="BackButton" TargetType="Frame">

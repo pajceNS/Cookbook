@@ -23,7 +23,7 @@ namespace Cookbook.ViewModels
         {
             _navigationService = navigationService;
             _recipeRepository = recipeRepository;
-            BackButtonClicked1 = new Command(OnBackButtonClicked);
+            BackButtonClicked = new Command(OnBackButtonClicked);
         }
         public ObservableCollection<RecipeStepItemViewModel> IngredientsSource
         {
@@ -34,7 +34,7 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(IngredientsSource));
             }
         }
-        public ICommand BackButtonClicked1 { get; }
+        public ICommand BackButtonClicked { get; }
         public ObservableCollection<RecipeStepItemViewModel> StepsSource
         {
             get => _stepSource;

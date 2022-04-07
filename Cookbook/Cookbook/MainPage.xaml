@@ -29,6 +29,8 @@
                     <Label Style="{DynamicResource LabelText}"                          
                            VerticalTextAlignment="Center"
                            HorizontalTextAlignment="Center"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
                            FontSize="Title"
                            Text="Magic Cookbook"
                            FontAttributes="Bold"/>
@@ -37,8 +39,8 @@
                        Padding="20"
                        Grid.Column="1"
                        Opacity="0.7"
-                       HorizontalOptions="Start"
-                       VerticalOptions="Start"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
                        CornerRadius="20"
                        Style="{DynamicResource BackButton}">
                     <ImageButton HorizontalOptions="FillAndExpand"

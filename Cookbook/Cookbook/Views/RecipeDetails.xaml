@@ -27,9 +27,7 @@
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
                         CornerRadius="20"
-                        
-                        Style="{DynamicResource BackButton}"
-                        >
+                        Style="{DynamicResource BackButton}">
                         <Image
                            HorizontalOptions="CenterAndExpand"
                            VerticalOptions="CenterAndExpand"
@@ -53,7 +51,6 @@
                                  VerticalOptions="Center"
                                  Command="{Binding BackButtonClicked}"/>
                     </Frame>
-
                 </Grid>
             </Frame>
             

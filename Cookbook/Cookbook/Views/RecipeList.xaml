@@ -16,6 +16,7 @@
                     <ColumnDefinition Width="0.20*"/>
                     <ColumnDefinition Width="0.80*"/>
                 </Grid.ColumnDefinitions>
+                
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
@@ -45,9 +46,9 @@
                 </Frame>
             </Grid>
         </Frame>
-        
-        <CollectionView 
-                        Margin="0,15,0,0"
+
+
+        <CollectionView Margin="0,15,0,0"
                         SelectionMode="Single"
                         SelectedItem="{Binding SelectedRecipe}"
                         ItemsSource="{Binding RecipeSource}"
@@ -65,8 +66,7 @@
                             
                             <Grid Style="{DynamicResource DescriptionGridBackground}"
                                   ColumnSpacing="2"
-                                  RowSpacing="0"
-                                  >
+                                  RowSpacing="0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
@@ -78,14 +78,13 @@
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                
-                                <Frame
-                                    IsClippedToBounds="True"
-                                    Padding="3"
-                                    Grid.Row="0"
-                                    CornerRadius="10" 
-                                    Grid.ColumnSpan="3"
-                                    Style="{DynamicResource FrameBackground}">
+
+                                <Frame  IsClippedToBounds="True"
+                                        Padding="3"
+                                        Grid.Row="0"
+                                        CornerRadius="10" 
+                                        Grid.ColumnSpan="3"
+                                        Style="{DynamicResource FrameBackground}">
                                     
                                     <Label Style="{DynamicResource LabelText}"
                                            LineBreakMode="TailTruncation"

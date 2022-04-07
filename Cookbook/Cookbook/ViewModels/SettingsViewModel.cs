@@ -16,6 +16,7 @@ namespace Cookbook.ViewModels
         private readonly INavigationService _navigationService;
         private readonly IThemeService _themeService;      
         private bool _switchTheme;
+
         public SettingsViewModel(INavigationService navigationService,IThemeService themeService)
         {
             BackButtonClicked = new Command(OnBackButtonClicked);
@@ -26,11 +27,8 @@ namespace Cookbook.ViewModels
         }
 
         public ICommand BackButtonClicked { get; }
-        private void OnBackButtonClicked()
-        {
-            _navigationService.GoBack();
-        }
         public ICommand SwitchThemeCommand { get; }
+
         public bool SwitchTheme 
         {
             get => _switchTheme;
@@ -40,6 +38,7 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(SwitchTheme));
             }
         }
+
         private void OnSwitchThemeCommand(ToggledEventArgs args)
         {
             if (args.Value == true)
@@ -50,6 +49,11 @@ namespace Cookbook.ViewModels
             {
                 _themeService.SwitchTheme("Light");
             }
+        }
+
+        private void OnBackButtonClicked()
+        {
+            _navigationService.GoBack();
         }
     }
 }

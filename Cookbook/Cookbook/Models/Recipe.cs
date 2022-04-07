@@ -7,7 +7,7 @@ namespace Cookbook.Models
 {
     public class Recipe
     {
-        public Recipe(Guid id, string name, string backgroundImage, string thumbnailImage, string shortDescription, string longDescription, string text, string stepImage, string ingredientName,string unit, string amount, string type)
+        public Recipe(Guid id, string name, string backgroundImage, string thumbnailImage, string shortDescription, string longDescription, string type)
         {
             
             Id = id;
@@ -25,13 +25,7 @@ namespace Cookbook.Models
             ThumbnailImage = thumbnailImage;
             ShortDescription = shortDescription;
             LongDescription = longDescription;
-            //StepImage = stepImage;
-            //Text = text;
-            //StepImage = stepImage;
-            //Amount = amount;
             Type = type;
-            //Unit = unit;
-            //IngredientName = ingredientName;
         }
 
             [JsonProperty("id")]
@@ -62,26 +56,6 @@ namespace Cookbook.Models
             [JsonProperty("type")]
             public string Type { get; set; }
 
-
-        //// Steps properties
-
-        //[JsonProperty("text")]
-        //public string Text { get; set; }
-
-        //    [JsonProperty("image")]
-        //    public string StepImage { get; set; }
-
-
-        //// Ingredients properties
-
-        //    [JsonProperty("name")]
-        //    public string IngredientName { get; set; }
-
-        //    [JsonProperty("unit")]
-        //    public string Unit { get; set; }
-
-        //    [JsonProperty("amount")]
-        //    public string Amount { get; set; }
 
     }
 }

@@ -17,20 +17,18 @@ namespace Cookbook.ViewModels
         private MainButtonViewModel _selectedRecipe;
         private ObservableCollection<MainButtonViewModel> _uniqueTypeRecipes;
 
-
         public MainViewModel(INavigationService navigationService, IRecipeRepository recipeRepository)
         {
             _navigationService = navigationService;
             _recipeRepository = recipeRepository;
             UniqueTypeRecipes = recipeRepository.GetUniqueTypesOfFood();
-
-
-
             ButtonSettings = new Command(OnButtonSettings);
             SelectedMealTypeCommand = new Command(OnSelectedMealTypeCommand);
         }
+
         public ICommand ButtonSettings { get; }
         public ICommand SelectedMealTypeCommand { get; }
+
         public MainButtonViewModel SelectedRecipe
         {
             get
@@ -43,6 +41,7 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(SelectedRecipe));
             }
         }
+
         public ObservableCollection<MainButtonViewModel> UniqueTypeRecipes
         {
             get
@@ -55,6 +54,7 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(UniqueTypeRecipes));
             }
         }
+
         private void OnSelectedMealTypeCommand()
         {
 
@@ -70,7 +70,5 @@ namespace Cookbook.ViewModels
         {
             _navigationService.NavigateToSettingsViewModel();
         }
-        
-        
     }
 }

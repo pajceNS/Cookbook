@@ -14,12 +14,6 @@ namespace Cookbook.Services
         public void GoBack()
         {
             Application.Current.MainPage.Navigation.PopModalAsync();
-            //var lastView = Application.Current.MainPage.Navigation.NavigationStack.Last();
-            //if (lastView is MainPage mainPage
-            //    && mainPage.BindingContext is MainViewModel mainViewModel)
-            //{
-            //    mainViewModel.LoadNotes();
-            //}
         }
 
         public void NavigateToRecipeDetailsViewModel(Guid id)
@@ -39,7 +33,6 @@ namespace Cookbook.Services
         {
             var vm = App.Locator.RecipeListViewModel;
             vm.LoadRecipes(mealName);
-            //vm.MealName = mealName;
             Application.
                 Current.
                 MainPage.
@@ -48,15 +41,12 @@ namespace Cookbook.Services
         }
         public void NavigateToSettingsViewModel()
         {
-            //var vm = App.Locator.RecipeListViewModel;
             var vm = App.Locator.SettingsViewModel;
-            //vm.MealName = mealName;
             Application.
                 Current.
                 MainPage.
                 Navigation.
                 PushModalAsync(new Settings { BindingContext = vm});
-            //throw new NotImplementedException();
         }
     }
 }

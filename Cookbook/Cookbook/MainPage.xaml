@@ -11,7 +11,6 @@
                  Padding="5">
 
         <Frame Padding="0"    
-               
                BackgroundColor="Transparent">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -21,7 +20,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                
+
                 <Frame Padding="0"
                        Grid.Column="0"
                        CornerRadius="20"
@@ -41,7 +40,6 @@
                        Style="{DynamicResource BackButton}">
                     <ImageButton HorizontalOptions="CenterAndExpand"
                                  BackgroundColor="Transparent"
-                                 
                                  Source="outline_settings_applications_24"
                                  VerticalOptions="CenterAndExpand"
                                  Command="{Binding ButtonSettings}"/>
@@ -49,9 +47,8 @@
             </Grid>
         </Frame>
 
-
         <CollectionView
-                    Margin="0,30,0,0"
+                    Margin="0,15,0,0"
                     Grid.ColumnSpan="2"
                     SelectionMode="Single"
                     SelectedItem="{Binding SelectedRecipe}"
@@ -69,11 +66,11 @@
                         <Frame CornerRadius="15" 
                                    Style="{DynamicResource FrameBackground}">
                             <Label Style="{DynamicResource LabelText}"
-                                       Text="{Binding Type}"
-                                       HeightRequest="100"
+                                   Text="{Binding Type}"
+                                   HeightRequest="100"
                                    HorizontalTextAlignment="Center"
                                    VerticalTextAlignment="Center"
-                                       FontSize="Title"/>
+                                   FontSize="Title"/>
                         </Frame>
                     </StackLayout>
                 </DataTemplate>

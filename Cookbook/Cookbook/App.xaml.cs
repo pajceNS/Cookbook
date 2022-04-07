@@ -18,7 +18,6 @@ namespace Cookbook
         {
             InitializeComponent();
             SetupServices();
-            //MainPage = new Page1();
             MainPage = new NavigationPage(new MainPage { BindingContext = Locator.MainViewModel });
         }
         internal static ViewModelLocator Locator

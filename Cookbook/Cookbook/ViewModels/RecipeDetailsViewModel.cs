@@ -19,12 +19,14 @@ namespace Cookbook.ViewModels
         private string _longDescription;
         private string _name;
         private string _backgroundImage;
+
         public RecipeDetailsViewModel(INavigationService navigationService, IRecipeRepository recipeRepository)
         {
             _navigationService = navigationService;
             _recipeRepository = recipeRepository;
             BackButtonClicked = new Command(OnBackButtonClicked);
         }
+        public ICommand BackButtonClicked { get; }
         public ObservableCollection<RecipeStepItemViewModel> IngredientsSource
         {
             get => _ingredientsSource;
@@ -34,7 +36,7 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(IngredientsSource));
             }
         }
-        public ICommand BackButtonClicked { get; }
+
         public ObservableCollection<RecipeStepItemViewModel> StepsSource
         {
             get => _stepSource;
@@ -44,11 +46,7 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(StepsSource));
             }
         }
-        
-        private void OnBackButtonClicked()
-        {
-            _navigationService.GoBack();
-        }
+
         public string BackgroundImage
         {
             get => _backgroundImage; set
@@ -82,10 +80,15 @@ namespace Cookbook.ViewModels
 
             Name = recipe[0].Name;
             BackgroundImage = recipe[0].BackgroundImage;
-            StepsSource = new ObservableCollection<RecipeStepItemViewModel>( recipe[0].Steps.Select(r => new RecipeStepItemViewModel(r)));
+            StepsSource = new ObservableCollection<RecipeStepItemViewModel>(recipe[0].Steps.Select(r => new RecipeStepItemViewModel(r)));
             IngredientsSource = new ObservableCollection<RecipeStepItemViewModel>(recipe[0].Ingredients.Select(r => new RecipeStepItemViewModel(r)));
 
         }
+        private void OnBackButtonClicked()
+        {
+            _navigationService.GoBack();
+        }
+        
 
     }
 }

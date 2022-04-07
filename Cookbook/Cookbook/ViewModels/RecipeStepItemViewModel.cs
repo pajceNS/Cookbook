@@ -15,6 +15,7 @@ namespace Cookbook.ViewModels
         private string _amount;
         private int _stepCounter;
         private bool _isStepTextLabelVisible;
+
         public RecipeStepItemViewModel(Step step)
         {
             if(step.Text != null)
@@ -27,13 +28,10 @@ namespace Cookbook.ViewModels
                 IsStepTextLabelVisible= false ;
             }
             StepImage = step.Image;
-            
-
-
             _stepCounter = Preferences.Get("stepCounter",0);
             Preferences.Set("stepCounter", ++_stepCounter);
-
         }
+
         public RecipeStepItemViewModel(Ingredient ingredient)
         {
             _name = ingredient.Name;
@@ -42,9 +40,8 @@ namespace Cookbook.ViewModels
             {
                 _unit = "/";
             }else _unit = ingredient.Unit;
+        }   
 
-
-        }
         public bool IsStepTextLabelVisible
         {
             get => _isStepTextLabelVisible;
@@ -54,6 +51,7 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(IsStepTextLabelVisible));
             }
         }
+
         public int StepCounter
         {
             get => _stepCounter;
@@ -63,6 +61,7 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(StepCounter));
             }
         }
+
         public string Name
         {
             get => _name;
@@ -72,6 +71,7 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(Name));
             }
         }
+
         public string Unit
         {
             get => _unit;

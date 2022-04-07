@@ -25,24 +25,20 @@ namespace Cookbook.ViewModels
             _recipeRepository = recipeRepository;
             _navigationService = navigationService;
             SelectedRecipeCommand = new Command(OnSelectedRecipeCommand);
-            //var testList = new List<RecipeItemViewModel>()
-            //{
-            //    new RecipeItemViewModel(new Recipe(Guid.NewGuid(),"recept1","desc1","Slika.png","Sasd","Sasd","Sasd","Sasd","Sasd","Sasd","Sasd","Sasd")),
-            //    //new RecipeItemViewModel(new Recipe(Guid.NewGuid(),"recept1","desc1","Slika.png"))
-                
-            //};
-            //RecipeSource = new ObservableCollection<RecipeItemViewModel>(testList);
         }
-        
+        public ICommand BackButtonClicked { get; }
+        public ICommand SelectedRecipeCommand { get; }
+        public ObservableCollection<RecipeItemViewModel> Items { get; set; }
+
         public ObservableCollection<RecipeItemViewModel> RecipeSource
+        {
+            get => _recipeSource;
+            set
             {
-                get { return _recipeSource; }
-                set
-                {
-                _recipeSource = value;
-                OnPropertyChanged(nameof(RecipeSource));
-                }
-            }     
+            _recipeSource = value;
+            OnPropertyChanged(nameof(RecipeSource));
+            }
+        }     
         public string MealName
         {
             get => _mealName;
@@ -52,9 +48,7 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(MealName));
             }
         }
-        public ObservableCollection<RecipeItemViewModel> Items { get; set; }
-        public ICommand BackButtonClicked { get; }
-        public ICommand SelectedRecipeCommand { get; }
+
         public RecipeItemViewModel SelectedRecipe
         {
             get => _selectedRecipe;
@@ -64,10 +58,17 @@ namespace Cookbook.ViewModels
                 OnPropertyChanged(nameof(SelectedRecipe));
             }
         }
-        private void OnBackButtonClicked()
+
+        public void OnSelectedRecipeCommand()
         {
-            _navigationService.GoBack();
+            if (SelectedRecipe != null)
+            {
+                var clickedRecipe = SelectedRecipe.GetRecipe();
+                _navigationService.NavigateToRecipeDetailsViewModel(clickedRecipe.Id);
+            }
+            SelectedRecipe = null;
         }
+
         internal void LoadRecipes(string mealName)
         {
             var allRecipesForType = _recipeRepository.GetRecipesForType(mealName)
@@ -76,14 +77,9 @@ namespace Cookbook.ViewModels
             MealName = mealName;
         }
 
-        public void OnSelectedRecipeCommand()
+        private void OnBackButtonClicked()
         {
-            if(SelectedRecipe != null)
-            {
-                var clickedRecipe = SelectedRecipe.GetRecipe();
-                _navigationService.NavigateToRecipeDetailsViewModel(clickedRecipe.Id);
-            }
-            SelectedRecipe = null;
+            _navigationService.GoBack();
         }
     }
 }

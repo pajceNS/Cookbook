@@ -6,7 +6,7 @@
              x:DataType="viewmodels:SettingsViewModel"
              NavigationPage.HasNavigationBar="False"
              BindingContext="SettingsViewModel">
-    
+
     <StackLayout Style="{DynamicResource StackBackground}"
                  Padding="5">
 
@@ -74,42 +74,4 @@
 
         </Grid>
     </StackLayout>
-    
-    <!--<Grid Style="{DynamicResource GridStyleFirstPage}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.1*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        
-        <Grid Grid.Row="0"
-              Margin="0,0,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="0.5*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.2*"/>
-            </Grid.RowDefinitions>
-            <ImageButton Source="BackButton.png"
-                         Margin="0,20,0,0"
-                         Grid.Column="0"
-                         Grid.Row="0"
-                         BackgroundColor="Transparent"
-                         VerticalOptions="Center"
-                         Command="{Binding BackButtonClicked}"/>
-            <Label Style="{DynamicResource LabelText}"
-                   Grid.Column="2"
-                   Grid.ColumnSpan="2"
-                   VerticalOptions="Center"
-                   HorizontalTextAlignment="Start"
-                   BackgroundColor="Transparent"
-                   Margin="0,20,0,0"
-                   FontSize="36"
-                   Text="Settings"/>
-        </Grid>
-        
-        
-    </Grid>-->
 </ContentPage>

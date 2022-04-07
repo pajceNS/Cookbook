@@ -57,7 +57,7 @@
                 </Grid>
             </Frame>
             
-            <Frame Padding="1"
+            <Frame Padding="0"
                    CornerRadius="10"
                    Style="{DynamicResource FrameBackground}">
 

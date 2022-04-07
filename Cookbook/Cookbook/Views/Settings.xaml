@@ -7,7 +7,75 @@
              NavigationPage.HasNavigationBar="False"
              BindingContext="SettingsViewModel">
     
-    <Grid Style="{DynamicResource GridStyleFirstPage}">
+    <StackLayout Style="{DynamicResource StackBackground}"
+                 Padding="5">
+
+        <Frame Padding="0"              
+               BackgroundColor="Transparent"
+               CornerRadius="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.20*"/>
+                    <ColumnDefinition Width="0.80*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Frame Grid.Column="0"
+                       Opacity="0.7"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       CornerRadius="20"
+                       Style="{DynamicResource BackButton}">
+                    <ImageButton HorizontalOptions="Center"
+                                 BackgroundColor="Transparent"
+                                 Source="outline_arrow_back_ios_24"
+                                 VerticalOptions="Center"
+                                 Command="{Binding BackButtonClicked}"/>
+                </Frame>
+                <Frame Padding="0"
+                       Grid.Column="1"
+                       CornerRadius="10"
+                       Style="{DynamicResource FrameBackground}">
+                    <Label Style="{DynamicResource LabelText}"                          
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Title"
+                           Text="Settings"
+                           FontAttributes="Bold"/>
+                </Frame>
+            </Grid>
+        </Frame>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label VerticalOptions="Start"
+                       Style="{DynamicResource LabelText}"
+                       Grid.Column="0"
+                       Margin="40,60,0,0"
+                       Text="Dark Mode"
+                       FontSize="22"/>
+
+            <Switch Margin="20,60,40,0"
+                        HorizontalOptions="End"
+                        VerticalOptions="Start"
+                        IsToggled="{Binding SwitchTheme}"
+                        Grid.Column="1">
+                <Switch.Behaviors>
+                    <xct:EventToCommandBehavior
+                            EventName="Toggled"
+                            Command="{Binding SwitchThemeCommand}"/>
+                </Switch.Behaviors>
+            </Switch>
+
+        </Grid>
+    </StackLayout>
+    
+    <!--<Grid Style="{DynamicResource GridStyleFirstPage}">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="*"/>
@@ -42,31 +110,6 @@
                    Text="Settings"/>
         </Grid>
         
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            
-            <Label VerticalOptions="Start"
-                       Style="{DynamicResource LabelText}"
-                       Grid.Column="0"
-                       Margin="40,60,0,0"
-                       Text="Dark Mode"
-                       FontSize="22"/>
-            
-            <Switch Margin="20,60,40,0"
-                        HorizontalOptions="End"
-                        VerticalOptions="Start"
-                        IsToggled="{Binding SwitchTheme}"
-                        Grid.Column="1">
-                <Switch.Behaviors>
-                    <xct:EventToCommandBehavior
-                            EventName="Toggled"
-                            Command="{Binding SwitchThemeCommand}"/>
-                </Switch.Behaviors>
-            </Switch>
-            
-        </Grid>
-    </Grid>
+        
+    </Grid>-->
 </ContentPage>

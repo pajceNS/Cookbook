@@ -7,69 +7,79 @@
              BindingContext="MainViewModel"
              NavigationPage.HasNavigationBar="False">
 
-    <Grid Style="{DynamicResource GridStyleFirstPage}"
-          Padding="10, 10, 10, 10" RowSpacing="20" ColumnSpacing="20">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        
-        <Label Style="{DynamicResource LabelText}"
-               Grid.Row="0"
-               Grid.Column="0"
-               Grid.ColumnSpan="3"
-               Margin="0,0,0,0"
-               FontSize="30"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               Text="Magic Cookbook"
-               FontAttributes="Bold"/>
-        
-        <ImageButton Grid.Row="0"
-                     Grid.Column="3"
-                     x:Name="Settings"
-                     HorizontalOptions="End"
-                     VerticalOptions="Center"
-                     BorderColor="Transparent"
-                     BackgroundColor="Transparent"
-                     Scale="0.5"
-                     Source="settingsicon"
-                     Command ="{Binding ButtonSettings}"/>
+    <StackLayout Style="{DynamicResource StackBackground}"
+                 Padding="5">
 
-        
-        <Grid Grid.Row="1"
-              Grid.ColumnSpan="4">
-            <CollectionView Grid.Row="0"
-                            SelectionMode="Single"
-                            SelectedItem="{Binding SelectedRecipe}"
-                            SelectionChangedCommand="{Binding SelectedMealTypeCommand}"
-                            ItemsSource="{Binding UniqueTypeRecipes}">
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical"
+        <Frame Padding="0"              
+               BackgroundColor="Transparent"
+               CornerRadius="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.80*"/>
+                    <ColumnDefinition Width="0.20*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Frame Padding="0"
+                       Grid.Column="0"
+                       CornerRadius="10"
+                       Style="{DynamicResource FrameBackground}">
+                    <Label Style="{DynamicResource LabelText}"                          
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Title"
+                           Text="Magic Cookbook"
+                           FontAttributes="Bold"/>
+                </Frame>
+                <Frame 
+                       Padding="20"
+                       Grid.Column="1"
+                       Opacity="0.7"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       CornerRadius="20"
+                       Style="{DynamicResource BackButton}">
+                    <ImageButton HorizontalOptions="FillAndExpand"
+                                 BackgroundColor="Transparent"
+                                 Source="sett"
+                                 VerticalOptions="FillAndExpand"
+                                 Command="{Binding ButtonSettings}"/>
+                </Frame>
+
+            </Grid>
+        </Frame>
+
+
+        <CollectionView
+                    Margin="0,30,0,0"
+                    Grid.ColumnSpan="2"
+                    SelectionMode="Single"
+                    SelectedItem="{Binding SelectedRecipe}"
+                    SelectionChangedCommand="{Binding SelectedMealTypeCommand}"
+                    ItemsSource="{Binding UniqueTypeRecipes}">
+
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
                                      Span="2"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="viewmodels:MainButtonViewModel">
-                        <StackLayout Padding="10">
-                            <Frame CornerRadius="15" 
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="viewmodels:MainButtonViewModel">
+                    <StackLayout Padding="5">
+                        <Frame CornerRadius="15" 
                                    Style="{DynamicResource FrameBackground}">
-                                <Label Style="{DynamicResource LabelText}"
-                                       Text="{Binding Type}"                                       
-                                       HeightRequest="40"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center"
+                            <Label Style="{DynamicResource LabelText}"
+                                       Text="{Binding Type}"
+                                       HeightRequest="100"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
                                        FontSize="Title"/>
-                            </Frame>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Grid>
-    </Grid>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>

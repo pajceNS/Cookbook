@@ -46,6 +46,7 @@
                 </Frame>
             </Grid>
         </Frame>
+        
         <CollectionView SelectionMode="Single"
                         SelectedItem="{Binding SelectedRecipe}"
                         ItemsSource="{Binding RecipeSource}"
@@ -56,11 +57,16 @@
                     
                     <StackLayout Spacing="-10">
                         
-                        <Frame CornerRadius="7" 
+                        <Frame CornerRadius="10" 
+                               BorderColor="Cyan"
                                Padding="0"
+                               IsClippedToBounds="True"
                                Style="{DynamicResource FrameBackground}">
                             
-                            <Grid Style="{DynamicResource DescriptionGridBackground}">
+                            <Grid Style="{DynamicResource DescriptionGridBackground}"
+                                  ColumnSpacing="2"
+                                  RowSpacing="0"
+                                  >
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="*"/>
@@ -74,6 +80,7 @@
                                 </Grid.ColumnDefinitions>
                                 
                                 <Frame
+                                    IsClippedToBounds="True"
                                     Padding="3"
                                     Grid.Row="0"
                                     Grid.ColumnSpan="3"
@@ -81,22 +88,32 @@
                                     
                                     <Label Style="{DynamicResource LabelText}"
                                            LineBreakMode="TailTruncation"
-                                           Grid.Column="1"
+                                           Grid.Column="0"
                                            Grid.Row="0"
-                                           Grid.ColumnSpan="2"
+                                           Grid.ColumnSpan="3"
                                            FontSize="Subtitle"
                                            HorizontalOptions="CenterAndExpand"
                                            HorizontalTextAlignment="Center" 
                                            Text="{Binding Name}"
                                            FontAttributes="Bold"/>
                                 </Frame>
-                                
-                                <Image VerticalOptions="FillAndExpand"
+                                <Frame
+                                    Margin="3"
+                                    
+                               BorderColor="Cyan"
+                                    CornerRadius="10"
+                                    Padding="-10"
+                                    IsClippedToBounds="True"
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    >
+                                    <Image 
+                                        VerticalOptions="FillAndExpand"
                                        HorizontalOptions="FillAndExpand"
-                                       Grid.Column="0"
-                                       Grid.Row="1"
-                                       Grid.RowSpan="3"
                                        Source="{Binding ThumbnailImage}"/>
+                                </Frame>
+                                
 
                                 <Label MaxLines="4"
                                        LineBreakMode="TailTruncation"

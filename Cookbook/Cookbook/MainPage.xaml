@@ -10,46 +10,42 @@
     <StackLayout Style="{DynamicResource StackBackground}"
                  Padding="5">
 
-        <Frame Padding="0"              
-               BackgroundColor="Transparent"
-               CornerRadius="20">
+        <Frame Padding="0"    
+               
+               BackgroundColor="Transparent">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.80*"/>
                     <ColumnDefinition Width="0.20*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-
+                
                 <Frame Padding="0"
                        Grid.Column="0"
-                       CornerRadius="10"
+                       CornerRadius="20"
                        Style="{DynamicResource FrameBackground}">
                     <Label Style="{DynamicResource LabelText}"                          
                            VerticalTextAlignment="Center"
                            HorizontalTextAlignment="Center"
-                           VerticalOptions="Center"
-                           HorizontalOptions="Center"
                            FontSize="Title"
                            Text="Magic Cookbook"
                            FontAttributes="Bold"/>
                 </Frame>
-                <Frame 
-                       Padding="20"
-                       Grid.Column="1"
+                <Frame Grid.Column="1"
                        Opacity="0.7"
-                       HorizontalOptions="CenterAndExpand"
-                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
                        CornerRadius="20"
                        Style="{DynamicResource BackButton}">
-                    <ImageButton HorizontalOptions="FillAndExpand"
+                    <ImageButton HorizontalOptions="CenterAndExpand"
                                  BackgroundColor="Transparent"
-                                 Source="sett"
-                                 VerticalOptions="FillAndExpand"
+                                 
+                                 Source="outline_settings_applications_24"
+                                 VerticalOptions="CenterAndExpand"
                                  Command="{Binding ButtonSettings}"/>
                 </Frame>
-
             </Grid>
         </Frame>
 

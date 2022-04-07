@@ -46,7 +46,9 @@
             </Grid>
         </Frame>
         
-        <CollectionView SelectionMode="Single"
+        <CollectionView 
+                        Margin="0,15,0,0"
+                        SelectionMode="Single"
                         SelectedItem="{Binding SelectedRecipe}"
                         ItemsSource="{Binding RecipeSource}"
                         SelectionChangedCommand="{Binding SelectedRecipeCommand}">

@@ -36,7 +36,7 @@
                 </Frame>
                 <Frame Padding="0"
                        Grid.Column="1"
-                       CornerRadius="10"
+                       CornerRadius="20"
                        Style="{DynamicResource FrameBackground}">
                     <Label Style="{DynamicResource LabelText}"                          
                            VerticalTextAlignment="Center"

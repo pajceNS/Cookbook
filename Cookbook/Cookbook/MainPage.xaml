@@ -59,7 +59,8 @@
             <CollectionView.Footer>
                 <StackLayout BackgroundColor="Transparent">
                     <Image
-                        Source="LogoFirstPage"/>
+                        Source="chef"
+                        Scale="0.3"/>
                 </StackLayout>
             </CollectionView.Footer>
 

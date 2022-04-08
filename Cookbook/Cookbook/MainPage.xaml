@@ -68,11 +68,10 @@
                         <Frame
                             Padding="0"
                             CornerRadius="15" 
-                            Style="{DynamicResource FrameBackground}"
-                            >
+                            Style="{DynamicResource FrameBackground}">
                             <Frame CornerRadius="15" 
                                    Margin="1"
-                               Padding="-15"
+                                   Padding="-15"
                                    VerticalOptions="CenterAndExpand"
                                    HorizontalOptions="CenterAndExpand"
                                    Style="{DynamicResource FrameBackground}">
@@ -82,14 +81,12 @@
                                     </Grid.RowDefinitions>
                                     <Image
                                     Grid.Row="0"
-                                    Opacity="0.8"
-                                    Source="template"
-                                    >
+                                    Source="template">
 
                                     </Image>
                                     <Label 
                                    Grid.Row="0"
-                                   Style="{DynamicResource LabelText}"
+                                   Style="{DynamicResource LabelTextFP}"
                                    Text="{Binding Type}"
                                    HeightRequest="100"
                                    HorizontalTextAlignment="Center"

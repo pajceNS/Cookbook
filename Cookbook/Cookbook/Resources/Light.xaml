@@ -13,6 +13,9 @@
     <Style x:Key="LabelText" TargetType="Label">
         <Setter Property="TextColor" Value="#7f0000"/>
     </Style>
+    <Style x:Key="LabelTextFP" TargetType="Label">
+        <Setter Property="TextColor" Value="#7f0000"/>
+    </Style>
     <Style x:Key="FrameBackground" TargetType="Frame">
         <Setter Property="BackgroundColor" Value="#faebfa"/>
         <Setter Property="BorderColor" Value="#a4392a"/>

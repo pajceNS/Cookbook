@@ -83,7 +83,7 @@
                                     <Image
                                     Grid.Row="0"
                                     Opacity="0.8"
-                                    Source="foodPlate"
+                                    Source="template"
                                     >
 
                                     </Image>

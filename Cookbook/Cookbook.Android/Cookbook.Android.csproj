@@ -216,9 +216,9 @@
     <AndroidResource Include="Resources\drawable\outline_settings_24.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\drawable\foodPlate.png">
+    <AndroidResource Include="Resources\drawable\template.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </AndroidResource>
     <Content Include="template.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

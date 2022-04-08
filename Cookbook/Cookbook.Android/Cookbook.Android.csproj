@@ -219,6 +219,10 @@
     <AndroidResource Include="Resources\drawable\template.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidResource>
+    <AndroidResource Include="Resources\drawable\dessert_thumbnail.png" />
+    <AndroidResource Include="Resources\drawable\dessert_background.png" />
+    <AndroidResource Include="Resources\drawable\cocktail_background.png" />
+    <AndroidResource Include="Resources\drawable\cocktail_thumbnail.png" />
     <Content Include="template.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

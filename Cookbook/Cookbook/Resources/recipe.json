@@ -61,7 +61,7 @@
 			"name": "Fileti lososa zapeceni u rerni",
 			"steps": [
 				{
-					"text": "Skuvati kropmire u vodi, voda treba blago da vri, orptilike 20 minuta. Povremeno cackalicom proveriti da li su krompiri omeksali.",
+					"text": "Skuvati kropmire u vodi, voda treba blago da vri, orptilike 20 minuta. Povremeno cackalicom proveriti da li su krompiri omeksali."
 				},
 				{
 					"text": "Pravljenje marinade. U malu posudu staviti 1 kasiku maslinovog ulja i dodati vegetu, sok od pola limuna i so. Smesu dobro izmesati. "
@@ -433,6 +433,114 @@
 			"shortDescription": "Fine grickalice punjene mljevenim mesom. Ako ne volite sa mljevenim mesom možete koristi sir ,feta sir ,špinat i sl.",
 			"longDescription": "Fine grickalice punjene mljevenim mesom. Ako ne volite sa mljevenim mesom možete koristi sir ,feta sir ,špinat i sl.",
 			"type": "Snack"
+		},
+		{
+			"id": "fbdda1b0-78f2-43a2-a5a1-7f6a9381a61b",
+			"name": "Easy chocolate molten cakes",
+			"steps": [
+				{
+					"text": "Heat oven to 200C/180C fan/gas 6. Butter 6 dariole moulds or basins well and place on a baking tray."
+				},
+				{
+					"text": "Put 100g butter and 100g chopped dark chocolate in a heatproof bowl and set over a pan of hot water (or alternatively put in the microwave and melt in 30 second bursts on a low setting) and stir until smooth. Set aside to cool slightly for 15 mins."
+				},
+				{
+					"text": "Using an electric hand whisk, mix in 150g light brown soft sugar, then 3 large eggs, one at a time, followed by ½ tsp vanilla extract and finally 50g plain flour. Divide the mixture among the darioles or basins."
+				},
+				{
+					"text": "You can now either put the mixture in the fridge, or freezer until you're ready to bake them. Can be cooked straight from frozen for 16 mins, or bake now for 10-12 mins until the tops are firm to the touch but the middles still feel squidgy."
+				},
+				{
+					"text": "Carefully run a knife around the edge of each pudding, then turn out onto serving plates and serve with single cream."
+				}
+			],
+			"backgroundImage": "dessert_background.png",
+			"thumbnailImage": "dessert_thumbnail.png",
+			"ingredients": [
+				{
+					"name": "butter, plus extra to grease",
+					"unit": "g",
+					"amount": "100"
+				},
+				{
+					"name": "dark chocolate, chopped",
+					"unit": "g",
+					"amount": "100"
+				},
+				{
+					"name": "light brown soft sugar",
+					"unit": "g",
+					"amount": "150"
+				},
+				{
+					"name": "large eggs",
+					"amount": "3"
+				},
+				{
+					"name": "vanilla extract",
+					"unit": "tsp",
+					"amount": "1/2"
+				},
+				{
+					"name": "plain flour",
+					"unit": "g",
+					"amount": "50g"
+				},
+				{
+					"name": "cream, to serve",
+					"amount": "single"
+				}
+			],
+			"shortDescription": "Bake an impressive dinner party dessert with minimum fuss – these chocolate puddings, also known as chocolate fondant or lava cake, have a lovely gooey centre",
+			"longDescription": "Bake an impressive dinner party dessert with minimum fuss – these chocolate puddings, also known as chocolate fondant or lava cake, have a lovely gooey centre",
+			"type": "Dessert"
+		},
+		{
+			"id": "1b0ba101-a892-4403-8c92-a8f2bfbfe60b",
+			"name": "White lady",
+			"steps": [
+				{
+					"text": "Tip the gin, triple sec, lemon juice, sugar syrup, egg white (if using) and ice into a cocktail shaker. Shake until the outside of the shaker feels very cold, then strain the mixture. Discard the ice, then return the drink to the shaker and shake again until the egg white is frothy."
+				},
+				{
+					"text": "Pour into a coupe glass and garnish with a twist of lemon zest to serve."
+				}
+			],
+			"backgroundImage": "cocktail_background.png",
+			"thumbnailImage": "cocktail_thumbnail.png",
+			"ingredients": [
+				{
+					"name": "gin",
+					"unit": "ml",
+					"amount": "50"
+				},
+				{
+					"name": "triple sec",
+					"unit": "ml",
+					"amount": "25"
+				},
+				{
+					"name": "lemon juice, plus lemon zest twists to serve",
+					"unit": "ml",
+					"amount": "25"
+				},
+				{
+					"name": "sugar syrup",
+					"unit": "tsp",
+					"amount": "2"
+				},
+				{
+					"name": "egg white (optional)",
+					"amount": "1/2"
+				},
+				{
+					"name": "plain flour",
+					"amount": "handfull"
+				}
+			],
+			"shortDescription": "Make a classic Christmas cocktail with gin, triple sec, lemon and egg white. It's light and refreshing, but has the strength of a martini – enjoy responsibly!",
+			"longDescription": "Make a classic Christmas cocktail with gin, triple sec, lemon and egg white. It's light and refreshing, but has the strength of a martini – enjoy responsibly!",
+			"type": "Cocktail"
 		}
 	]
 }

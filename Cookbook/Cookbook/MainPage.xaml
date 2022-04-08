@@ -65,16 +65,42 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="viewmodels:MainButtonViewModel">
                     <StackLayout Padding="5">
-                        <Frame CornerRadius="15" 
+                        <Frame
+                            Padding="0"
+                            CornerRadius="15" 
+                            Style="{DynamicResource FrameBackground}"
+                            >
+                            <Frame CornerRadius="15" 
+                                   Margin="1"
+                               Padding="-15"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="CenterAndExpand"
                                    Style="{DynamicResource FrameBackground}">
-                            <Label Style="{DynamicResource LabelText}"
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                    Grid.Row="0"
+                                    Opacity="0.8"
+                                    Source="template"
+                                    >
+
+                                    </Image>
+                                    <Label 
+                                   Grid.Row="0"
+                                   Style="{DynamicResource LabelText}"
                                    Text="{Binding Type}"
                                    HeightRequest="100"
                                    HorizontalTextAlignment="Center"
                                    VerticalTextAlignment="Center"
-                                   FontSize="Title"
+                                   FontSize="Subtitle"
                                    FontFamily="Regular1"/>
+                                </Grid>
+
+                            </Frame>
                         </Frame>
+                        
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

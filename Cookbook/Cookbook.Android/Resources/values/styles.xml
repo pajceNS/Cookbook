@@ -15,6 +15,5 @@
          which is used to tint widgets -->
     <!--<item name="colorAccent">#FF4081</item>-->	  
 	<item name="colorPrimaryDark">#420000</item>
-	  <item name="colorPrimary">#420000</item>
   </style>
 </resources>

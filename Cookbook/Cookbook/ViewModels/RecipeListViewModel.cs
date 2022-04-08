@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
 
 namespace Cookbook.ViewModels
@@ -18,16 +20,29 @@ namespace Cookbook.ViewModels
         private readonly IRecipeRepository _recipeRepository;
         private ObservableCollection<RecipeItemViewModel> _recipeSource;
         private RecipeItemViewModel _selectedRecipe;
+        private bool _canExecuteSettingsCommand = true;
 
         public RecipeListViewModel(INavigationService navigationService, IRecipeRepository recipeRepository)
         {
-            BackButtonClicked = new Command(OnBackButtonClicked);
             _recipeRepository = recipeRepository;
             _navigationService = navigationService;
-            SelectedRecipeCommand = new Command(OnSelectedRecipeCommand);
+            BackButtonClicked = new AsyncCommand(OnBackButtonClicked, () => CanExecuteSettingsCommand);
+            SelectedRecipeCommand = new AsyncCommand(OnSelectedRecipeCommand, () => CanExecuteSettingsCommand);
         }
         public ICommand BackButtonClicked { get; }
         public ICommand SelectedRecipeCommand { get; }
+
+        private bool CanExecuteSettingsCommand
+        {
+            get => _canExecuteSettingsCommand;
+            set
+            {
+                _canExecuteSettingsCommand = value;
+                ((AsyncCommand)BackButtonClicked).ChangeCanExecute();
+                ((AsyncCommand)SelectedRecipeCommand).ChangeCanExecute();
+            }
+        }
+
         public ObservableCollection<RecipeItemViewModel> Items { get; set; }
 
         public ObservableCollection<RecipeItemViewModel> RecipeSource
@@ -59,12 +74,14 @@ namespace Cookbook.ViewModels
             }
         }
 
-        public void OnSelectedRecipeCommand()
+        private async Task OnSelectedRecipeCommand()
         {
             if (SelectedRecipe != null)
             {
                 var clickedRecipe = SelectedRecipe.GetRecipe();
-                _navigationService.NavigateToRecipeDetailsViewModel(clickedRecipe.Id);
+                CanExecuteSettingsCommand = false;
+                await _navigationService.NavigateToRecipeDetailsViewModel(clickedRecipe.Id);
+                CanExecuteSettingsCommand = true;
             }
             SelectedRecipe = null;
         }
@@ -77,9 +94,11 @@ namespace Cookbook.ViewModels
             MealName = mealName;
         }
 
-        private void OnBackButtonClicked()
+        private async Task OnBackButtonClicked()
         {
-            _navigationService.GoBack();
+            CanExecuteSettingsCommand = false;
+            await _navigationService.GoBack();
+            CanExecuteSettingsCommand = true;
         }
     }
 }

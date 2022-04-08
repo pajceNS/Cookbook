@@ -56,6 +56,12 @@
                     SelectedItem="{Binding SelectedRecipe}"
                     SelectionChangedCommand="{Binding SelectedMealTypeCommand}"
                     ItemsSource="{Binding UniqueTypeRecipes}">
+            <CollectionView.Footer>
+                <StackLayout BackgroundColor="Transparent">
+                    <Image
+                        Source="LogoFirstPage"/>
+                </StackLayout>
+            </CollectionView.Footer>
 
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical"

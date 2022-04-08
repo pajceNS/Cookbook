@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -11,42 +12,41 @@ namespace Cookbook.Services
 {
     internal class NavigationService : INavigationService
     {
-        public void GoBack()
+        public async Task GoBack()
         {
-            Application.Current.MainPage.Navigation.PopModalAsync();
+            await Application.Current.MainPage.Navigation.PopModalAsync();
         }
 
-        public void NavigateToRecipeDetailsViewModel(Guid id)
+        public async Task NavigateToRecipeDetailsViewModel(Guid id)
         {
-            Preferences.Set("stepCounter", 0
-                );
+            Preferences.Set("stepCounter", 0);
             var vm = App.Locator.RecipeDetailsViewModel;
             vm.LoadRecipeWithId(id);
-            Application.
+            await Application.
                 Current.
                 MainPage.
                 Navigation.
                 PushModalAsync(new RecipeDetails { BindingContext = vm });
         }
 
-        public void NavigateToRecipeListViewModel(string mealName)
+        public async Task NavigateToRecipeListViewModel(string mealName)
         {
             var vm = App.Locator.RecipeListViewModel;
             vm.LoadRecipes(mealName);
-            Application.
+            await Application.
                 Current.
                 MainPage.
                 Navigation.
-                PushModalAsync(new RecipeList { BindingContext = vm});
+                PushModalAsync(new RecipeList { BindingContext = vm });
         }
-        public void NavigateToSettingsViewModel()
+        public async Task NavigateToSettingsViewModel()
         {
             var vm = App.Locator.SettingsViewModel;
-            Application.
+            await Application.
                 Current.
                 MainPage.
                 Navigation.
-                PushModalAsync(new Settings { BindingContext = vm});
+                PushModalAsync(new Settings { BindingContext = vm });
         }
     }
 }

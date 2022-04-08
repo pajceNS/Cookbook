@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
 
 namespace Cookbook.ViewModels
@@ -16,18 +18,30 @@ namespace Cookbook.ViewModels
         private readonly INavigationService _navigationService;
         private MainButtonViewModel _selectedRecipe;
         private ObservableCollection<MainButtonViewModel> _uniqueTypeRecipes;
+        private bool _canExecuteSettingsCommand = true;
 
         public MainViewModel(INavigationService navigationService, IRecipeRepository recipeRepository)
         {
             _navigationService = navigationService;
             _recipeRepository = recipeRepository;
             UniqueTypeRecipes = recipeRepository.GetUniqueTypesOfFood();
-            ButtonSettings = new Command(OnButtonSettings);
-            SelectedMealTypeCommand = new Command(OnSelectedMealTypeCommand);
+            ButtonSettings = new AsyncCommand(OnButtonSettings, () => CanExecuteSettingsCommand);
+            SelectedMealTypeCommand = new AsyncCommand(OnSelectedMealTypeCommand, () => CanExecuteSettingsCommand);
         }
 
         public ICommand ButtonSettings { get; }
         public ICommand SelectedMealTypeCommand { get; }
+
+        private bool CanExecuteSettingsCommand
+        {
+            get => _canExecuteSettingsCommand;
+            set
+            {
+                _canExecuteSettingsCommand = value;
+                ((AsyncCommand)ButtonSettings).ChangeCanExecute();
+                ((AsyncCommand)SelectedMealTypeCommand).ChangeCanExecute();
+            }
+        }
 
         public MainButtonViewModel SelectedRecipe
         {
@@ -55,20 +69,25 @@ namespace Cookbook.ViewModels
             }
         }
 
-        private void OnSelectedMealTypeCommand()
+        private async Task OnSelectedMealTypeCommand()
         {
 
             if (SelectedRecipe != null)
             {
-                var mealType = SelectedRecipe.Type;
+                var mealType = SelectedRecipe.Type;                
+                CanExecuteSettingsCommand = false;
+                await _navigationService.NavigateToRecipeListViewModel(mealType);
+                CanExecuteSettingsCommand = true;
                 SelectedRecipe = null;
-                _navigationService.NavigateToRecipeListViewModel(mealType);
             }
         }
 
-        private void OnButtonSettings()
+        private async Task OnButtonSettings()
         {
-            _navigationService.NavigateToSettingsViewModel();
+            CanExecuteSettingsCommand = false;
+            await _navigationService.NavigateToSettingsViewModel();
+            CanExecuteSettingsCommand = true;
+
         }
     }
 }

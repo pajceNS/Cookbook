@@ -30,13 +30,6 @@ namespace Cookbook.ViewModels
                 _type = value;
                 OnPropertyChanged(nameof(Type));
             }
-        }   
-        //private void OnSelectedMealTypeCommand(string mealType)
-        //{
-        //    if(mealType != null)
-        //    {
-        //        _navigationService.NavigateToRecipeListViewModel(mealType);
-        //    }
-        //}
+        }
     }
 }

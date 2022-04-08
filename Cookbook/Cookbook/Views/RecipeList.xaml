@@ -31,7 +31,8 @@
                                  BackgroundColor="Transparent"
                                  Source="outline_arrow_back_ios_24"
                                  VerticalOptions="Center"
-                                 Command="{Binding BackButtonClicked}"/>
+                                 Command="{Binding BackButtonClicked}"
+                                 Scale="1.5"/>
                 </Frame>
                 <Frame Padding="0"
                        Grid.Column="1"

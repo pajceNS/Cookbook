@@ -40,9 +40,10 @@
                        Style="{DynamicResource BackButton}">
                     <ImageButton HorizontalOptions="CenterAndExpand"
                                  BackgroundColor="Transparent"
-                                 Source="outline_settings_applications_24"
+                                 Source="outline_settings_24"                                
                                  VerticalOptions="CenterAndExpand"
-                                 Command="{Binding ButtonSettings}"/>
+                                 Command="{Binding ButtonSettings}"
+                                 Scale="1.8"/>
                 </Frame>
             </Grid>
         </Frame>

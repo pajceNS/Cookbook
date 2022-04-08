@@ -32,6 +32,7 @@
                                  BackgroundColor="Transparent"
                                  Source="outline_arrow_back_ios_24"
                                  VerticalOptions="Center"
+                                 Scale="1.5"
                                  Command="{Binding BackButtonClicked}"/>
                 </Frame>
                 <Frame Padding="0"
@@ -61,10 +62,12 @@
                        FontSize="22"/>
 
             <Switch Margin="20,60,40,0"
-                        HorizontalOptions="End"
-                        VerticalOptions="Start"
-                        IsToggled="{Binding SwitchTheme}"
-                        Grid.Column="1">
+                    ThumbColor="#420000"
+                    OnColor="#fff2f2"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    IsToggled="{Binding SwitchTheme}"
+                    Grid.Column="1">
                 <Switch.Behaviors>
                     <xct:EventToCommandBehavior
                             EventName="Toggled"

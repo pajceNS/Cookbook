@@ -60,18 +60,15 @@
                    Style="{DynamicResource FrameBackground}">
 
                 <StackLayout>
-                    <Label Text="Meal name:"
-                           Style="{DynamicResource LabelText}"                                                   
-                           HorizontalTextAlignment="Center"
-                           FontSize="Subtitle"
-                           FontAttributes="Bold">
-                    </Label>
+                    
+                    
                     <Label Grid.Column="1"
                            VerticalOptions="Center"
                            FontSize="Title"
                            Text="{Binding Name}" 
                            Style="{DynamicResource LabelText}"
                            HorizontalTextAlignment="Center"
+                           FontFamily="Regular1"
                            FontAttributes="Bold"/>
 
                     <Frame Style="{DynamicResource DescriptionFrameBackground}" 
@@ -81,12 +78,14 @@
                             <Label Text="Description:"
                                    Style="{DynamicResource LabelText}"                                                   
                                    HorizontalTextAlignment="Center"
-                                   FontSize="Subtitle"
+                                   FontSize="Small"
                                    FontAttributes="Bold">
                             </Label>
-                            <Label FontSize="20"
+                            <Label
                                    Style="{DynamicResource LabelText}"
-                                   Text="{Binding LongDescription}">
+                                   Text="{Binding LongDescription}"
+                                   FontSize="Subtitle"
+                                   >
                             </Label>
                         </StackLayout>
                     </Frame>
@@ -101,7 +100,7 @@
                              Style="{DynamicResource StackBackground}">
                     <Label Text="Ingredients"
                            FontAttributes="Bold"
-                           FontSize="Title"
+                           FontSize="Subtitle"
                            Style="{DynamicResource LabelText}"
                            HorizontalOptions="Center">
                     </Label>
@@ -127,7 +126,8 @@
                                                 <Label.FormattedText>
                                                     <FormattedString>
                                                         <Span Text="Name: "
-                                                              FontAttributes="Bold"/>
+                                                              FontAttributes="Bold"
+                                                              FontSize="Small"/>
                                                         <Span Text="{Binding Name}"/>
                                                     </FormattedString>
                                                 </Label.FormattedText>
@@ -138,7 +138,8 @@
                                                 <Label.FormattedText>
                                                     <FormattedString>
                                                         <Span Text="Amount: "
-                                                              FontAttributes="Bold"/>
+                                                              FontAttributes="Bold"
+                                                              FontSize="Small"/>
                                                         <Span Text="{Binding Amount}"/>
                                                     </FormattedString>
                                                 </Label.FormattedText>
@@ -149,7 +150,8 @@
                                                 <Label.FormattedText>
                                                     <FormattedString>
                                                         <Span Text="Unit: "
-                                                              FontAttributes="Bold"/>
+                                                              FontAttributes="Bold"
+                                                              FontSize="Small"/>
                                                         <Span Text="{Binding Unit}"/>
                                                     </FormattedString>
                                                 </Label.FormattedText>
@@ -176,7 +178,7 @@
                     <Label Text="Steps"
                            Style="{DynamicResource LabelText}"
                            FontAttributes="Bold"
-                           FontSize="Title"
+                           FontSize="Subtitle"
                            HorizontalOptions="Center">
                     </Label>
                     
@@ -199,8 +201,8 @@
                                                        IsVisible="{Binding IsStepTextLabelVisible}">
                                                 <Label.FormattedText>
                                                     <FormattedString>
-                                                        <Span Text="To do: " FontAttributes="Bold"/>
-                                                        <Span Text="{Binding Text}"/>
+                                                        <Span Text="To do: " FontAttributes="Bold" FontSize="Small"/>
+                                                        <Span Text="{Binding Text}" FontSize="Small"/>
                                                     </FormattedString>
                                                 </Label.FormattedText>
                                             </Label>

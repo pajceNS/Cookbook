@@ -43,6 +43,7 @@
                            HorizontalTextAlignment="Center"
                            FontSize="Title"
                            Text="{Binding MealName}"
+                           FontFamily="Regular1"
                            FontAttributes="Bold"/>
                 </Frame>
             </Grid>
@@ -96,6 +97,7 @@
                                            HorizontalOptions="CenterAndExpand"
                                            HorizontalTextAlignment="Center" 
                                            Text="{Binding Name}"
+                                           FontFamily="Regular1"
                                            FontAttributes="Bold"/>
                                 </Frame>
                                 <Frame

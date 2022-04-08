@@ -30,6 +30,7 @@
                            HorizontalTextAlignment="Center"
                            FontSize="Title"
                            Text="Magic Cookbook"
+                           FontFamily="Regular2"
                            FontAttributes="Bold"/>
                 </Frame>
                 <Frame Grid.Column="1"
@@ -71,7 +72,8 @@
                                    HeightRequest="100"
                                    HorizontalTextAlignment="Center"
                                    VerticalTextAlignment="Center"
-                                   FontSize="Title"/>
+                                   FontSize="Title"
+                                   FontFamily="Regular1"/>
                         </Frame>
                     </StackLayout>
                 </DataTemplate>

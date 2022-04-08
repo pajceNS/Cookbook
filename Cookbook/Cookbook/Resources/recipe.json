@@ -53,6 +53,101 @@
 				}
 			],
 			"shortDescription": "Za ljubitelje lososa jednostavno, brzo i veoma ukusno, sta je više potrebno.",
+			"longDescription": " Danas sam ulovila fine komade lososa u našoj ribarnici i kratko ih zapekla u vručoj pečnici, s tim da sam ih prije marinirala u finim travama.",
+			"type": "Lunch"
+		},
+		{
+			"id": "25bfb1bf-d84b-41f2-9115-f2dd11fead81",
+			"name": "Fileti lososa zapeceni u rerni",
+			"steps": [
+				{
+					"text": "Skuvati kropmire u vodi, voda treba blago da vri, orptilike 20 minuta. Povremeno cackalicom proveriti da li su krompiri omeksali.",
+				},
+				{
+					"text": "Pravljenje marinade. U malu posudu staviti 1 kasiku maslinovog ulja i dodati vegetu, sok od pola limuna i so. Smesu dobro izmesati. "
+				},
+				{
+					"text": "Posuti marinadu ravnomerno preko lososvih fileta, i ostaviti losos sa strane.",
+					"image": "losos_step1.png"
+				},
+				{
+					"text": "Zagreajti rernu na 180 stepeni."
+				},
+				{
+					"text": "Sparglu preliti jednom kasikom maslonovog ulja, dodati biber, beli luk u prahu i so. Dobro izmesati.",
+					"image": "losos_step2.png"
+				},
+				{
+					"text": "Kada je krompir spreman, izvaditi ga u ciniju i dodati jednu kasiku maslinovog ulja, so, biber i origano.",
+					"image": "losos_step3.png"
+				},
+				{
+					"text": "Na pleh postaviti papir za pecenje i postaviti filete lososa na papir. Sa strane dodati sparglu i krompire."
+				},
+				{
+					"text": "Iscediti pola limuna preko lososa, krompira i spargle."
+				},
+				{
+					"text": "Dodati listice limuna preko lososa, i dodatno iseci 1 limun na cetvrtine i rasporediti ga po plehu.",
+					"image": "losos_step4.png"
+				},
+				{
+					"text": "Peci u rerni na 180 stepeni 15 do 20 minuta."
+				}
+			],
+			"backgroundImage": "losos_background1.png",
+			"thumbnailImage": "losos_thumbnail.png",
+			"ingredients": [
+				{
+					"name": "losos",
+					"unit": "filet",
+					"amount": "4"
+				},
+				{
+					"name": "vegeta",
+					"unit": "kasika",
+					"amount": "2"
+				},
+				{
+					"name": "origano",
+					"unit": "kasika",
+					"amount": "1"
+				},
+				{
+					"name": "so",
+					"unit": "po ukusu"
+				},
+				{
+					"name": "biber",
+					"unit": "kafena kasikica",
+					"amount": "2"
+				},
+				{
+					"name": "beli luk u prahu",
+					"unit": "kafena kasikica",
+					"amount": "2"
+				},
+				{
+					"name": "maslinovo ulje",
+					"unit": "supena kasika",
+					"amount": "3"
+				},
+				{
+					"name": "veza spargle"
+				},
+				{
+					"name": "sitan krompir",
+					"unit": "kg",
+					"amount": "0.5"
+				},
+				{
+					"name": "limun",
+					"unit": "komad",
+					"amount": "3"
+				}
+
+			],
+			"shortDescription": "Za ljubitelje lososa jednostavno, brzo i veoma ukusno, sta je više potrebno.",
 			"longDescription": "Za ljubitelje lososa jednostavno, brzo i veoma ukusno, sta je više potrebno.",
 			"type": "Lunch"
 		},

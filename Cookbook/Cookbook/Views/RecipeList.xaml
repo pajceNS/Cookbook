@@ -101,7 +101,7 @@
                                            FontAttributes="Bold"/>
                                 </Frame>
                                 <Frame
-                                    Style="{DynamicResource DescriptionFrameBackground}"
+                                    Style="{DynamicResource FrameForImage}"
                                     Margin="3"
                                     CornerRadius="10"
                                     Padding="-10"

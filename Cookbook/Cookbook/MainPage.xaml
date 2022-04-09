@@ -60,7 +60,7 @@
                 <StackLayout BackgroundColor="Transparent">
                     <Image
                         Source="chef"
-                        Scale="0.3"/>
+                        Scale="0.22"/>
                 </StackLayout>
             </CollectionView.Footer>
 
@@ -98,7 +98,7 @@
                                    HeightRequest="100"
                                    HorizontalTextAlignment="Center"
                                    VerticalTextAlignment="Center"
-                                   FontSize="Subtitle"
+                                   FontSize="Title"
                                    FontFamily="Regular1"/>
                                 </Grid>
 

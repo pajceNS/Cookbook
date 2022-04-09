@@ -14,7 +14,7 @@ namespace Cookbook.Droid
 {
 	
 	
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.2.0.155")]
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "12.1.0.11")]
 	public partial class Resource
 	{
 		
@@ -22287,52 +22287,64 @@ namespace Cookbook.Droid
 			public const int outline_settings_24 = 2131165344;
 			
 			// aapt resource value: 0x7F0700A1
-			public const int outline_settings_applications_24 = 2131165345;
+			public const int outline_settings_24_dark = 2131165345;
 			
 			// aapt resource value: 0x7F0700A2
-			public const int preference_list_divider_material = 2131165346;
+			public const int outline_settings_24_white = 2131165346;
 			
 			// aapt resource value: 0x7F0700A3
-			public const int settingsicon = 2131165347;
+			public const int outline_settings_applications_24 = 2131165347;
 			
 			// aapt resource value: 0x7F0700A4
-			public const int step5_1 = 2131165348;
-			
-			// aapt resource value: 0x7F0700A5
-			public const int step5_2 = 2131165349;
-			
-			// aapt resource value: 0x7F0700A6
-			public const int step5_3 = 2131165350;
+			public const int preference_list_divider_material = 2131165348;
 			
 			// aapt resource value: 0x7F0700A7
-			public const int step5_4 = 2131165351;
+			public const int settingsicon = 2131165351;
+			
+			// aapt resource value: 0x7F0700A5
+			public const int settings_dark = 2131165349;
+			
+			// aapt resource value: 0x7F0700A6
+			public const int settings_light = 2131165350;
 			
 			// aapt resource value: 0x7F0700A8
-			public const int template = 2131165352;
+			public const int step5_1 = 2131165352;
 			
 			// aapt resource value: 0x7F0700A9
-			public const int test_custom_background = 2131165353;
+			public const int step5_2 = 2131165353;
 			
 			// aapt resource value: 0x7F0700AA
-			public const int thumbnail1 = 2131165354;
+			public const int step5_3 = 2131165354;
 			
 			// aapt resource value: 0x7F0700AB
-			public const int thumbnail2 = 2131165355;
+			public const int step5_4 = 2131165355;
 			
 			// aapt resource value: 0x7F0700AC
-			public const int thumbnail3 = 2131165356;
+			public const int template = 2131165356;
 			
 			// aapt resource value: 0x7F0700AD
-			public const int thumbnail4 = 2131165357;
+			public const int test_custom_background = 2131165357;
 			
 			// aapt resource value: 0x7F0700AE
-			public const int thumbnail5 = 2131165358;
+			public const int thumbnail1 = 2131165358;
 			
 			// aapt resource value: 0x7F0700AF
-			public const int tooltip_frame_dark = 2131165359;
+			public const int thumbnail2 = 2131165359;
 			
 			// aapt resource value: 0x7F0700B0
-			public const int tooltip_frame_light = 2131165360;
+			public const int thumbnail3 = 2131165360;
+			
+			// aapt resource value: 0x7F0700B1
+			public const int thumbnail4 = 2131165361;
+			
+			// aapt resource value: 0x7F0700B2
+			public const int thumbnail5 = 2131165362;
+			
+			// aapt resource value: 0x7F0700B3
+			public const int tooltip_frame_dark = 2131165363;
+			
+			// aapt resource value: 0x7F0700B4
+			public const int tooltip_frame_light = 2131165364;
 			
 			static Drawable()
 			{

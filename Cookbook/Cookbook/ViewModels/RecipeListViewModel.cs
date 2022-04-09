@@ -79,6 +79,8 @@ namespace Cookbook.ViewModels
             if (SelectedRecipe != null)
             {
                 var clickedRecipe = SelectedRecipe.GetRecipe();
+                SelectedRecipe = null;
+
                 CanExecuteSettingsCommand = false;
                 await _navigationService.NavigateToRecipeDetailsViewModel(clickedRecipe.Id);
                 CanExecuteSettingsCommand = true;

@@ -74,12 +74,14 @@ namespace Cookbook.ViewModels
 
             if (SelectedRecipe != null)
             {
-                var mealType = SelectedRecipe.Type;                
+                var mealType = SelectedRecipe.Type;
+                SelectedRecipe = null;
                 CanExecuteSettingsCommand = false;
                 await _navigationService.NavigateToRecipeListViewModel(mealType);
                 CanExecuteSettingsCommand = true;
-                SelectedRecipe = null;
+                
             }
+            SelectedRecipe = null;
         }
 
         private async Task OnButtonSettings()

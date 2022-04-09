@@ -28,7 +28,8 @@
                        VerticalOptions="Start"
                        CornerRadius="20"
                        Style="{DynamicResource BackButton}">
-                    <ImageButton HorizontalOptions="Center"
+                    <ImageButton 
+                                 HorizontalOptions="Center"
                                  BackgroundColor="Transparent"
                                  Source="outline_arrow_back_ios_24"
                                  VerticalOptions="Center"

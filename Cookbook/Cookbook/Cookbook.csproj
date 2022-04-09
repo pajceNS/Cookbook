@@ -11,12 +11,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Font Awesome 6 Free-Solid-900.otf" />
     <None Remove="Fonts\LeckerliOne-Regular.ttf" />
     <None Remove="Fonts\MarcellusSC-Regular.ttf" />
     <None Remove="Fonts\Pattaya-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Fonts\Font Awesome 6 Free-Solid-900.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fonts\LeckerliOne-Regular.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

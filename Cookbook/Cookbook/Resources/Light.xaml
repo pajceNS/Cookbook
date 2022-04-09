@@ -31,4 +31,12 @@
         <Setter Property="BackgroundColor" Value="#e0c5e0"/>
         <Setter Property="BorderColor" Value="#a4392a"/>
     </Style>
+    <Style x:Key="FrameForImage" TargetType="Frame">
+        <Setter Property="BackgroundColor" Value="#e0c5e0"/>
+    </Style>
+
+    <!--<Style x:Key="SettingsImage" TargetType="ImageButton">
+        <Setter Property="Source" Value="settings_light"/>
+    </Style>-->
+
 </ResourceDictionary>

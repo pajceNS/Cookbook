@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:fontAwesome="clr-namespace:FontAwesome"
              xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
              x:Class="Cookbook.MainPage"
              x:DataType="viewmodels:MainViewModel"
@@ -8,9 +9,9 @@
              NavigationPage.HasNavigationBar="False">
 
     <StackLayout Style="{DynamicResource StackBackground}"
-                 Padding="5">
+                 Padding="0">
 
-        <Frame Padding="0"    
+        <Frame Padding="-1"    
                BackgroundColor="Transparent">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -21,30 +22,35 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
 
-                <Frame Padding="0"
-                       Grid.Column="0"
-                       CornerRadius="20"
+                <Frame Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Padding="10"
+                       CornerRadius="0"
                        Style="{DynamicResource FrameBackground}">
-                    <Label Style="{DynamicResource LabelText}"                          
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.75*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Style="{DynamicResource LabelText}"                          
                            VerticalTextAlignment="Center"
                            HorizontalTextAlignment="Center"
                            FontSize="Title"
                            Text="Magic Cookbook"
                            FontFamily="Regular2"
-                           FontAttributes="Bold"/>
-                </Frame>
-                <Frame Grid.Column="1"
-                       Opacity="0.7"
-                       HorizontalOptions="Start"
-                       VerticalOptions="Start"
-                       CornerRadius="20"
-                       Style="{DynamicResource BackButton}">
-                    <ImageButton HorizontalOptions="CenterAndExpand"
-                                 BackgroundColor="Transparent"
-                                 Source="outline_settings_24"                                
-                                 VerticalOptions="CenterAndExpand"
-                                 Command="{Binding ButtonSettings}"
-                                 Scale="1.8"/>
+                           FontAttributes="Bold">
+
+                        </Label>
+                        <Button BackgroundColor="Transparent"
+                                Command="{Binding ButtonSettings}"
+                                Grid.Column="1"
+                                HorizontalOptions="EndAndExpand"
+                                ImageSource="{DynamicResource SettingsButtonImageSource}">
+                        </Button>
+
+                    </Grid>
                 </Frame>
             </Grid>
         </Frame>
@@ -76,7 +82,8 @@
                             Padding="0"
                             CornerRadius="15" 
                             Style="{DynamicResource FrameBackground}">
-                            <Frame CornerRadius="15" 
+                            <Frame 
+                                   CornerRadius="15" 
                                    Margin="1"
                                    Padding="-15"
                                    VerticalOptions="CenterAndExpand"

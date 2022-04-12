@@ -40,17 +40,26 @@
                     <Frame 
                        Grid.Column="0"
                        Opacity="0.7"
+                       Padding="0"
                        HorizontalOptions="Start"
                        VerticalOptions="Start"
                        CornerRadius="20"
                        Style="{DynamicResource BackButton}">
-                        <ImageButton 
+                        <Button 
+                            BackgroundColor="Transparent"
+                            Margin="1"
+                            Command="{Binding BackButtonClicked}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            ImageSource="{DynamicResource BackButton1}">
+                        </Button>
+                        <!--<ImageButton 
                                  Scale="1.5"
                                  BackgroundColor="Transparent"
                                  Source="outline_arrow_back_ios_24"
                                  HorizontalOptions="Center"
                                  VerticalOptions="Center"
-                                 Command="{Binding BackButtonClicked}"/>
+                                 Command="{Binding BackButtonClicked}"/>-->
                     </Frame>
                 </Grid>
             </Frame>

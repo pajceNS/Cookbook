@@ -5,4 +5,4 @@ using Xamarin.Forms.Xaml;
 [assembly: ExportFont("LeckerliOne-Regular.ttf", Alias="Regular")]
 [assembly: ExportFont("Pattaya-Regular.ttf", Alias = "Regular1")]
 [assembly: ExportFont("MarcellusSC-Regular.ttf", Alias = "Regular2")]
-[assembly: ExportFont("Font Awesome 6 Free-Solid-900", Alias = "Solid")]
+[assembly: ExportFont("Free-Solid-900.otf", Alias = "Solid")]

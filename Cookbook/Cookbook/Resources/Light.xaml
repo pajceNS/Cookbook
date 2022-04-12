@@ -1,7 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontAwesome="clr-namespace:FontAwesome"
              x:Class="Cookbook.Resources.Light">
+
+    <!--<Color x:Key="ColorForSettingsButton">#7f0000</Color>-->
+
+    <FontImageSource x:Key="SettingsButtonImageSource" 
+                     FontFamily="Solid"
+                     Color="#7f0000"
+                     Glyph="{x:Static fontAwesome:FontAwesomeIcons.Gear}">
+    </FontImageSource>
+    <FontImageSource x:Key="BackButton1" 
+                     FontFamily="Solid"
+                     Color="#7f0000"
+                     Glyph="{x:Static fontAwesome:FontAwesomeIcons.ChevronLeft}">
+    </FontImageSource>
+
+
+    
+
     <Style x:Key="GridStyleFirstPage" TargetType="Grid">
         <Setter Property="BackgroundColor" Value="#fff2f2"/>
     </Style>
@@ -9,7 +27,6 @@
         <Setter Property="BackgroundColor" Value="#e0c5e0"/>
     </Style>
 
-    
     <Style x:Key="LabelText" TargetType="Label">
         <Setter Property="TextColor" Value="#7f0000"/>
     </Style>
@@ -18,7 +35,7 @@
     </Style>
     <Style x:Key="FrameBackground" TargetType="Frame">
         <Setter Property="BackgroundColor" Value="#faebfa"/>
-        <Setter Property="BorderColor" Value="#a4392a"/>
+        <Setter Property="BorderColor" Value="#420000"/>
     </Style>
     <Style x:Key="StackBackground" TargetType="StackLayout">
         <Setter Property="BackgroundColor" Value="#fff2f2"/>

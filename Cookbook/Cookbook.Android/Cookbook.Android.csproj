@@ -230,6 +230,8 @@
     <AndroidResource Include="Resources\drawable\outline_settings_24_dark.xml" />
     <AndroidResource Include="Resources\drawable\settings_dark.png" />
     <AndroidResource Include="Resources\drawable\settings_light.png" />
+    <AndroidResource Include="Resources\drawable\logolight.png" />
+    <AndroidResource Include="Resources\drawable\logodark.png" />
     <Content Include="template.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

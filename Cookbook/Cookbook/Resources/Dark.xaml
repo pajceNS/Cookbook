@@ -9,12 +9,20 @@
 
     <!--<Color x:Key="ColorForSettingsButton">#fff2f2</Color>-->
 
+    <Style TargetType="Image" x:Key="LogoFooterImage">
+        <Setter Property="Source" Value="logodark"/>
+    </Style>
+    
     <FontImageSource x:Key="SettingsButtonImageSource" 
                      FontFamily="Solid"
                      Color="#fff2f2"
                      Glyph="{x:Static fontAwesome:FontAwesomeIcons.Gear}">
     </FontImageSource>
-
+    <FontImageSource x:Key="BackButton1" 
+                     FontFamily="Solid"
+                     Color="#fff2f2"
+                     Glyph="{x:Static fontAwesome:FontAwesomeIcons.ChevronLeft}">
+    </FontImageSource>
     <Style x:Key="DescriptionGridBackground" TargetType="Grid">
         <Setter Property="BackgroundColor" Value="#8c0f0f"/>
     </Style>

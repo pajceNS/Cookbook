@@ -22,8 +22,7 @@
                 </Grid.RowDefinitions>
 
                 <Frame Grid.Column="0"
-                       Opacity="0.7"
-                       Padding="0"
+                       Padding="10"
                        HorizontalOptions="Start"
                        VerticalOptions="Start"
                        CornerRadius="20"
@@ -121,8 +120,7 @@
                                     Grid.RowSpan="3"
                                     >
                                     <Image 
-                                        VerticalOptions="FillAndExpand"
-                                       HorizontalOptions="FillAndExpand"
+                                        Aspect="AspectFill"
                                        Source="{Binding ThumbnailImage}"/>
                                 </Frame>
                                 

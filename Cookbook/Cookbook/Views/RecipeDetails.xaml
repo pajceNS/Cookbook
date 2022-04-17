@@ -21,26 +21,31 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <Frame
-                        Padding="-10"
+                        Padding="1"
                         Grid.Row="0"
                         Grid.RowSpan="2"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
                         CornerRadius="20"
                         Style="{DynamicResource BackButton}">
-                        <Image
-                           HorizontalOptions="CenterAndExpand"
-                           VerticalOptions="CenterAndExpand"
+                        <Frame
+                            Padding="0"
+                            CornerRadius="20"
+                            Style="{DynamicResource BackButton}">
+                            <Image
                            Opacity="0.9"
+                            Aspect="AspectFill"
                            Source="{Binding BackgroundImage}">
-                        </Image>
+                            </Image>
+                        </Frame>
+                        
                     </Frame>
 
 
                     <Frame 
                        Grid.Column="0"
-                       Opacity="0.7"
-                       Padding="0"
+                        Grid.Row="0"
+                       Padding="10"
                        HorizontalOptions="Start"
                        VerticalOptions="Start"
                        CornerRadius="20"

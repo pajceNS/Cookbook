@@ -65,8 +65,8 @@
             <CollectionView.Footer>
                 <StackLayout BackgroundColor="Transparent">
                     <Image
-                        Source="chef"
-                        Scale="0.22"/>
+                        Style="{DynamicResource LogoFooterImage}"
+                        Scale="0.2"/>
                 </StackLayout>
             </CollectionView.Footer>
 

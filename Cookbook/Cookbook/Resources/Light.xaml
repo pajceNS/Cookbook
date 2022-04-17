@@ -6,6 +6,10 @@
 
     <!--<Color x:Key="ColorForSettingsButton">#7f0000</Color>-->
 
+    <Style TargetType="Image" x:Key="LogoFooterImage">
+        <Setter Property="Source" Value="logolight"/>
+    </Style>
+    
     <FontImageSource x:Key="SettingsButtonImageSource" 
                      FontFamily="Solid"
                      Color="#7f0000"
@@ -35,18 +39,18 @@
     </Style>
     <Style x:Key="FrameBackground" TargetType="Frame">
         <Setter Property="BackgroundColor" Value="#faebfa"/>
-        <Setter Property="BorderColor" Value="#420000"/>
+        <Setter Property="BorderColor" Value="#7f0000"/>
     </Style>
     <Style x:Key="StackBackground" TargetType="StackLayout">
         <Setter Property="BackgroundColor" Value="#fff2f2"/>
     </Style>
     <Style x:Key="DescriptionFrameBackground" TargetType="Frame">
         <Setter Property="BackgroundColor" Value="#e0c5e0"/>
-        <Setter Property="BorderColor" Value="#a4392a"/>
+        <Setter Property="BorderColor" Value="#7f0000"/>
     </Style>
     <Style x:Key="BackButton" TargetType="Frame">
-        <Setter Property="BackgroundColor" Value="#e0c5e0"/>
-        <Setter Property="BorderColor" Value="#a4392a"/>
+        <Setter Property="BackgroundColor" Value="#faebfa"/>
+        <Setter Property="BorderColor" Value="#7f0000"/>
     </Style>
     <Style x:Key="FrameForImage" TargetType="Frame">
         <Setter Property="BackgroundColor" Value="#e0c5e0"/>

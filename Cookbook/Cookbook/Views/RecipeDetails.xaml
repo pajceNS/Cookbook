@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
+             x:Class="Cookbook.Views.RecipeDetails"
+             BindingContext="RecipeDetailsViewModel">
+    <ScrollView>
+        
+        <StackLayout Style="{DynamicResource StackBackground}" 
+                     Padding="5">
+
+            <Frame Padding="0"
+                   BackgroundColor="Transparent"
+                   CornerRadius="20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.20*"/>
+                        <ColumnDefinition Width="0.80*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Frame
+                        Padding="1"
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        CornerRadius="20"
+                        Style="{DynamicResource BackButton}">
+                        <Frame
+                            Padding="0"
+                            CornerRadius="20"
+                            Style="{DynamicResource BackButton}">
+                            <Image
+                           Opacity="0.9"
+                            Aspect="AspectFill"
+                           Source="{Binding BackgroundImage}">
+                            </Image>
+                        </Frame>
+                        
+                    </Frame>
+
+
+                    <Frame 
+                       Grid.Column="0"
+                        Grid.Row="0"
+                       Padding="10"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       CornerRadius="20"
+                       Style="{DynamicResource BackButton}">
+                        <Button 
+                            BackgroundColor="Transparent"
+                            Margin="1"
+                            Command="{Binding BackButtonClicked}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            ImageSource="{DynamicResource BackButton1}">
+                        </Button>
+                        <!--<ImageButton 
+                                 Scale="1.5"
+                                 BackgroundColor="Transparent"
+                                 Source="outline_arrow_back_ios_24"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center"
+                                 Command="{Binding BackButtonClicked}"/>-->
+                    </Frame>
+                </Grid>
+            </Frame>
+            
+            <Frame Padding="0"
+                   CornerRadius="10"
+                   Style="{DynamicResource FrameBackground}">
+
+                <StackLayout>
+                    
+                    
+                    <Label Grid.Column="1"
+                           VerticalOptions="Center"
+                           FontSize="Title"
+                           Text="{Binding Name}" 
+                           Style="{DynamicResource LabelText}"
+                           HorizontalTextAlignment="Center"
+                           FontFamily="Regular1"
+                           FontAttributes="Bold"/>
+
+                    <Frame Style="{DynamicResource DescriptionFrameBackground}" 
+                           Padding="5"
+                           CornerRadius="10">
+                        <StackLayout>
+                            <Label Text="Description:"
+                                   Style="{DynamicResource LabelText}"                                                   
+                                   HorizontalTextAlignment="Center"
+                                   FontSize="Small"
+                                   FontAttributes="Bold">
+                            </Label>
+                            <Label
+                                   Style="{DynamicResource LabelText}"
+                                   Text="{Binding LongDescription}"
+                                   FontSize="Subtitle"
+                                   >
+                            </Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+            
+            
+            <Frame CornerRadius="10"
+                   Padding="0"
+                   Style="{DynamicResource FrameBackground}">
+                <StackLayout Padding="3"
+                             Style="{DynamicResource StackBackground}">
+                    <Label Text="Ingredients"
+                           FontAttributes="Bold"
+                           FontSize="Subtitle"
+                           Style="{DynamicResource LabelText}"
+                           HorizontalOptions="Center">
+                    </Label>
+                    
+                    <CollectionView 
+                        ItemsSource="{Binding IngredientsSource}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="viewmodels:RecipeStepItemViewModel">
+
+                                <StackLayout Spacing="-10">
+                                    <Frame CornerRadius="20" 
+                                           Padding="10"
+                                           Style="{DynamicResource FrameBackground}">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Label Grid.Row="0"
+                                                   Style="{DynamicResource LabelText}">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="Name: "
+                                                              FontAttributes="Bold"
+                                                              FontSize="Small"/>
+                                                        <Span Text="{Binding Name}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+
+                                            <Label Grid.Row="1"
+                                                   Style="{DynamicResource LabelText}">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="Amount: "
+                                                              FontAttributes="Bold"
+                                                              FontSize="Small"/>
+                                                        <Span Text="{Binding Amount}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+
+                                            <Label Grid.Row="2"
+                                                   Style="{DynamicResource LabelText}">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="Unit: "
+                                                              FontAttributes="Bold"
+                                                              FontSize="Small"/>
+                                                        <Span Text="{Binding Unit}"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </Grid>
+                                    </Frame>
+
+                                    <Label>
+                                    </Label>
+
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
+
+            
+            <Frame CornerRadius="10"
+                   Style="{DynamicResource FrameBackground}"
+                   Padding="0">
+                <StackLayout Padding="3"
+                             Style="{DynamicResource StackBackground}">
+                    <Label Text="Steps"
+                           Style="{DynamicResource LabelText}"
+                           FontAttributes="Bold"
+                           FontSize="Subtitle"
+                           HorizontalOptions="Center">
+                    </Label>
+                    
+                    <CollectionView ItemsSource="{Binding StepsSource}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="viewmodels:RecipeStepItemViewModel">
+                                
+                                <StackLayout Spacing="-10"
+                                             Style="{DynamicResource StackBackground}">
+                                    <Frame CornerRadius="20"  
+                                           Padding="10"
+                                           Style="{DynamicResource FrameBackground}">
+
+                                        <StackLayout>
+                                            <Label Style="{DynamicResource LabelText}"
+                                                   Text="{Binding StepCounter, StringFormat='Step: {0:D}'}"
+                                                   FontAttributes="Bold">
+                                            </Label>
+                                            <Label Style="{DynamicResource LabelText}"
+                                                       IsVisible="{Binding IsStepTextLabelVisible}">
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="To do: " FontAttributes="Bold" FontSize="Small"/>
+                                                        <Span Text="{Binding Text}" FontSize="Small"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                            <Image
+                                                    Source="{Binding StepImage}">
+                                            </Image>
+                                        </StackLayout>
+                                        
+                                    </Frame>
+                                    
+                                    <Label>
+                                    </Label>
+                                    
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

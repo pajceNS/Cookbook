@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
+             x:Class="Cookbook.Views.RecipeList"
+             x:DataType="viewmodels:RecipeListViewModel"
+             BindingContext="RecipeListViewModel">
+
+    <StackLayout Style="{DynamicResource StackBackground}"
+                 Padding="5">
+
+        <Frame Padding="0"              
+               BackgroundColor="Transparent">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.20*"/>
+                    <ColumnDefinition Width="0.80*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Frame Grid.Column="0"
+                       Padding="10"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       CornerRadius="20"
+                       Style="{DynamicResource BackButton}">
+                    <Button 
+                            Margin="1"
+                            BackgroundColor="Transparent"
+                            Command="{Binding BackButtonClicked}"
+                            Grid.Column="1"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            ImageSource="{DynamicResource BackButton1}">
+                    </Button>
+                    <!--<ImageButton HorizontalOptions="Center"
+                                 BackgroundColor="Red"
+                                 Source="outline_arrow_back_ios_24"
+                                 VerticalOptions="Center"
+                                 Command="{Binding BackButtonClicked}"
+                                 Scale="1.5"/>-->
+                </Frame>
+                <Frame Padding="0"
+                       Grid.Column="1"
+                       CornerRadius="20"
+                       Style="{DynamicResource FrameBackground}">
+                    <Label Style="{DynamicResource LabelText}"                          
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Title"
+                           Text="{Binding MealName}"
+                           FontFamily="Regular1"
+                           FontAttributes="Bold"/>
+                </Frame>
+            </Grid>
+        </Frame>
+
+
+        <CollectionView Margin="0,15,0,0"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedRecipe}"
+                        ItemsSource="{Binding RecipeSource}"
+                        SelectionChangedCommand="{Binding SelectedRecipeCommand}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="viewmodels:RecipeItemViewModel">
+                    
+                    <StackLayout Spacing="-10">
+
+                        <Frame CornerRadius="10" 
+                               Padding="0"
+                               IsClippedToBounds="True"
+                               Style="{DynamicResource FrameBackground}">
+                            
+                            <Grid Style="{DynamicResource DescriptionGridBackground}"
+                                  ColumnSpacing="2"
+                                  RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Frame  IsClippedToBounds="True"
+                                        Padding="3"
+                                        Grid.Row="0"
+                                        CornerRadius="10" 
+                                        Grid.ColumnSpan="3"
+                                        Style="{DynamicResource FrameBackground}">
+                                    
+                                    <Label Style="{DynamicResource LabelText}"
+                                           LineBreakMode="TailTruncation"
+                                           Grid.Column="0"
+                                           Grid.Row="0"
+                                           Grid.ColumnSpan="3"
+                                           FontSize="Subtitle"
+                                           HorizontalOptions="CenterAndExpand"
+                                           HorizontalTextAlignment="Center" 
+                                           Text="{Binding Name}"
+                                           FontFamily="Regular1"
+                                           FontAttributes="Bold"/>
+                                </Frame>
+                                <Frame
+                                    Style="{DynamicResource FrameForImage}"
+                                    Margin="3"
+                                    CornerRadius="10"
+                                    Padding="-10"
+                                    IsClippedToBounds="True"
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                    Grid.RowSpan="3"
+                                    >
+                                    <Image 
+                                        Aspect="AspectFill"
+                                       Source="{Binding ThumbnailImage}"/>
+                                </Frame>
+                                
+
+                                <Label MaxLines="4"
+                                       LineBreakMode="TailTruncation"
+                                       Grid.Column="1"
+                                       Grid.Row="1"
+                                       Grid.RowSpan="3"
+                                       Grid.ColumnSpan="2"
+                                       FontSize="15"
+                                       Style="{DynamicResource LabelText}"
+                                       Text="{Binding ShortDescription}"/>
+                            </Grid>
+
+                        </Frame>
+
+                        <Label>
+                        </Label>
+                        
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

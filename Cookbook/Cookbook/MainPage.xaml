@@ -1,6 +1,120 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cookbook.MainPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:fontAwesome="clr-namespace:FontAwesome"
+             xmlns:viewmodels="clr-namespace:Cookbook.ViewModels"
+             x:Class="Cookbook.MainPage"
+             x:DataType="viewmodels:MainViewModel"
+             BindingContext="MainViewModel"
+             NavigationPage.HasNavigationBar="False">
 
+    <StackLayout Style="{DynamicResource StackBackground}"
+                 Padding="0">
+
+        <Frame Padding="-1"    
+               BackgroundColor="Transparent">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.80*"/>
+                    <ColumnDefinition Width="0.20*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Frame Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       Padding="10"
+                       CornerRadius="0"
+                       Style="{DynamicResource FrameBackground}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.75*"/>
+                            <ColumnDefinition Width="0.25*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Style="{DynamicResource LabelText}"                          
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Title"
+                           Text="Magic Cookbook"
+                           FontFamily="Regular2"
+                           FontAttributes="Bold">
+
+                        </Label>
+                        <Button BackgroundColor="Transparent"
+                                Command="{Binding ButtonSettings}"
+                                Grid.Column="1"
+                                HorizontalOptions="EndAndExpand"
+                                ImageSource="{DynamicResource SettingsButtonImageSource}">
+                        </Button>
+
+                    </Grid>
+                </Frame>
+            </Grid>
+        </Frame>
+
+        <CollectionView
+                    Margin="0,15,0,0"
+                    Grid.ColumnSpan="2"
+                    SelectionMode="Single"
+                    SelectedItem="{Binding SelectedRecipe}"
+                    SelectionChangedCommand="{Binding SelectedMealTypeCommand}"
+                    ItemsSource="{Binding UniqueTypeRecipes}">
+            <CollectionView.Footer>
+                <StackLayout BackgroundColor="Transparent">
+                    <Image
+                        Style="{DynamicResource LogoFooterImage}"
+                        Scale="0.2"/>
+                </StackLayout>
+            </CollectionView.Footer>
+
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                     Span="2"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="viewmodels:MainButtonViewModel">
+                    <StackLayout Padding="5">
+                        <Frame
+                            Padding="0"
+                            CornerRadius="15" 
+                            Style="{DynamicResource FrameBackground}">
+                            <Frame 
+                                   CornerRadius="15" 
+                                   Margin="1"
+                                   Padding="-15"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="CenterAndExpand"
+                                   Style="{DynamicResource FrameBackground}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image
+                                    Grid.Row="0"
+                                    Source="template">
+
+                                    </Image>
+                                    <Label 
+                                   Grid.Row="0"
+                                   Style="{DynamicResource LabelTextFP}"
+                                   Text="{Binding Type}"
+                                   HeightRequest="100"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Title"
+                                   FontFamily="Regular1"/>
+                                </Grid>
+
+                            </Frame>
+                        </Frame>
+                        
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>

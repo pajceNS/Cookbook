@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:Cookbook.ViewModels" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="Cookbook.Views.Settings"
+             x:DataType="viewmodels:SettingsViewModel"
+             NavigationPage.HasNavigationBar="False"
+             BindingContext="SettingsViewModel">
+
+    <StackLayout Style="{DynamicResource StackBackground}"
+                 Padding="5">
+
+        <Frame Padding="0"              
+               BackgroundColor="Transparent"
+               CornerRadius="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.20*"/>
+                    <ColumnDefinition Width="0.80*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Frame Grid.Column="0"
+                       Padding="10"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"
+                       CornerRadius="20"
+                       Style="{DynamicResource BackButton}">
+                    <Button 
+                            BackgroundColor="Transparent"
+                            Margin="1"
+                            Command="{Binding BackButtonClicked}"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            ImageSource="{DynamicResource BackButton1}">
+                    </Button>
+                    <!--<ImageButton 
+                                 HorizontalOptions="Center"
+                                 BackgroundColor="Transparent"
+                                 Source="outline_arrow_back_ios_24"
+                                 VerticalOptions="Center"
+                                 Scale="1.5"
+                                 Command="{Binding BackButtonClicked}"/>-->
+                </Frame>
+                <Frame Padding="0"
+                       Grid.Column="1"
+                       CornerRadius="20"
+                       Style="{DynamicResource FrameBackground}">
+                    <Label Style="{DynamicResource LabelText}"                          
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="Title"
+                           FontFamily="Regular1"
+                           Text="Settings"
+                           FontAttributes="Bold"/>
+                </Frame>
+            </Grid>
+        </Frame>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label VerticalOptions="Start"
+                       Style="{DynamicResource LabelText}"
+                       Grid.Column="0"
+                       Margin="40,60,0,0"
+                       Text="Dark Mode"
+                       FontSize="22"/>
+
+            <Switch Margin="20,60,40,0"
+                    ThumbColor="#420000"
+                    OnColor="#fff2f2"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    IsToggled="{Binding SwitchTheme}"
+                    Grid.Column="1">
+                <Switch.Behaviors>
+                    <xct:EventToCommandBehavior
+                            EventName="Toggled"
+                            Command="{Binding SwitchThemeCommand}"/>
+                </Switch.Behaviors>
+            </Switch>
+
+        </Grid>
+    </StackLayout>
+</ContentPage>
